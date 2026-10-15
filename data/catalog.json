@@ -1,0 +1,284 @@
+[
+  {
+    "id": "23541112",
+    "sku": "23541112",
+    "name": "BICICLETA ELECTRICA QUINT TMEBKB20 R26 NEGRA",
+    "category": "bicicletas",
+    "list_price": 1499008,
+    "cash_price": 1249000,
+    "installment_24": 87449,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "24785017",
+    "sku": "24785017",
+    "name": "MOTO ELECTRICA PALERMO LUZ LED 500W GRIS",
+    "category": "motos eléctricas",
+    "list_price": 2225541,
+    "cash_price": 1900000,
+    "installment_24": 129790,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "24785019",
+    "sku": "24785019",
+    "name": "MOTO ELECTRICA NAPOLES 500W CELESTE",
+    "category": "motos eléctricas",
+    "list_price": 2799102,
+    "cash_price": 2390000,
+    "installment_24": 163000,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "23541510",
+    "sku": "23541510",
+    "name": "BICICLETA RANDERS STRADA VINTAGE BKE-126-C CELESTE",
+    "category": "bicicletas",
+    "list_price": 369995,
+    "cash_price": 299999,
+    "installment_24": 21580,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "23541512",
+    "sku": "23541512",
+    "name": "BICICLETA RANDERS ASTORIA CELESTE BKE-726-C",
+    "category": "bicicletas",
+    "list_price": 460017,
+    "cash_price": 375000,
+    "installment_24": 26890,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "16521065",
+    "sku": "16521065",
+    "name": "JUEGO DE JARDIN SOL DE MAYO 2 BANCO DOBLE + 2 BANCO SIMPLE + MESA",
+    "category": "jardín",
+    "list_price": 1052700,
+    "cash_price": 840000,
+    "installment_24": 61250,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "16521066",
+    "sku": "16521066",
+    "name": "JUEGO JARDIN SOL DE MAYO BANCO DOBLE + MESA RATONA",
+    "category": "jardín",
+    "list_price": 462825,
+    "cash_price": 370400,
+    "installment_24": 26998,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "14142260",
+    "sku": "14142260",
+    "name": "TOCADOR HENN CHANEL D900-05 BLANCO HP",
+    "category": "dormitorio",
+    "list_price": 512947,
+    "cash_price": 359000,
+    "installment_24": 27700,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "14142253",
+    "sku": "14142253",
+    "name": "TOCADOR HENN AGNES D921-190 3 CAJONES BLANCO",
+    "category": "dormitorio",
+    "list_price": 403354,
+    "cash_price": 282100,
+    "installment_24": 21850,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "14101015",
+    "sku": "14101015",
+    "name": "ZAPATERO HENN DUETTO D182",
+    "category": "dormitorio",
+    "list_price": 363110,
+    "cash_price": 254100,
+    "installment_24": 19600,
+    "currency": "ARS",
+    "variants": [
+      {
+        "sku": "14101015",
+        "label": "D182-05 BLANCO HP"
+      },
+      {
+        "sku": "14101003",
+        "label": "D182-214 CINAMOMO"
+      }
+    ],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "57464004",
+    "sku": "57464004",
+    "name": "LAVAVAJILLA ENOVA KE12F10-BL-L 12 CUB. BLANCO",
+    "category": "electrodomésticos",
+    "list_price": 799002,
+    "cash_price": 599990,
+    "installment_24": 44900,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "51757016",
+    "sku": "51757016",
+    "name": "CEPILLO MODELADOR GA.MA UNIQ MULTISTYLER FLOW 6 ACCESORIOS",
+    "category": "cuidado personal",
+    "list_price": 359004,
+    "cash_price": 287000,
+    "installment_24": 11690,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "51789019",
+    "sku": "51789019",
+    "name": "COMBO GA.MA SECADOR Y PLANCHA ELEGANCE AVOCADO",
+    "category": "cuidado personal",
+    "list_price": 152888,
+    "cash_price": 119000,
+    "installment_24": 8600,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "23541108",
+    "sku": "23541108",
+    "name": "BICICLETA MTB MINT ASTRO TALLE M/L R29 AMARILLO ( GRAVITY BEMBA -BENZ-GLOCK)",
+    "category": "bicicletas",
+    "list_price": 280000,
+    "cash_price": 219900,
+    "installment_24": 15500,
+    "currency": "ARS",
+    "variants": [
+      {
+        "sku": "23541108",
+        "label": null
+      },
+      {
+        "sku": "23541120",
+        "label": null
+      },
+      {
+        "sku": "23541107",
+        "label": null
+      }
+    ],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "PEABODY-PE-LMA327B",
+    "sku": null,
+    "name": "LICUADORA DE MANO PEABODY PE-LMA327B BLANCA",
+    "category": "electrodomésticos",
+    "list_price": 141551,
+    "cash_price": 113600,
+    "installment_24": 7990,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "51551032",
+    "sku": "51551032",
+    "name": "ROBOT DE COCINA SIBIU RC10 MULTIFUNCION 2 LITROS",
+    "category": "electrodomésticos",
+    "list_price": null,
+    "cash_price": null,
+    "installment_24": null,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": "price on request",
+    "image_file": null
+  },
+  {
+    "id": "14798121",
+    "sku": "14798121",
+    "name": "BUTACA WINNER 100x100 BOUCLE G4 GRIS",
+    "category": "sillones y sofás",
+    "list_price": 1226759,
+    "cash_price": 949000,
+    "installment_24": 68700,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "14798071",
+    "sku": "14798071",
+    "name": "BUTACA DENVER 1 CUERPO 70X70 BOUCLE BEIGE",
+    "category": "sillones y sofás",
+    "list_price": 771375,
+    "cash_price": 599000,
+    "installment_24": 43900,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "14798061",
+    "sku": "14798061",
+    "name": "SOFA ESQUINERO CIRO 2.20 MTS LINO MARFIL",
+    "category": "sillones y sofás",
+    "list_price": 1678875,
+    "cash_price": 1349000,
+    "installment_24": 99900,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  },
+  {
+    "id": "14798012",
+    "sku": "14798012",
+    "name": "SOFA KAPPESBERG HAVANA 2,06M RECLINABLE S231-2-A027",
+    "category": "sillones y sofás",
+    "list_price": 990023,
+    "cash_price": 789000,
+    "installment_24": 58900,
+    "currency": "ARS",
+    "variants": [],
+    "availability_note": null,
+    "image_file": null
+  }
+]
