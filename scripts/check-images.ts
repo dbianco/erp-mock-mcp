@@ -8,7 +8,7 @@ for (const product of catalog.filter((p) => p.image_file !== null)) {
   const url = `${base}/${product.image_file}`;
   const response = await fetch(url, { method: 'HEAD' });
   const type = response.headers.get('content-type') ?? '';
-  const good = response.status === 200 && type.startsWith('image/jpeg');
+  const good = response.status === 200 && type.startsWith('image/png');
   console.log(`${good ? 'ok  ' : 'FAIL'} ${product.id} ${response.status} ${type}`);
   if (!good) {
     failures += 1;

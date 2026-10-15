@@ -10,7 +10,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "23541112.png"
   },
   {
     "id": "24785017",
@@ -23,7 +23,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "24785017.png"
   },
   {
     "id": "24785019",
@@ -36,7 +36,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "24785019.png"
   },
   {
     "id": "23541510",
@@ -49,7 +49,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "23541510.png"
   },
   {
     "id": "23541512",
@@ -62,7 +62,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "23541512.png"
   },
   {
     "id": "16521065",
@@ -75,7 +75,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "16521065.png"
   },
   {
     "id": "16521066",
@@ -88,7 +88,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "16521066.png"
   },
   {
     "id": "14142260",
@@ -101,7 +101,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "14142260.png"
   },
   {
     "id": "14142253",
@@ -114,7 +114,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "14142253.png"
   },
   {
     "id": "14101015",
@@ -136,7 +136,7 @@
       }
     ],
     "availability_note": null,
-    "image_file": null
+    "image_file": "14101015.png"
   },
   {
     "id": "57464004",
@@ -149,7 +149,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "57464004.png"
   },
   {
     "id": "51757016",
@@ -162,7 +162,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "51757016.png"
   },
   {
     "id": "51789019",
@@ -175,7 +175,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": "51789019.jpg"
+    "image_file": "51789019.png"
   },
   {
     "id": "23541108",
@@ -201,7 +201,7 @@
       }
     ],
     "availability_note": null,
-    "image_file": null
+    "image_file": "23541108.png"
   },
   {
     "id": "PEABODY-PE-LMA327B",
@@ -214,7 +214,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": "PEABODY-PE-LMA327B.jpg"
+    "image_file": "PEABODY-PE-LMA327B.png"
   },
   {
     "id": "51551032",
@@ -227,7 +227,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": "price on request",
-    "image_file": null
+    "image_file": "51551032.png"
   },
   {
     "id": "14798121",
@@ -240,7 +240,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "14798121.png"
   },
   {
     "id": "14798071",
@@ -253,7 +253,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "14798071.png"
   },
   {
     "id": "14798061",
@@ -266,7 +266,7 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "14798061.png"
   },
   {
     "id": "14798012",
@@ -279,6 +279,6 @@
     "currency": "ARS",
     "variants": [],
     "availability_note": null,
-    "image_file": null
+    "image_file": "14798012.png"
   }
 ]

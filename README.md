@@ -38,10 +38,10 @@ A product without a price answers `price on request`; the tools never invent one
 ```bash
 npm run build:catalog   # regenerates data/catalog.json from data/source-catalog.psv
                         # and data/image-sources.json
-npm run check:images    # after deploying the pictures: every image_url answers 200 image/jpeg
+npm run check:images    # after deploying the pictures: every image_url answers 200 image/png
 ```
 
-Pictures are JPEGs in `assets/images`, copied by hand to the site that hosts them. Only products whose
+Pictures are 800 px wide PNGs in `assets/images`, copied by hand to the site that hosts them. Only products whose
 picture could be verified against the catalog row have one (`jq '[.[] | select(.image_file)] | length' data/catalog.json`);
 the others have `image_url: null`. `data/image-sources.json` records where each came from.
 

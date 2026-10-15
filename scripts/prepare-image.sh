@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # Usage: scripts/prepare-image.sh <product-id> <downloaded-file>
+# Converts any image sips can read (JPEG, WebP, AVIF, ...) to an 800 px wide PNG.
 set -euo pipefail
 id="$1"
 source_file="$2"
-out="assets/images/${id}.jpg"
+out="assets/images/${id}.png"
+max_bytes=1000000
 mkdir -p assets/images
-for quality in 80 70 60 50 40; do
-  sips -s format jpeg -s formatOptions "$quality" --resampleWidth 800 "$source_file" --out "$out" > /dev/null
-  size=$(stat -f%z "$out")
-  if [ "$size" -le 200000 ]; then
-    echo "${id}: ${size} bytes (quality ${quality})"
-    exit 0
-  fi
-done
-echo "${id}: could not get under 200000 bytes" >&2
-exit 1
+sips -s format png --resampleWidth 800 "$source_file" --out "$out" > /dev/null
+size=$(stat -f%z "$out")
+if [ "$size" -gt "$max_bytes" ]; then
+  echo "${id}: ${size} bytes is over ${max_bytes}" >&2
+  rm -f "$out"
+  exit 1
+fi
+echo "${id}: ${size} bytes"

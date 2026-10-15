@@ -9,7 +9,7 @@ const sources: Record<string, { file: string; source_page: string; fetched: stri
 );
 const withImage = catalog.filter((p) => p.image_file !== null);
 
-const MIN_IMAGES = 2; // verified count from `ls assets/images | wc -l` on 2026-10-15
+const MIN_IMAGES = 20; // `ls assets/images | wc -l` on 2026-10-15, after the owner supplied the rest
 
 describe('image bundle', () => {
   test('enough products have a picture (guards against silently losing them)', () => {
@@ -17,28 +17,28 @@ describe('image bundle', () => {
     expect(withImage.length).toBe(Object.values(sources).filter((s) => s.verified).length);
   });
 
-  test('every catalog image exists as a JPEG of at most 200000 bytes', () => {
+  test('every catalog image exists as a PNG of at most 1000000 bytes', () => {
     for (const product of withImage) {
       const file = root(`assets/images/${product.image_file}`);
       expect(existsSync(file), `${product.id} file`).toBe(true);
-      expect(statSync(file).size, `${product.id} size`).toBeLessThanOrEqual(200000);
-      const head = readFileSync(file).subarray(0, 3);
-      expect([...head], `${product.id} JPEG magic bytes`).toEqual([0xff, 0xd8, 0xff]);
+      expect(statSync(file).size, `${product.id} size`).toBeLessThanOrEqual(1000000);
+      const head = readFileSync(file).subarray(0, 8);
+      expect([...head], `${product.id} PNG magic bytes`).toEqual([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
     }
   });
 
-  test('there is no file in the bundle that the catalog does not use, and none is WebP', () => {
+  test('there is no file in the bundle that the catalog does not use, and none is WebP or AVIF', () => {
     const used = new Set(withImage.map((p) => p.image_file));
     const present = readdirSync(root('assets/images')).filter((f) => !f.startsWith('.'));
     expect(present.filter((f) => !used.has(f))).toEqual([]);
-    expect(present.some((f) => f.toLowerCase().endsWith('.webp'))).toBe(false);
+    expect(present.filter((f) => !f.endsWith('.png'))).toEqual([]);
   });
 
   test('every verified source has an https page and a date', () => {
     for (const [id, source] of Object.entries(sources)) {
       expect(source.source_page, id).toMatch(/^https:\/\//);
       expect(source.fetched, id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      expect(source.file, id).toBe(`${id}.jpg`);
+      expect(source.file, id).toBe(`${id}.png`);
     }
   });
 

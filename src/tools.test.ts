@@ -96,14 +96,16 @@ describe('get_product', () => {
   });
 
   test('image_url is built from the configured base and is null without a picture', async () => {
-    const withPicture = catalog.map((p) => (p.id === '23541108' ? { ...p, image_file: '23541108.jpg' } : p));
-    const client = await connect(withPicture);
+    const fixture = catalog.map((p) =>
+      p.id === '23541108' ? { ...p, image_file: '23541108.png' } : p.id === '23541112' ? { ...p, image_file: null } : p,
+    );
+    const client = await connect(fixture);
     expect((await call(client, 'get_product', { sku: '23541108' })).structuredContent?.image_url).toBe(
-      `${BASE}/23541108.jpg`,
+      `${BASE}/23541108.png`,
     );
     expect((await call(client, 'get_product', { sku: '23541112' })).structuredContent?.image_url).toBeNull();
     const found = await call(client, 'search_products', { query: 'MTB' });
-    expect(found.structuredContent?.products[0].image_url).toBe(`${BASE}/23541108.jpg`);
+    expect(found.structuredContent?.products[0].image_url).toBe(`${BASE}/23541108.png`);
   });
 });
 
@@ -124,7 +126,7 @@ describe('list_categories', () => {
 
 describe('image helpers', () => {
   test('imageUrl is null when the product has no file', () => {
-    expect(imageUrl(catalog[0]!, BASE)).toBeNull();
+    expect(imageUrl({ ...catalog[0]!, image_file: null }, BASE)).toBeNull();
   });
 
   test('imageCaption falls back to the bare name when there is no price', () => {
