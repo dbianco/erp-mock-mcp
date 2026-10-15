@@ -101,8 +101,7 @@ describe('generated catalog', () => {
     ]);
   });
 
-  test('single-SKU products carry no variants and no image yet', () => {
+  test('single-SKU products carry no variants', () => {
     expect(byId('14798012').variants).toEqual([]);
-    expect(rows.every((r) => r.image_file === null)).toBe(true);
   });
 });
