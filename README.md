@@ -47,5 +47,6 @@ the others have `image_url: null`. `data/image-sources.json` records where each 
 
 ## Rights
 
-The pictures are third-party product photos used in an internal proof of concept. Do not publish
-this repository.
+The pictures in `assets/images` are product photos taken from the internet and kept here for a proof of
+concept. The repository is public by the owner's decision (2026-10-15). If a rights holder asks for a
+picture to be removed, delete the file, its entry in `data/image-sources.json` and run `npm run build:catalog`.
