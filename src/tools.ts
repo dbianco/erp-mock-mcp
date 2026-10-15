@@ -93,9 +93,10 @@ export function createCatalogServer(catalog: Catalog, options: ServerOptions): M
         ...(max_price !== undefined && { maxPrice: max_price }),
         ...(limit !== undefined && { limit }),
       });
-      const lines = result.products.map(
-        (p) => `${p.id} | ${p.name} | cash ${formatPrice(p.cash_price)} | 24 instalments of ${formatPrice(p.installment_24)}`,
-      );
+      const lines = result.products.map((p) => {
+        const picture = imageUrl(p, base);
+        return `${p.id} | ${p.name} | cash ${formatPrice(p.cash_price)} | 24 instalments of ${formatPrice(p.installment_24)}${picture === null ? '' : ` | image ${picture}`}`;
+      });
       return {
         content: [
           { type: 'text' as const, text: [`${result.totalMatches} match(es), showing ${lines.length}:`, ...lines].join('\n') },
@@ -163,6 +164,10 @@ export function createCatalogServer(catalog: Catalog, options: ServerOptions): M
         `list ${formatPrice(product.list_price)} | cash ${formatPrice(product.cash_price)} | 24 instalments of ${formatPrice(product.installment_24)}`,
         ...(record.discount_percent === null ? [] : [`discount ${record.discount_percent}%`]),
         ...(product.availability_note === null ? [] : [product.availability_note]),
+        ...(product.variants.length === 0
+          ? []
+          : [`variants: ${product.variants.map((v) => (v.label === null ? v.sku : `${v.sku} (${v.label})`)).join(', ')}`]),
+        ...(record.image_url === null ? [] : [`image ${record.image_url}`]),
       ].join('\n');
       return { content: [{ type: 'text' as const, text }], structuredContent: record };
     },

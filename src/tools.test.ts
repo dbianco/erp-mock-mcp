@@ -88,6 +88,17 @@ describe('get_product', () => {
     expect(result.content[0]?.text).toContain('23541108');
   });
 
+  test('the text the model reads carries the picture link and the variant SKUs', async () => {
+    const bike = await call(await connect(), 'get_product', { sku: '23541108' });
+    const text = bike.content[0]?.text ?? '';
+    expect(text).toContain(`${BASE}/23541108.png`);
+    for (const variant of bike.structuredContent?.variants ?? []) {
+      expect(text).toContain(variant.sku);
+    }
+    const found = await call(await connect(), 'search_products', { query: 'MTB' });
+    expect(found.content[0]?.text).toContain(`${BASE}/23541108.png`);
+  });
+
   test('the caption is a Spanish line with the cash price and the instalment', async () => {
     const sofa = await call(await connect(), 'get_product', { sku: '14798061' });
     expect(sofa.structuredContent?.image_caption).toBe(
