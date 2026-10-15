@@ -52,8 +52,15 @@ function haystack(product: Product): string {
 }
 
 function matchesToken(text: string, token: string): boolean {
-  // "bicicletas" must find "BICICLETA": a trailing plural "s" is also tried without the "s".
-  return text.includes(token) || (token.length > 3 && token.endsWith('s') && text.includes(token.slice(0, -1)));
+  if (text.includes(token)) {
+    return true;
+  }
+  // "bicicletas" must find "BICICLETA" and "tocadores" must find "TOCADOR": a trailing plural
+  // "s" or "es" is also tried without it.
+  if (token.length > 3 && token.endsWith('s') && text.includes(token.slice(0, -1))) {
+    return true;
+  }
+  return token.length > 4 && token.endsWith('es') && text.includes(token.slice(0, -2));
 }
 
 function withinPrice(product: Product, minPrice?: number, maxPrice?: number): boolean {

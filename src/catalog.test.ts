@@ -19,6 +19,13 @@ describe('text normalisation', () => {
     expect(normalise('ELÉCTRICA Jardín')).toBe('electrica jardin');
   });
 
+  test('tokenising strips punctuation at the edges of a word but keeps it inside', () => {
+    expect(tokenise('¿Bicicletas ELÉCTRICAS?')).toEqual(['bicicletas', 'electricas']);
+    expect(tokenise('bicicleta eléctrica.')).toEqual(['bicicleta', 'electrica']);
+    expect(tokenise('GA.MA, 2,06m!')).toEqual(['ga.ma', '2,06m']);
+    expect(tokenise('?!...')).toEqual([]);
+  });
+
   test('tokenising drops empty tokens', () => {
     expect(tokenise('  Bicicletas   ELÉCTRICAS ')).toEqual(['bicicletas', 'electricas']);
     expect(tokenise('   ')).toEqual([]);
@@ -55,6 +62,22 @@ describe('searchProducts', () => {
       '24785017',
       '24785019',
     ]);
+  });
+
+  test('final review: punctuation around a shopper-typed query does not hide the product', () => {
+    const plain = ids(searchProducts(catalog, { query: 'bicicleta' }).products);
+    for (const query of ['bicicleta?', '¿bicicletas?', 'bicicletas,', '  bicicleta. ']) {
+      expect(ids(searchProducts(catalog, { query }).products), query).toEqual(plain);
+    }
+    expect(ids(searchProducts(catalog, { query: 'bicicletas, eléctricas.' }).products)).toEqual(['23541112']);
+    // A query that is only punctuation says nothing, so it lists the default page.
+    expect(searchProducts(catalog, { query: '?!' }).totalMatches).toBe(20);
+  });
+
+  test('final review: Spanish plurals ending in "es" find the singular product', () => {
+    expect(ids(searchProducts(catalog, { query: 'tocadores' }).products)).toEqual(['14142253', '14142260']);
+    expect(ids(searchProducts(catalog, { query: 'jardines' }).products)).toEqual(['16521066', '16521065']);
+    expect(ids(searchProducts(catalog, { query: 'secadores' }).products)).toEqual(['51789019']);
   });
 
   test('review focus 2: an empty or blank query lists the five cheapest priced products', () => {
