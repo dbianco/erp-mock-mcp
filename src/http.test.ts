@@ -1,17 +1,40 @@
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { AddressInfo } from 'node:net';
 import { afterEach, describe, expect, test } from 'vitest';
-import { loadCatalog } from './catalog.js';
 import { createHttpServer } from './http.js';
+import { createCasaGigliTenant } from './tenants/casa-gigli.js';
+import type { Tenant } from './tenant.js';
 
-const catalog = loadCatalog();
 const open: { close: () => Promise<void> }[] = [];
 
-async function start(authToken?: string): Promise<string> {
+/** A tiny tenant exposing one tool, so routing is tested independently of any real dataset. */
+function fakeTenant(slug: string, tool: string): Tenant {
+  return {
+    slug,
+    name: slug,
+    createServer: () => {
+      const server = new McpServer({ name: slug, version: '1' });
+      server.registerTool(tool, { description: `tool of ${slug}`, annotations: { readOnlyHint: true } }, async () => ({
+        content: [{ type: 'text' as const, text: slug }],
+      }));
+      return server;
+    },
+  };
+}
+
+const alpha = fakeTenant('alpha', 'only_alpha');
+const beta = fakeTenant('beta', 'only_beta');
+const twoTenants = new Map([
+  ['alpha', alpha],
+  ['beta', beta],
+]);
+
+async function start(authToken?: string, tenants: ReadonlyMap<string, Tenant> = twoTenants): Promise<string> {
   const server = createHttpServer({
-    catalog,
-    imageBaseUrl: 'https://img.example/m',
+    tenants,
+    defaultTenant: 'alpha',
     ...(authToken !== undefined && { authToken }),
   });
   await new Promise<void>((resolve) => server.listen(0, '127.0.0.1', resolve));
@@ -23,8 +46,8 @@ afterEach(async () => {
   await Promise.all(open.splice(0).map((s) => s.close()));
 });
 
-async function client(url: string, token?: string): Promise<Client> {
-  const transport = new StreamableHTTPClientTransport(new URL(`${url}/mcp`), {
+async function client(url: string, token?: string, path = '/alpha/mcp'): Promise<Client> {
+  const transport = new StreamableHTTPClientTransport(new URL(`${url}${path}`), {
     requestInit: token === undefined ? {} : { headers: { Authorization: `Bearer ${token}` } },
   });
   const c = new Client({ name: 'test', version: '1' });
@@ -32,14 +55,16 @@ async function client(url: string, token?: string): Promise<Client> {
   return c;
 }
 
+const toolNames = async (c: Client) => (await c.listTools()).tools.map((t) => t.name).sort();
+
 const initialize = {
   jsonrpc: '2.0',
   id: 1,
   method: 'initialize',
   params: { protocolVersion: '2025-03-26', capabilities: {}, clientInfo: { name: 't', version: '1' } },
 };
-const post = (url: string, body: string, headers: Record<string, string> = {}) =>
-  fetch(`${url}/mcp`, {
+const post = (url: string, body: string, headers: Record<string, string> = {}, path = '/alpha/mcp') =>
+  fetch(`${url}${path}`, {
     method: 'POST',
     headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream', ...headers },
     body,
@@ -54,12 +79,9 @@ describe('open server', () => {
   });
 
   test('speaks MCP end to end: initialize, tools/list, tools/call', async () => {
-    const c = await client(await start());
-    expect((await c.listTools()).tools.map((t) => t.name).sort()).toEqual([
-      'get_product',
-      'list_categories',
-      'search_products',
-    ]);
+    const url = await start(undefined, new Map([['casa-gigli', createCasaGigliTenant({ imageBaseUrl: 'https://img.example/m' })]]));
+    const c = await client(url, undefined, '/casa-gigli/mcp');
+    expect(await toolNames(c)).toEqual(expect.arrayContaining(['get_product', 'list_categories', 'search_products']));
     const result = (await c.callTool({ name: 'search_products', arguments: { query: 'sofa' } })) as unknown as {
       structuredContent: { total_matches: number };
     };
@@ -71,7 +93,7 @@ describe('open server', () => {
     const first = await client(url);
     await first.listTools();
     const second = await client(url);
-    expect((await second.listTools()).tools).toHaveLength(3);
+    expect(await toolNames(second)).toEqual(['only_alpha']);
   });
 });
 
@@ -94,7 +116,7 @@ describe('bearer authentication', () => {
   test('accepts the right token, and the MCP client can use it', async () => {
     const url = await start('s3cret-token');
     const c = await client(url, 's3cret-token');
-    expect((await c.listTools()).tools).toHaveLength(3);
+    expect(await toolNames(c)).toEqual(['only_alpha']);
   });
 });
 
@@ -114,11 +136,53 @@ describe('malformed requests', () => {
     expect((await fetch(`${url}/health`)).status).toBe(200);
   });
 
-  test('GET on the MCP endpoint is 405 (stateless, POST only) and unknown paths are 404', async () => {
+  test('GET on a tenant endpoint is 405 (stateless, POST only)', async () => {
     const url = await start();
-    const get = await fetch(`${url}/mcp`);
+    const get = await fetch(`${url}/alpha/mcp`);
     expect(get.status).toBe(405);
     expect(get.headers.get('allow')).toBe('POST');
-    expect((await fetch(`${url}/nope`)).status).toBe(404);
+  });
+});
+
+describe('tenant routing', () => {
+  test('routes /alpha/mcp and /beta/mcp to their own tool lists', async () => {
+    const url = await start();
+    expect(await toolNames(await client(url, undefined, '/alpha/mcp'))).toEqual(['only_alpha']);
+    expect(await toolNames(await client(url, undefined, '/beta/mcp'))).toEqual(['only_beta']);
+  });
+
+  test("calling another tenant's tool fails", async () => {
+    const c = await client(await start(), undefined, '/alpha/mcp');
+    const result = (await c.callTool({ name: 'only_beta', arguments: {} }).catch((e: unknown) => e)) as {
+      isError?: boolean;
+    };
+    expect(result instanceof Error || result.isError === true).toBe(true);
+  });
+
+  test('/mcp answers as the default tenant', async () => {
+    expect(await toolNames(await client(await start(), undefined, '/mcp'))).toEqual(['only_alpha']);
+  });
+
+  test.each(['/gamma/mcp', '/alpha/mcp/', '/ALPHA/mcp', '/a/b/mcp', '/alpha', '/nope'])(
+    '%s is a 404 not_found',
+    async (path) => {
+      const url = await start();
+      const response = await post(url, JSON.stringify(initialize), {}, path);
+      expect(response.status).toBe(404);
+      expect(await response.json()).toEqual({ error: 'not_found' });
+    },
+  );
+
+  test('an unknown slug is a 404 before the bearer check', async () => {
+    const url = await start('s3cret-token');
+    expect((await post(url, JSON.stringify(initialize), {}, '/gamma/mcp')).status).toBe(404);
+  });
+
+  test('authentication applies to every tenant route and /mcp, but not /health', async () => {
+    const url = await start('s3cret-token');
+    for (const path of ['/alpha/mcp', '/beta/mcp', '/mcp']) {
+      expect((await post(url, JSON.stringify(initialize), {}, path)).status).toBe(401);
+    }
+    expect((await fetch(`${url}/health`)).status).toBe(200);
   });
 });

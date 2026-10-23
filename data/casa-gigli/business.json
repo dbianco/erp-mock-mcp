@@ -1,0 +1,20 @@
+{
+  "name": "Casa Gigli",
+  "address": "Héroes de Malvinas 271, X2563 Noetinger, Córdoba",
+  "phone": "03472 47-0066",
+  "email": null,
+  "hours": [
+    { "day": "mon", "ranges": [{ "open": "08:00", "close": "12:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "tue", "ranges": [{ "open": "08:00", "close": "12:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "wed", "ranges": [{ "open": "08:00", "close": "12:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "thu", "ranges": [{ "open": "08:00", "close": "12:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "fri", "ranges": [{ "open": "08:00", "close": "12:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "sat", "ranges": [{ "open": "08:30", "close": "12:30" }] },
+    { "day": "sun", "ranges": [] }
+  ],
+  "links": {
+    "instagram": "https://www.instagram.com/casa_gigli",
+    "web": "https://casagigli.com.ar/"
+  },
+  "notes": []
+}

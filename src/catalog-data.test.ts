@@ -17,7 +17,7 @@ interface Row {
 }
 
 const rows: Row[] = JSON.parse(
-  readFileSync(new URL('../data/catalog.json', import.meta.url), 'utf8'),
+  readFileSync(new URL('../data/casa-gigli/catalog.json', import.meta.url), 'utf8'),
 );
 const byId = (id: string): Row => {
   const row = rows.find((r) => r.id === id);

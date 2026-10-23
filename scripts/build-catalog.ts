@@ -29,11 +29,11 @@ const OVERRIDES: Record<string, { name?: string; id?: string; variants?: Variant
   'LICUADORA DE MANO PEABODY PE-LMA327B BLANCA': { id: 'PEABODY-PE-LMA327B' },
 };
 
-const images: Record<string, ImageSource> = existsSync(here('data/image-sources.json'))
-  ? JSON.parse(readFileSync(here('data/image-sources.json'), 'utf8'))
+const images: Record<string, ImageSource> = existsSync(here('data/casa-gigli/image-sources.json'))
+  ? JSON.parse(readFileSync(here('data/casa-gigli/image-sources.json'), 'utf8'))
   : {};
 
-const lines = readFileSync(here('data/source-catalog.psv'), 'utf8').split('\n').filter((l) => l.trim() !== '');
+const lines = readFileSync(here('data/casa-gigli/source-catalog.psv'), 'utf8').split('\n').filter((l) => l.trim() !== '');
 const [, ...dataLines] = lines;
 
 const products = dataLines.map((line) => {
@@ -64,5 +64,5 @@ const products = dataLines.map((line) => {
   };
 });
 
-writeFileSync(here('data/catalog.json'), `${JSON.stringify(products, null, 2)}\n`);
-console.log(`Wrote ${products.length} products to data/catalog.json`);
+writeFileSync(here('data/casa-gigli/catalog.json'), `${JSON.stringify(products, null, 2)}\n`);
+console.log(`Wrote ${products.length} products to data/casa-gigli/catalog.json`);

@@ -1,0 +1,10 @@
+[
+  { "name": "Modelo regional WRF", "url": "https://pronosticos.ohmc.ar/", "description": "Pronósticos del modelo regional WRF del OHMC (menos de 4 km de resolución)." },
+  { "name": "Radares meteorológicos (WebMet)", "url": "https://webmet.ohmc.ar/", "description": "Radares meteorológicos con cobertura de unos 240 km de radio." },
+  { "name": "Imágenes de satélite GOES (GeoColor)", "url": "https://wrf.ohmc.ar/goes/GeoColor/", "description": "Imágenes satelitales en color real." },
+  { "name": "Monitoreo de heladas (GOES)", "url": "https://wrf.ohmc.ar/goes/heladas/", "description": "Producto satelital para seguimiento de heladas." },
+  { "name": "Topes nubosos (GOES)", "url": "https://wrf.ohmc.ar/goes/C13/", "description": "Temperatura del tope de las nubes." },
+  { "name": "REPROMMAT", "url": "https://reprommat.ohmc.ar/", "description": "Sistema provincial de alerta temprana; el acceso es solo para personal autorizado de gestión de riesgo." },
+  { "name": "Portal APRHi", "url": "https://portal-aprhi.opendata.arcgis.com/", "description": "Portal provincial de información hídrica." },
+  { "name": "Servicio Meteorológico Nacional", "url": "https://www.smn.gob.ar/", "description": "Pronósticos y alertas oficiales del servicio meteorológico nacional." }
+]

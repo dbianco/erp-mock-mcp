@@ -1,0 +1,19 @@
+{
+  "name": "Güemes Neumáticos",
+  "address": "Julio A. Roca 987, X5000CQG Córdoba",
+  "phone": "0351 460-3165",
+  "email": null,
+  "hours": [
+    { "day": "mon", "ranges": [{ "open": "08:30", "close": "18:00" }] },
+    { "day": "tue", "ranges": [{ "open": "08:30", "close": "18:00" }] },
+    { "day": "wed", "ranges": [{ "open": "08:30", "close": "18:00" }] },
+    { "day": "thu", "ranges": [{ "open": "08:30", "close": "18:00" }] },
+    { "day": "fri", "ranges": [{ "open": "08:30", "close": "18:00" }] },
+    { "day": "sat", "ranges": [] },
+    { "day": "sun", "ranges": [] }
+  ],
+  "links": {
+    "facebook": "https://www.facebook.com/p/G%C3%BCemes-Neum%C3%A1ticos-100041697807236/"
+  },
+  "notes": []
+}

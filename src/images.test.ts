@@ -5,7 +5,7 @@ import { loadCatalog } from './catalog.js';
 const root = (relative: string): URL => new URL(`../${relative}`, import.meta.url);
 const catalog = loadCatalog();
 const sources: Record<string, { file: string; source_page: string; fetched: string; verified: boolean }> = JSON.parse(
-  readFileSync(root('data/image-sources.json'), 'utf8'),
+  readFileSync(root('data/casa-gigli/image-sources.json'), 'utf8'),
 );
 const withImage = catalog.filter((p) => p.image_file !== null);
 

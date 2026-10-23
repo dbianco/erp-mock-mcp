@@ -1,0 +1,8 @@
+[
+  { "name": "Río Suquía en Córdoba", "kind": "river", "locality": "cordoba", "level_m": 0.82, "capacity_percent": null, "trend": "steady" },
+  { "name": "Río San Antonio en Villa Carlos Paz", "kind": "river", "locality": "villa-carlos-paz", "level_m": 0.64, "capacity_percent": null, "trend": "rising" },
+  { "name": "Dique San Roque", "kind": "dam", "locality": "villa-carlos-paz", "level_m": null, "capacity_percent": 71, "trend": "rising" },
+  { "name": "Río Cuarto en Río Cuarto", "kind": "river", "locality": "rio-cuarto", "level_m": 0.95, "capacity_percent": null, "trend": "falling" },
+  { "name": "Río Ctalamochita en Villa María", "kind": "river", "locality": "villa-maria", "level_m": 1.1, "capacity_percent": null, "trend": "steady" },
+  { "name": "Dique Los Molinos", "kind": "dam", "locality": "cordoba", "level_m": null, "capacity_percent": 64, "trend": "steady" }
+]

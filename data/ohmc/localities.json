@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "cordoba",
+    "name": "Córdoba",
+    "department": "Capital"
+  },
+  {
+    "slug": "villa-carlos-paz",
+    "name": "Villa Carlos Paz",
+    "department": "Punilla"
+  },
+  {
+    "slug": "rio-cuarto",
+    "name": "Río Cuarto",
+    "department": "Río Cuarto"
+  },
+  {
+    "slug": "villa-maria",
+    "name": "Villa María",
+    "department": "General San Martín"
+  },
+  {
+    "slug": "san-francisco",
+    "name": "San Francisco",
+    "department": "San Justo"
+  },
+  {
+    "slug": "cosquin",
+    "name": "Cosquín",
+    "department": "Punilla"
+  }
+]

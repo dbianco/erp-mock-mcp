@@ -58,6 +58,12 @@ const failure = (text: string) => ({ isError: true as const, content: [{ type: '
 
 export function createCatalogServer(catalog: Catalog, options: ServerOptions): McpServer {
   const server = new McpServer({ name: 'erp-mock-mcp', version: '0.1.0' });
+  registerCatalogTools(server, catalog, options);
+  return server;
+}
+
+/** Registers `search_products`, `get_product` and `list_categories` on a server. */
+export function registerCatalogTools(server: McpServer, catalog: Catalog, options: ServerOptions): void {
   const base = options.imageBaseUrl;
 
   server.registerTool(
@@ -193,6 +199,4 @@ export function createCatalogServer(catalog: Catalog, options: ServerOptions): M
       };
     },
   );
-
-  return server;
 }

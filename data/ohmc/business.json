@@ -1,0 +1,18 @@
+{
+  "name": "Observatorio Hidro-Meteorológico Córdoba (OHMC)",
+  "address": "Ituzaingó 1300, Parque de las Tejas, Córdoba",
+  "phone": null,
+  "email": "info@ohmc.ar",
+  "hours": null,
+  "links": {
+    "web": "https://ohmc.ar/",
+    "facebook": "https://www.facebook.com/OHM.Cba",
+    "x": "https://x.com/HidroCordoba",
+    "instagram": "https://www.instagram.com/hidrocordoba",
+    "youtube": "https://www.youtube.com/channel/UCRUIKHNDtWU8QtfDrTTVNnQ/featured"
+  },
+  "notes": [
+    "Observatorio creado el 31 de marzo de 2017, con más de 20 instituciones públicas y privadas.",
+    "Registro de eventos COSECHEROS EMESA: programa de ciencia ciudadana y aplicación Android para reportar impactos de eventos meteorológicos extremos en la agricultura y la deriva de agroquímicos."
+  ]
+}

@@ -1,14 +1,15 @@
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { timingSafeEqual } from 'node:crypto';
 import http, { type IncomingMessage, type ServerResponse } from 'node:http';
-import type { Catalog } from './catalog.js';
-import { createCatalogServer } from './tools.js';
+import type { Tenant } from './tenant.js';
 
 const MAX_BODY_BYTES = 1_048_576;
 
 export interface HttpOptions {
-  catalog: Catalog;
-  imageBaseUrl: string;
+  /** Tenants by slug; a request to `/<slug>/mcp` is answered by that tenant's server. */
+  tenants: ReadonlyMap<string, Tenant>;
+  /** The tenant that answers the legacy `/mcp` path. */
+  defaultTenant?: string;
   /** When set and non-empty, `POST /mcp` requires `Authorization: Bearer <authToken>`. */
   authToken?: string;
 }
@@ -50,13 +51,21 @@ async function readJson(req: IncomingMessage): Promise<Body> {
   }
 }
 
+const TENANT_PATH = /^\/([a-z0-9-]+)\/mcp$/;
+
+function resolveTenant(pathname: string, options: HttpOptions): Tenant | undefined {
+  const slug = pathname === '/mcp' ? options.defaultTenant : TENANT_PATH.exec(pathname)?.[1];
+  return slug === undefined ? undefined : options.tenants.get(slug);
+}
+
 async function handle(req: IncomingMessage, res: ServerResponse, options: HttpOptions): Promise<void> {
   const { pathname } = new URL(req.url ?? '/', 'http://localhost');
 
   if (pathname === '/health' && req.method === 'GET') {
     return sendJson(res, 200, { status: 'ok' });
   }
-  if (pathname !== '/mcp') {
+  const tenant = resolveTenant(pathname, options);
+  if (tenant === undefined) {
     return sendJson(res, 404, { error: 'not_found' });
   }
   if (req.method !== 'POST') {
@@ -75,7 +84,7 @@ async function handle(req: IncomingMessage, res: ServerResponse, options: HttpOp
   }
 
   // One server and one transport per request: nothing is shared between callers.
-  const mcp = createCatalogServer(options.catalog, { imageBaseUrl: options.imageBaseUrl });
+  const mcp = tenant.createServer();
   const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
   res.on('close', () => {
     void transport.close();
