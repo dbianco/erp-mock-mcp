@@ -1,0 +1,38 @@
+[
+  {
+    "id": "rotacion-10000",
+    "topic": "rotación",
+    "title": "Rotá los neumáticos cada 10.000 km",
+    "text": "Rotar las cubiertas cada 10.000 km reparte el desgaste entre las cuatro ruedas y alarga su vida útil."
+  },
+  {
+    "id": "presion-mensual",
+    "topic": "presión",
+    "title": "Controlá la presión todos los meses",
+    "text": "Medí la presión con las cubiertas frías, al menos una vez por mes y antes de un viaje largo. Usá el valor que indica el manual del vehículo, no el máximo grabado en la cubierta."
+  },
+  {
+    "id": "presion-baja",
+    "topic": "presión",
+    "title": "Qué pasa con la presión baja",
+    "text": "Con poca presión el consumo de combustible aumenta, la cubierta se desgasta por los costados y el auto responde peor en curvas."
+  },
+  {
+    "id": "dibujo-minimo",
+    "topic": "desgaste",
+    "title": "Profundidad mínima del dibujo",
+    "text": "Cambiá la cubierta cuando el dibujo llegue a 1,6 mm o cuando aparezcan los indicadores de desgaste en la banda de rodamiento."
+  },
+  {
+    "id": "auxilio",
+    "topic": "auxilio",
+    "title": "No te olvides de la rueda de auxilio",
+    "text": "Revisá la presión de la rueda de auxilio cada tres meses: es la que se usa cuando más se la necesita."
+  },
+  {
+    "id": "amortiguadores-senales",
+    "topic": "amortiguadores",
+    "title": "Señales de amortiguadores gastados",
+    "text": "El auto rebota después de un bache, se hunde al frenar, hace ruidos en la suspensión o las cubiertas se gastan de forma despareja. Revisalos cada 60.000 km."
+  }
+]

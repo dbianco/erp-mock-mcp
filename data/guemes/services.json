@@ -1,0 +1,47 @@
+[
+  {
+    "id": "balanceo",
+    "name": "Balanceo de ruedas",
+    "description": "Balanceo electrónico de cada rueda para eliminar vibraciones en el volante.",
+    "from_price": 6500,
+    "unit": "por rueda",
+    "duration_minutes": 15,
+    "includes": ["Pesas de plomo o adhesivas", "Revisión visual de la cubierta"]
+  },
+  {
+    "id": "amortiguadores",
+    "name": "Cambio de amortiguadores",
+    "description": "Reemplazo de amortiguadores delanteros o traseros.",
+    "from_price": 38000,
+    "unit": "por eje",
+    "duration_minutes": 120,
+    "includes": ["Mano de obra", "Prueba de ruta", "Revisión de bujes y topes"]
+  },
+  {
+    "id": "rotacion",
+    "name": "Rotación de neumáticos",
+    "description": "Cambio de posición de las cubiertas para que se desgasten parejo.",
+    "from_price": 12000,
+    "unit": "por vehículo",
+    "duration_minutes": 30,
+    "includes": ["Control de presión", "Ajuste de torque de las tuercas"]
+  },
+  {
+    "id": "alineacion",
+    "name": "Alineación",
+    "description": "Alineación del tren delantero para corregir desvíos y desgaste irregular.",
+    "from_price": 18000,
+    "unit": "por vehículo",
+    "duration_minutes": 45,
+    "includes": ["Informe de valores antes y después"]
+  },
+  {
+    "id": "montaje",
+    "name": "Montaje y desmontaje de cubiertas",
+    "description": "Cambio de cubiertas en llanta con válvula nueva.",
+    "from_price": 5000,
+    "unit": "por rueda",
+    "duration_minutes": 20,
+    "includes": ["Válvula nueva", "Balanceo no incluido"]
+  }
+]

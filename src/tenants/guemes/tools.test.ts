@@ -21,9 +21,16 @@ const call = async (client: Client, name: string, args: Record<string, unknown> 
   (await client.callTool({ name, arguments: args })) as ToolResult;
 
 describe('Güemes tenant', () => {
-  test('offers exactly four tools', async () => {
+  test('offers exactly six tools', async () => {
     const { tools } = await (await connect()).listTools();
-    expect(tools.map((t) => t.name).sort()).toEqual(['get_business_info', 'get_product', 'list_categories', 'search_products']);
+    expect(tools.map((t) => t.name).sort()).toEqual([
+      'get_business_info',
+      'get_maintenance_tips',
+      'get_product',
+      'list_categories',
+      'list_services',
+      'search_products',
+    ]);
   });
 
   test('business info has the real contact data and weekday-only hours', async () => {
@@ -78,5 +85,45 @@ describe('Güemes tenant', () => {
     };
     expect(categories.map((c) => c.category)).toEqual(['auto', 'camioneta', 'moto']);
     expect(categories.reduce((sum, c) => sum + c.count, 0)).toBe(15);
+  });
+});
+
+const plain = (text: string): string => text.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+
+describe('Güemes services and tips', () => {
+  test('list_services includes balancing, shock absorbers and rotation, with positive from-prices', async () => {
+    const { services } = (await call(await connect(), 'list_services')).structuredContent as {
+      services: { name: string; from_price: number; duration_minutes: number; includes: string[] }[];
+    };
+    const names = services.map((s) => plain(s.name)).join(' | ');
+    for (const wanted of ['balanceo', 'amortiguadores', 'rotacion']) {
+      expect(names).toContain(wanted);
+    }
+    for (const service of services) {
+      expect(Number.isInteger(service.from_price) && service.from_price > 0).toBe(true);
+      expect(service.duration_minutes).toBeGreaterThan(0);
+    }
+  });
+
+  test('tips include rotation every 10.000 km and a pressure check', async () => {
+    const { tips } = (await call(await connect(), 'get_maintenance_tips')).structuredContent as {
+      tips: { topic: string; text: string }[];
+    };
+    expect(tips.some((t) => t.text.includes('10.000 km'))).toBe(true);
+    expect(tips.some((t) => plain(t.topic).includes('presion'))).toBe(true);
+  });
+
+  test("topic 'presion' without the accent finds the pressure tips", async () => {
+    const { tips } = (await call(await connect(), 'get_maintenance_tips', { topic: 'presion' })).structuredContent as {
+      tips: { topic: string }[];
+    };
+    expect(tips.length).toBeGreaterThanOrEqual(1);
+    expect(tips.every((t) => plain(t.topic) === 'presion')).toBe(true);
+  });
+
+  test('an unknown topic is an isError result listing the valid topics', async () => {
+    const result = await call(await connect(), 'get_maintenance_tips', { topic: 'cocina' });
+    expect(result.isError).toBe(true);
+    expect(plain(result.content[0]?.text ?? '')).toContain('presion');
   });
 });

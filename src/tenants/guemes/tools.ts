@@ -1,5 +1,7 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
+import { normalise } from '../../text.js';
+import { TipSchema, type Tip } from '../../tips.js';
 import {
   DEFAULT_LIMIT,
   type Tyre,
@@ -115,6 +117,69 @@ export function registerTyreTools(server: McpServer, tyres: readonly Tyre[]): vo
       return {
         content: [{ type: 'text' as const, text: categories.map((c) => `${c.category}: ${c.count}`).join('\n') }],
         structuredContent: { categories },
+      };
+    },
+  );
+}
+
+export const ServiceSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string(),
+  from_price: z.number().int().positive(),
+  unit: z.string(),
+  duration_minutes: z.number().int().positive(),
+  includes: z.array(z.string()),
+});
+export type Service = z.infer<typeof ServiceSchema>;
+
+export function registerServiceTools(server: McpServer, services: readonly Service[], tips: readonly Tip[]): void {
+  server.registerTool(
+    'list_services',
+    {
+      title: 'Workshop services',
+      description:
+        'List the workshop services of the shop (wheel balancing, shock-absorber replacement, tyre rotation, alignment, ' +
+        'tyre fitting) with a starting price in Argentine pesos, what the price is per, the duration and what is included. ' +
+        '`from_price` is a starting price, not a quote: say so and do not invent a final price.',
+      inputSchema: {},
+      outputSchema: { services: z.array(ServiceSchema) },
+      annotations: { readOnlyHint: true },
+    },
+    async () => ({
+      content: [
+        {
+          type: 'text' as const,
+          text: services
+            .map((s) => `${s.name} | from ${money(s.from_price)} ${s.unit} | ~${s.duration_minutes} min | ${s.includes.join(', ')}`)
+            .join('\n'),
+        },
+      ],
+      structuredContent: { services: [...services] },
+    }),
+  );
+
+  const topics = [...new Set(tips.map((t) => t.topic))];
+  server.registerTool(
+    'get_maintenance_tips',
+    {
+      title: 'Maintenance tips',
+      description:
+        `Tyre and suspension maintenance advice. Optional \`topic\` (case and accents ignored) is one of: ${topics.join(', ')}. ` +
+        'Give the advice as returned; do not add intervals or figures the tool does not state.',
+      inputSchema: { topic: z.string().max(100).optional() },
+      outputSchema: { tips: z.array(TipSchema) },
+      annotations: { readOnlyHint: true },
+    },
+    async ({ topic }) => {
+      const wanted = topic === undefined ? undefined : normalise(topic.trim());
+      const selected = wanted === undefined ? tips : tips.filter((t) => normalise(t.topic) === wanted);
+      if (wanted !== undefined && selected.length === 0) {
+        return failure(`Unknown topic "${topic}". Valid topics: ${topics.join(', ')}.`);
+      }
+      return {
+        content: [{ type: 'text' as const, text: selected.map((t) => `[${t.topic}] ${t.title}: ${t.text}`).join('\n') }],
+        structuredContent: { tips: [...selected] },
       };
     },
   );
