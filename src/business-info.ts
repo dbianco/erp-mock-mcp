@@ -27,11 +27,18 @@ export const loadBusinessInfo = (tenant: string): BusinessInfo =>
 
 const FORMAT_HINT = 'Use an ISO 8601 date-time such as 2026-10-23T10:00:00 (Córdoba time when no offset is given).';
 
+/** False for a day the calendar does not have (2026-02-30), which `Date` would silently roll over. */
+const isRealDay = (year: number, month: number, day: number): boolean => {
+  const check = new Date(Date.UTC(year, month - 1, day));
+  return check.getUTCFullYear() === year && check.getUTCMonth() === month - 1 && check.getUTCDate() === day;
+};
+
 /** Parses an ISO 8601 date-time; one with no UTC offset is Córdoba local time (UTC-3, no daylight saving). */
 export function parseAt(at: string): Date {
   const hasOffset = /(Z|[+-]\d{2}(:?\d{2})?)$/i.test(at.trim());
   const date = new Date(hasOffset ? at.trim() : `${at.trim()}-03:00`);
-  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(at.trim()) || Number.isNaN(date.getTime())) {
+  const typed = /^(\d{4})-(\d{2})-(\d{2})T\d{2}:\d{2}/.exec(at.trim());
+  if (typed === null || Number.isNaN(date.getTime()) || !isRealDay(Number(typed[1]), Number(typed[2]), Number(typed[3]))) {
     throw new Error(`Cannot read "${at}" as a date-time. ${FORMAT_HINT}`);
   }
   return date;

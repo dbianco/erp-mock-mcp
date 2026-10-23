@@ -68,7 +68,7 @@ describe('isOpenAt', () => {
 });
 
 describe('parseAt', () => {
-  test.each(['mañana', '2026-13-45T99:00:00', ''])('rejects %j mentioning ISO 8601', (text) => {
+  test.each(['mañana', '2026-13-45T99:00:00', '', '2026-02-30T10:00:00', '2026-04-31T10:00:00', '2026-02-29T10:00:00Z'])('rejects %j mentioning ISO 8601', (text) => {
     expect(() => parseAt(text)).toThrow(/ISO 8601/);
   });
 });
