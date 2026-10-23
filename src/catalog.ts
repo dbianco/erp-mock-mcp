@@ -37,7 +37,7 @@ export interface SearchResult {
   products: Product[];
 }
 
-export function loadCatalog(file: URL = new URL('../data/catalog.json', import.meta.url)): Catalog {
+export function loadCatalog(file: URL = new URL('../data/casa-gigli/catalog.json', import.meta.url)): Catalog {
   return z.array(ProductSchema).parse(JSON.parse(readFileSync(file, 'utf8')));
 }
 

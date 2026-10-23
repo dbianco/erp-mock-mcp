@@ -9,7 +9,7 @@ products and is both a demo and a deterministic fixture. No orders, stock or pay
 ```bash
 npm install
 npm start            # http://127.0.0.1:8788/mcp
-npm test             # 58 tests
+npm test             # 62 tests
 npm run typecheck
 ```
 
@@ -36,17 +36,17 @@ A product without a price answers `price on request`; the tools never invent one
 ## Data and pictures
 
 ```bash
-npm run build:catalog   # regenerates data/catalog.json from data/source-catalog.psv
-                        # and data/image-sources.json
+npm run build:catalog   # regenerates data/casa-gigli/catalog.json from data/casa-gigli/source-catalog.psv
+                        # and data/casa-gigli/image-sources.json
 npm run check:images    # after deploying the pictures: every image_url answers 200 image/png
 ```
 
 Pictures are 800 px wide PNGs in `assets/images`, copied by hand to the site that hosts them. Only products whose
-picture could be verified against the catalog row have one (`jq '[.[] | select(.image_file)] | length' data/catalog.json`);
-the others have `image_url: null`. `data/image-sources.json` records where each came from.
+picture could be verified against the catalog row have one (`jq '[.[] | select(.image_file)] | length' data/casa-gigli/catalog.json`);
+the others have `image_url: null`. `data/casa-gigli/image-sources.json` records where each came from.
 
 ## Rights
 
 The pictures in `assets/images` are product photos taken from the internet and kept here for a proof of
 concept. The repository is public by the owner's decision (2026-10-15). If a rights holder asks for a
-picture to be removed, delete the file, its entry in `data/image-sources.json` and run `npm run build:catalog`.
+picture to be removed, delete the file, its entry in `data/casa-gigli/image-sources.json` and run `npm run build:catalog`.
