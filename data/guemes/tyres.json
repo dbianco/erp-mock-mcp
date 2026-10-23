@@ -1,0 +1,167 @@
+[
+  {
+    "id": "GN-001",
+    "sku": "GN-001",
+    "brand": "Pirelli",
+    "model": "Cinturato P1",
+    "size": "175/70 R13",
+    "vehicle_type": "auto",
+    "list_price": 98000,
+    "cash_price": 89000,
+    "note": null
+  },
+  {
+    "id": "GN-002",
+    "sku": "GN-002",
+    "brand": "Fate",
+    "model": "Sentiva",
+    "size": "185/65 R14",
+    "vehicle_type": "auto",
+    "list_price": 105000,
+    "cash_price": 96000,
+    "note": null
+  },
+  {
+    "id": "GN-003",
+    "sku": "GN-003",
+    "brand": "Firestone",
+    "model": "F-600",
+    "size": "175/65 R14",
+    "vehicle_type": "auto",
+    "list_price": 101000,
+    "cash_price": 92000,
+    "note": null
+  },
+  {
+    "id": "GN-004",
+    "sku": "GN-004",
+    "brand": "Pirelli",
+    "model": "Cinturato P1",
+    "size": "195/55 R15",
+    "vehicle_type": "auto",
+    "list_price": 132000,
+    "cash_price": 121000,
+    "note": null
+  },
+  {
+    "id": "GN-005",
+    "sku": "GN-005",
+    "brand": "Fate",
+    "model": "Sentiva",
+    "size": "205/55 R16",
+    "vehicle_type": "auto",
+    "list_price": 148000,
+    "cash_price": 136000,
+    "note": null
+  },
+  {
+    "id": "GN-006",
+    "sku": "GN-006",
+    "brand": "Michelin",
+    "model": "Primacy 4",
+    "size": "205/55 R16",
+    "vehicle_type": "auto",
+    "list_price": 215000,
+    "cash_price": 198000,
+    "note": null
+  },
+  {
+    "id": "GN-007",
+    "sku": "GN-007",
+    "brand": "Bridgestone",
+    "model": "Turanza T005",
+    "size": "195/65 R15",
+    "vehicle_type": "auto",
+    "list_price": 168000,
+    "cash_price": 155000,
+    "note": null
+  },
+  {
+    "id": "GN-008",
+    "sku": "GN-008",
+    "brand": "Goodyear",
+    "model": "Assurance",
+    "size": "205/60 R16",
+    "vehicle_type": "auto",
+    "list_price": 172000,
+    "cash_price": 159000,
+    "note": null
+  },
+  {
+    "id": "GN-009",
+    "sku": "GN-009",
+    "brand": "Michelin",
+    "model": "Primacy 4",
+    "size": "225/45 R17",
+    "vehicle_type": "auto",
+    "list_price": 268000,
+    "cash_price": 245000,
+    "note": null
+  },
+  {
+    "id": "GN-010",
+    "sku": "GN-010",
+    "brand": "Bridgestone",
+    "model": "Dueler H/T",
+    "size": "265/65 R17",
+    "vehicle_type": "camioneta",
+    "list_price": 312000,
+    "cash_price": 289000,
+    "note": null
+  },
+  {
+    "id": "GN-011",
+    "sku": "GN-011",
+    "brand": "Pirelli",
+    "model": "Scorpion",
+    "size": "245/70 R16",
+    "vehicle_type": "camioneta",
+    "list_price": 295000,
+    "cash_price": 272000,
+    "note": null
+  },
+  {
+    "id": "GN-012",
+    "sku": "GN-012",
+    "brand": "Fate",
+    "model": "Maxisport 2",
+    "size": "215/65 R16",
+    "vehicle_type": "camioneta",
+    "list_price": 189000,
+    "cash_price": 174000,
+    "note": null
+  },
+  {
+    "id": "GN-013",
+    "sku": "GN-013",
+    "brand": "Pirelli",
+    "model": "Diablo Rosso",
+    "size": "120/70 R17",
+    "vehicle_type": "moto",
+    "list_price": 142000,
+    "cash_price": 131000,
+    "note": null
+  },
+  {
+    "id": "GN-014",
+    "sku": "GN-014",
+    "brand": "Michelin",
+    "model": "Pilot Street",
+    "size": "140/70 R17",
+    "vehicle_type": "moto",
+    "list_price": 151000,
+    "cash_price": 139000,
+    "note": null
+  },
+  {
+    "id": "GN-015",
+    "sku": "GN-015",
+    "brand": "Fate",
+    "model": "Sport",
+    "size": "90/90 R18",
+    "vehicle_type": "moto",
+    "list_price": 76000,
+    "cash_price": 69000,
+    "note": null
+  }
+]
