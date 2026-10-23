@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-10-23T09:00:00-03:00",
+  "by_locality": {
+    "cordoba": { "temperature_c": 19, "humidity_percent": 58, "pressure_hpa": 1012, "wind_kmh": 14, "wind_direction": "NE" },
+    "villa-carlos-paz": { "temperature_c": 17, "humidity_percent": 63, "pressure_hpa": 995, "wind_kmh": 10, "wind_direction": "E" },
+    "rio-cuarto": { "temperature_c": 18, "humidity_percent": 55, "pressure_hpa": 1008, "wind_kmh": 18, "wind_direction": "N" },
+    "villa-maria": { "temperature_c": 19, "humidity_percent": 52, "pressure_hpa": 1010, "wind_kmh": 16, "wind_direction": "NE" },
+    "san-francisco": { "temperature_c": 18, "humidity_percent": 57, "pressure_hpa": 1009, "wind_kmh": 12, "wind_direction": "N" },
+    "cosquin": { "temperature_c": 16, "humidity_percent": 66, "pressure_hpa": 990, "wind_kmh": 8, "wind_direction": "E" }
+  }
+}

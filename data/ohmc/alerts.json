@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ALERTA-DEMO-001",
+    "level": "naranja",
+    "type": "Tormentas fuertes",
+    "localities": ["villa-carlos-paz", "cosquin", "cordoba"],
+    "validity_text": "Desde la tarde del 24 de octubre hasta la madrugada del 25 de octubre",
+    "description": "Tormentas fuertes con ráfagas de viento y caída de granizo en sierras y zona capital.",
+    "recommended_action": "Evitá estar al aire libre y alejate de árboles y cursos de agua; asegurá objetos sueltos."
+  },
+  {
+    "id": "ALERTA-DEMO-002",
+    "level": "amarillo",
+    "type": "Lluvias persistentes",
+    "localities": ["villa-carlos-paz", "cosquin"],
+    "validity_text": "Durante el 25 de octubre",
+    "description": "Lluvias persistentes en las sierras, con posible crecida de arroyos y ríos serranos.",
+    "recommended_action": "No cruces cursos de agua crecidos y mantenete informado por los canales oficiales."
+  }
+]
