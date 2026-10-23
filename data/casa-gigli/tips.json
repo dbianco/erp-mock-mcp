@@ -1,0 +1,48 @@
+{
+  "tips": [
+    {
+      "id": "tip-bicicleta-talle",
+      "topic": "bicicletas",
+      "title": "Cómo elegir el rodado",
+      "text": "Para uso urbano alcanza un rodado 26; si la persona mide menos de 1,60 m conviene probarla antes de comprar. La bicicleta eléctrica pide revisar el estado de la batería cada 3 meses."
+    },
+    {
+      "id": "tip-motos-bateria",
+      "topic": "motos eléctricas",
+      "title": "Cuidar la batería",
+      "text": "Cargá la moto eléctrica después de cada uso largo y evitá dejarla totalmente descargada más de unos días: la batería dura más."
+    },
+    {
+      "id": "tip-dormitorio-medidas",
+      "topic": "dormitorio",
+      "title": "Medí antes de comprar",
+      "text": "Antes de elegir un tocador o zapatero, medí el ancho de la pared y el alto del cuarto, y dejá 5 cm libres para poder armarlo."
+    },
+    {
+      "id": "tip-electro-limpieza",
+      "topic": "electrodomésticos",
+      "title": "Mantenimiento del lavavajillas",
+      "text": "Limpiá el filtro una vez por semana y usá sal regeneradora si el agua de tu zona es dura."
+    }
+  ],
+  "offers": [
+    {
+      "id": "oferta-contado",
+      "title": "Precio contado",
+      "text": "Pagando en efectivo o transferencia tenés el precio contado, más bajo que el precio de lista.",
+      "valid_text": "Vigente hasta agotar stock"
+    },
+    {
+      "id": "oferta-24-cuotas",
+      "title": "24 cuotas con tarjeta bancaria",
+      "text": "Comprá en 24 cuotas con tarjetas emitidas por bancos; el valor de la cuota figura en cada producto.",
+      "valid_text": "Vigente todo el mes"
+    },
+    {
+      "id": "oferta-retiro-local",
+      "title": "Retiro en el local sin cargo",
+      "text": "Retirá tu compra en Héroes de Malvinas 271, Noetinger, sin costo de envío.",
+      "valid_text": "Todos los días de atención del local"
+    }
+  ]
+}
