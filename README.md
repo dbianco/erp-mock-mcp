@@ -1,7 +1,7 @@
 # erp-mock-mcp
 
-A read-only mock of three businesses, exposed as MCP servers so the Textra AI agent (feature 025) can answer
-questions about each of them. One process serves three Textra tenants, each on its own URL with only its own
+A read-only mock of four businesses, exposed as MCP servers so the Textra AI agent (feature 025) can answer
+questions about each of them. One process serves four Textra tenants, each on its own URL with only its own
 tools and data. It is both a demo and a deterministic fixture: no orders, stock, payments or live data.
 
 | Tenant | Route | Tools |
@@ -9,6 +9,7 @@ tools and data. It is both a demo and a deterministic fixture: no orders, stock,
 | Casa Gigli (retail, Noetinger) | `POST /casa-gigli/mcp` | `search_products`, `get_product`, `list_categories`, `get_business_info`, `get_tips_and_offers` |
 | Güemes Neumáticos (tyre shop, Córdoba) | `POST /guemes/mcp` | `search_products`, `get_product`, `list_categories`, `get_business_info`, `list_services`, `get_maintenance_tips` |
 | Observatorio Hidro-Meteorológico Córdoba | `POST /ohmc/mcp` | `list_localities`, `get_forecast`, `get_active_alerts`, `get_current_conditions`, `get_hydrological_levels`, `get_monitoring_links`, `get_business_info` |
+| APROSS (health insurer, Córdoba) | `POST /apross/mcp` | `get_business_info`, `get_authorities`, `list_health_programs`, `get_health_program`, `get_mobile_mammography`, `find_offices`, `get_contacts` |
 
 `POST /mcp` answers as Casa Gigli, so registrations made before multi-tenancy keep working. `GET /health` is open.
 Any other path, an unknown slug included, is a 404.
@@ -32,7 +33,7 @@ The server is stateless: `POST /<slug>/mcp` (Streamable HTTP) and `GET /health`.
 the server at startup.
 The Textra platform refuses loopback and private addresses, so register each tenant through a public `https` URL
 (for example a Cloudflare quick tunnel): `https://<public-host>/casa-gigli/mcp`, `https://<public-host>/guemes/mcp`
-and `https://<public-host>/ohmc/mcp`.
+`https://<public-host>/ohmc/mcp` and `https://<public-host>/apross/mcp`.
 
 ## Tools
 
@@ -55,6 +56,18 @@ alignment and tyre fitting with a *starting* price. `get_maintenance_tips` — o
 **OHMC.** `get_forecast` — `locality`, `extended` (false: today; true: five days). `get_active_alerts` — optional
 `locality`; no alert for a locality is a normal answer. `get_current_conditions` and `get_hydrological_levels`
 (rivers and dams). `get_monitoring_links` — the real sources the observatory points to. `list_localities`.
+
+**APROSS.** `get_authorities` — Directorio and directores generales. `list_health_programs` / `get_health_program` —
+the three programs on the site (Plan Materno Infantil, Calendario Nacional de Vacunación, prevención y control de la
+obesidad); a null `who` means the site does not say who is eligible. `get_mobile_mammography` — requirements, cost, the
+affiliate benefit (until 2026-10-31), the latest stop and figures. `find_offices` — `query` (locality, name or address)
+and `kind` (`delegacion`, `subdelegacion`, `puesto`) over 28 + 9 + 21 offices. `get_contacts` — phones and e-mails by purpose.
+
+**APROSS data is a snapshot, not invented.** It was read from https://www.apross.gov.ar/ on 2026-10-25 and every
+dataset carries its `source_url` and `read_at`; nothing is fetched at request time. The site has no page on the mobile
+mammography unit's figures beyond one news item, so `mammography.json` tags each figure `apross` or `press` (La Voz de
+San Justo) with its date. To refresh, re-read the pages named in the `source_url` fields and edit `data/apross/*.json`;
+`npm test` checks the shapes and the office counts.
 
 ## Invented data
 

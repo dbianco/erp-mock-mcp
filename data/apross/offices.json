@@ -1,0 +1,470 @@
+{
+  "source_url": "https://www.apross.gov.ar/centros-de-atencion/",
+  "read_at": "2026-10-25",
+  "offices": [
+    {
+      "kind": "delegacion",
+      "name": "Sede Central",
+      "locality": "Córdoba Capital",
+      "address": "Marcelo T. de Alvear 758",
+      "hours": "8:00–14:00",
+      "phone": "0800-888-2776"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Alta Gracia (Terminal)",
+      "locality": "Alta Gracia",
+      "address": "Presidente Perón 1977",
+      "hours": "8:00–12:30",
+      "phone": "3547-308465"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Arroyito (SEP)",
+      "locality": "Arroyito",
+      "address": "Falucho 260",
+      "hours": "8:00–12:30",
+      "phone": "3576-519212"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Bell Ville (Centro Cívico)",
+      "locality": "Bell Ville",
+      "address": "Córdoba 519, 2° piso",
+      "hours": "8:00–12:30",
+      "phone": "353-7600628"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Capital Federal (Casa de Córdoba)",
+      "locality": "Capital Federal",
+      "address": "Callao 332",
+      "hours": "8:00–12:30",
+      "phone": "11-21845775"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Cosquín (SEP)",
+      "locality": "Cosquín",
+      "address": "Pedro Ortiz 571",
+      "hours": "8:00–12:30",
+      "phone": "3541-286967"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Cruz del Eje (Centro Cívico)",
+      "locality": "Cruz del Eje",
+      "address": "Sarmiento 331",
+      "hours": "8:00–12:30",
+      "phone": "3549-584667"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Deán Funes (SEP)",
+      "locality": "Deán Funes",
+      "address": "Teniente Morandini 355",
+      "hours": "8:00–12:30",
+      "phone": "3521-400144"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Embalse (SEP)",
+      "locality": "Embalse",
+      "address": "Hipólito Irigoyen 308",
+      "hours": "8:00–12:30",
+      "phone": "3571-349428"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Hospital Ferreyra",
+      "locality": "Córdoba Capital",
+      "address": "Av. Concepción Arenal 930",
+      "hours": "8:00–14:00",
+      "phone": "351-2041645"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Huinca Renancó (SEP)",
+      "locality": "Huinca Renancó",
+      "address": "Moreno esq. 25 de Mayo",
+      "hours": "8:00–12:30",
+      "phone": "2336-474584"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Laboulaye (Centro Cívico)",
+      "locality": "Laboulaye",
+      "address": "España 186",
+      "hours": "8:00–12:30",
+      "phone": "3385-591458"
+    },
+    {
+      "kind": "delegacion",
+      "name": "La Falda (SEP)",
+      "locality": "La Falda",
+      "address": "Presidente Perón 67",
+      "hours": "8:00–12:30",
+      "phone": "3548-600834"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Las Varillas (SEP)",
+      "locality": "Las Varillas",
+      "address": "9 de Julio 241",
+      "hours": "8:00–12:30",
+      "phone": "3533-504164"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Marcos Juárez (Centro Cívico)",
+      "locality": "Marcos Juárez",
+      "address": "Juan B. Justo 1000",
+      "hours": "8:00–12:30",
+      "phone": "3473-645951"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Mina Clavero (SEP)",
+      "locality": "Mina Clavero",
+      "address": "Urquiza 1170",
+      "hours": "8:00–12:30",
+      "phone": "3544-560697"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Morteros (Municipio)",
+      "locality": "Morteros",
+      "address": "Av. Belgrano esq. Pellegrini",
+      "hours": "8:00–12:30",
+      "phone": "3562-525914"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Oliva (SEP)",
+      "locality": "Oliva",
+      "address": "Sarmiento 250",
+      "hours": "8:00–12:30",
+      "phone": "3532-490519"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Río Cuarto (Centro Cívico)",
+      "locality": "Río Cuarto",
+      "address": "Av. Arturo Illia 1254",
+      "hours": "8:00–12:30",
+      "phone": "358-5738103"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Río Tercero (Centro Cívico)",
+      "locality": "Río Tercero",
+      "address": "Av. San Martín 250",
+      "hours": "8:00–12:30",
+      "phone": "3571-349249"
+    },
+    {
+      "kind": "delegacion",
+      "name": "San Francisco (Centro Cívico)",
+      "locality": "San Francisco",
+      "address": "9 de Julio 1683, 1° piso",
+      "hours": "8:00–12:30",
+      "phone": "3564-501745"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Tanti (SEP)",
+      "locality": "Tanti",
+      "address": "Pampa esq. Ruta 28",
+      "hours": "8:00–12:30",
+      "phone": "351-5575758"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Villa Allende",
+      "locality": "Villa Allende",
+      "address": "Rivadavia 120",
+      "hours": "8:00–12:30",
+      "phone": "3543-625351"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Villa Carlos Paz",
+      "locality": "Villa Carlos Paz",
+      "address": "Lisandro de la Torre 215, edificio Lake Tower",
+      "hours": "8:00–12:30",
+      "phone": "3541-286970"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Villa de María de Río Seco (SEP)",
+      "locality": "Villa de María de Río Seco",
+      "address": "Cuativita esq. Leopoldo Lugones",
+      "hours": "8:00–12:30",
+      "phone": "3522-451832"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Villa del Rosario (SEP)",
+      "locality": "Villa del Rosario",
+      "address": "San Martín 680",
+      "hours": "8:00–12:30",
+      "phone": "3573-505746"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Villa Dolores (Centro Cívico)",
+      "locality": "Villa Dolores",
+      "address": "Sarmiento 63",
+      "hours": "8:00–12:30",
+      "phone": "3544-560707"
+    },
+    {
+      "kind": "delegacion",
+      "name": "Villa María (Centro Cívico)",
+      "locality": "Villa María",
+      "address": "Mendoza 2154",
+      "hours": "8:00–12:30",
+      "phone": "3522-451819"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "Bulnes (Municipal)",
+      "locality": "Bulnes",
+      "address": "Pje. Pte. Alvear 222",
+      "hours": "6:30–13:00",
+      "phone": "3582 412403"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "Coronel Moldes (Municipal)",
+      "locality": "Coronel Moldes",
+      "address": "Independencia 158",
+      "hours": "6:00–13:00",
+      "phone": "03582 465552"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "Corral de Bustos",
+      "locality": "Corral de Bustos",
+      "address": "Bv. Fauda 255",
+      "hours": "8:00–12:30",
+      "phone": "3468 536998"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "General Deheza",
+      "locality": "General Deheza",
+      "address": "Sarmiento 231",
+      "hours": "7:00–14:00",
+      "phone": "0358-4057583 / WhatsApp 3584823505"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "Jesús María",
+      "locality": "Jesús María",
+      "address": "Almafuerte 451",
+      "hours": "8:00–14:00",
+      "phone": "3525-651321"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "La Carlota",
+      "locality": "La Carlota",
+      "address": "Vélez Sarsfield y Moreno",
+      "hours": "6:00–13:00",
+      "phone": null
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "Santa Rosa de Calamuchita",
+      "locality": "Santa Rosa de Calamuchita",
+      "address": "Córdoba 242",
+      "hours": "7:00–13:00",
+      "phone": "03546-429650 / 420667"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "Santa Rosa de Río Primero",
+      "locality": "Santa Rosa de Río Primero",
+      "address": "9 de Julio 614",
+      "hours": "7:30–12:30",
+      "phone": "03574-480096 / cel. 3574-411384"
+    },
+    {
+      "kind": "subdelegacion",
+      "name": "Villa del Totoral",
+      "locality": "Villa del Totoral",
+      "address": "Bv. Allende 661",
+      "hours": "8:00–14:00",
+      "phone": "03524 472963"
+    },
+    {
+      "kind": "puesto",
+      "name": "Clínica del Sol",
+      "locality": "Córdoba Capital",
+      "address": "Bv. Chacabuco 705",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Clínica Santa María",
+      "locality": "Alta Gracia",
+      "address": "Belisario Roman 40",
+      "hours": "8:00–13:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Vélez Sarsfield",
+      "locality": "Córdoba Capital",
+      "address": "Naciones Unidas 984",
+      "hours": "9:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Oulton",
+      "locality": "Córdoba Capital",
+      "address": "Av. Vélez Sarsfield 562",
+      "hours": "8:00–15:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Sanatorio Mayo",
+      "locality": "Córdoba Capital",
+      "address": "Humberto 1° 520",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Clínica Regional del Este",
+      "locality": "San Francisco",
+      "address": "Corrientes 245",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Santa Teresita",
+      "locality": "Realicó (La Pampa)",
+      "address": "Francia 1460",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Clínica Regional del Sud",
+      "locality": "Río Cuarto",
+      "address": "Av. Italia 1262",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Conci Carpinella",
+      "locality": "Córdoba Capital",
+      "address": "Justo J. de Urquiza 358",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Clínica Privada Dean Funes S.R.L.",
+      "locality": "Deán Funes",
+      "address": "Sáenz Peña 261",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Sanatorio Privado Gatti S.R.L.",
+      "locality": "Oncativo",
+      "address": "Ituzaingó 681",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Clínica Privada de Especialidades de Villa María S.R.L.",
+      "locality": "Villa María",
+      "address": "Corrientes 733",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Ciprem S.R.L. (Sanatorio Francés), Baigorri",
+      "locality": "Córdoba Capital",
+      "address": "Baigorri 749, Alta Córdoba",
+      "hours": "8:00–14:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Ciprem S.R.L. (Sanatorio Francés), Fragueiro",
+      "locality": "Córdoba Capital",
+      "address": "Fragueiro 1952, Alta Córdoba",
+      "hours": "12:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "AOS S.R.L. (Sanatorio de la Cañada), Córdoba",
+      "locality": "Córdoba Capital",
+      "address": "Av. Pueyrredón 650, Barrio Güemes",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "AOS S.R.L. (Sanatorio de la Cañada), Villa María",
+      "locality": "Villa María",
+      "address": "Larrabure 1466",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "AOS S.R.L. (Sanatorio de la Cañada), Río Tercero",
+      "locality": "Río Tercero",
+      "address": "Lavalle 45",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Sanatorio Privado Caroya S.R.L.",
+      "locality": "Colonia Caroya",
+      "address": "Av. San Martín 1998",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Clínica Privada de Especialidades Médico-Quirúrgicas S.R.L.",
+      "locality": "Oncativo",
+      "address": "Rivadavia 676",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Roentgen S.A.",
+      "locality": "Villa María",
+      "address": "Entre Ríos 1243",
+      "hours": "8:00–16:00",
+      "phone": null
+    },
+    {
+      "kind": "puesto",
+      "name": "Hospital Italiano",
+      "locality": "Córdoba Capital",
+      "address": "Roma 550, Barrio General Paz",
+      "hours": "8:00–16:00",
+      "phone": null
+    }
+  ]
+}
