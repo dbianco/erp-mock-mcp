@@ -1,4 +1,5 @@
 import type { Tenant } from './tenant.js';
+import { createAprossTenant } from './tenants/apross/index.js';
 import { createCasaGigliTenant } from './tenants/casa-gigli.js';
 import { createGuemesTenant } from './tenants/guemes/index.js';
 import { createOhmcTenant } from './tenants/ohmc/index.js';
@@ -11,6 +12,6 @@ export interface RegistryOptions {
 }
 
 export function createTenants(options: RegistryOptions): ReadonlyMap<string, Tenant> {
-  const tenants = [createCasaGigliTenant({ imageBaseUrl: options.imageBaseUrl }), createGuemesTenant(), createOhmcTenant()];
+  const tenants = [createCasaGigliTenant({ imageBaseUrl: options.imageBaseUrl }), createGuemesTenant(), createOhmcTenant(), createAprossTenant()];
   return new Map(tenants.map((tenant) => [tenant.slug, tenant]));
 }

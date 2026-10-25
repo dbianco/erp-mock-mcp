@@ -1,0 +1,74 @@
+{
+  "read_at": "2026-10-25",
+  "programs": [
+    {
+      "slug": "plan-materno-infantil",
+      "name": "Plan Materno Infantil",
+      "summary": "Prestaciones necesarias para el control adecuado del embarazo, atención del parto y seguimiento inicial del bebé.",
+      "who": null,
+      "benefits": [
+        "Chequera o agenda de embarazo.",
+        "Atención del parto.",
+        "Chequera de salud infantil, una vez gestionada el alta afiliatoria del bebé.",
+        "Las prestaciones de las chequeras de embarazo y de salud infantil no tienen coseguro.",
+        "Cobertura de leches incluidas en el vademécum de APROSS, si es necesario."
+      ],
+      "how_to": [
+        "Pedir a la médica o médico prestador que complete el formulario de solicitud del Programa Materno.",
+        "Obtener un certificado médico que indique el tiempo de embarazo, la fecha probable de parto y la fecha de última menstruación.",
+        "Enviar ambos documentos escaneados en PDF a integral@apross.gov.ar."
+      ],
+      "providers": [],
+      "notes": [
+        "El sitio recomienda la lactancia materna exclusiva hasta los 6 meses.",
+        "Normativa citada: Resolución 140-2009 (Programa Materno Infantil) y Resolución 230-12."
+      ],
+      "source_url": "https://www.apross.gov.ar/plan-materno-infantil/"
+    },
+    {
+      "slug": "calendario-nacional-vacunacion",
+      "name": "Calendario Nacional de Vacunación",
+      "summary": "Las vacunas del Calendario Nacional son obligatorias y gratuitas, y se aplican en vacunatorios, centros de salud y hospitales públicos. Cubre todas las etapas de la vida.",
+      "who": null,
+      "benefits": ["Vacunas del Calendario Nacional, gratuitas."],
+      "how_to": ["Se aplican en vacunatorios, centros de salud y hospitales públicos; el sitio no describe un trámite de inscripción."],
+      "providers": [],
+      "notes": [
+        "La información proviene de argentina.gob.ar (https://www.argentina.gob.ar/salud/vacunas).",
+        "Carné de vacunación: https://cba.gov.ar/programa-de-inmunizaciones/carne-de-vacunacion-2/"
+      ],
+      "source_url": "https://www.apross.gov.ar/calendario-nacional-vacunacion/"
+    },
+    {
+      "slug": "prevencion-control-obesidad",
+      "name": "Plan para la prevención y control de la obesidad",
+      "summary": "Prevención y tratamiento de afiliados con exceso de peso, organizados en módulos o protocolos según el IMC y las enfermedades asociadas.",
+      "who": "Mayores de 18 años con IMC desde 27 kg/m²; menores de 18 con IMC por encima del percentil 85; embarazadas con IMC inicial superior a 27 kg/m².",
+      "benefits": [
+        "Consultas clínicas, pediátricas y nutricionales.",
+        "Sesiones psicológicas y psiquiátricas.",
+        "Orientación en actividad física.",
+        "En algunos protocolos: balón intragástrico, cirugía bariátrica y dermolipectomía abdominal."
+      ],
+      "how_to": [
+        "Comunicarse con una de las instituciones prestadoras adheridas para obtener turno.",
+        "Dudas puntuales: comunicaciones@apross.gov.ar."
+      ],
+      "providers": [
+        { "name": "Centro de Rehabilitación Médico Privado S.R.L. (Río Cuarto)", "phone": "0358-4630367 / 0358-4899919 / 0358-4152372" },
+        { "name": "Centro Médico Luquez (Córdoba, San Vicente)", "phone": "0351-4558041" },
+        { "name": "Centro Médico COINSA (Córdoba)", "phone": "0351-4229647" },
+        { "name": "Clínica Privada Vélez Sarsfield (Córdoba)", "phone": "0351-4432222" },
+        { "name": "Sanatorio Mayo Privado (Córdoba)", "phone": "0351-4217041" },
+        { "name": "Clínica Privada S.R.L. (Villa Dolores)", "phone": "03544-42112" },
+        { "name": "CTOM (Córdoba)", "phone": "0351-4642647 / 0351-4671268" },
+        { "name": "Hospital Italiano (Córdoba)", "phone": "0351-4106500" }
+      ],
+      "notes": [
+        "Hay formularios de solicitud de balón intragástrico, cirugía bariátrica y dermolipectomía abdominal.",
+        "Normativa citada: Resoluciones 148-12 y 240-11."
+      ],
+      "source_url": "https://www.apross.gov.ar/prevencion-control-obesidad/"
+    }
+  ]
+}

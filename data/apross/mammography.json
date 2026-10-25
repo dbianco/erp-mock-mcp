@@ -1,0 +1,39 @@
+{
+  "read_at": "2026-10-25",
+  "summary": "APROSS + Cerca lleva un mamógrafo móvil y consultorios móviles a localidades de Córdoba, en articulación con el Ministerio de Salud provincial. Atiende a mujeres de 40 años o más, sean o no afiliadas.",
+  "requirements": [
+    "Tener 40 años o más (la prensa agrega: mujeres de más de 35 con antecedentes familiares directos de cáncer de mama).",
+    "No haberse realizado una mamografía en los últimos 12 meses.",
+    "No estar embarazada ni amamantando.",
+    "No estar bajo tratamiento oncológico."
+  ],
+  "cost": "Sin costo ni coseguro. No se requiere pedido médico para estudios por imágenes.",
+  "affiliate_benefit": {
+    "valid_until": "2026-10-31",
+    "requirements": ["Tener 40 años o más.", "No tener carencias.", "Residir en la provincia de Córdoba."],
+    "free_services": [
+      "Consulta ginecológica.",
+      "Ecografía mamaria bilateral.",
+      "Mamografía bilateral (con o sin proyección axilar).",
+      "Mamografía digital bilateral."
+    ],
+    "how_to_get_appointment": "Elegir la institución más cercana y pedir turno por los canales habituales de cada establecimiento. El listado de prestadores está en la web de APROSS."
+  },
+  "latest_stop": {
+    "place": "Plaza San Martín, Córdoba Capital",
+    "schedule": "martes 6 al sábado 10 de octubre de 2026, de 10 a 18 hs; domingo 11 de octubre, de 14 a 19 hs",
+    "also_there": ["Consultorios móviles de pediatría, ginecología y odontología.", "Vacunatorio.", "Información sobre ITS.", "Donación de cabello para pelucas oncológicas."]
+  },
+  "figures": [
+    { "claim": "Más de 12 mil mamografías y más de 90 localidades recorridas", "as_of": "2026-10", "source_url": "https://www.apross.gov.ar/apross-cerca-en-plaza-san-martin-mamografias-y-controles-de-salud-para-toda-la-comunidad/", "source_type": "apross" },
+    { "claim": "10.831 estudios en más de 75 localidades (1.441 en 2024, 4.202 en 2025, 5.188 en lo que va de 2026)", "as_of": "2026-08", "source_url": "https://www.lavozdesanjusto.com.ar/apross-cerca-ya-realizo-mas-de-10000-mamografias-en-la-provincia", "source_type": "press" }
+  ],
+  "notes": [
+    "Las cifras son de fechas distintas y no coinciden entre fuentes: citar cada una con su fecha.",
+    "Las fechas y paradas de la gira cambian. Para la parada vigente hay que consultar el sitio de APROSS: https://www.apross.gov.ar/category/novedades-afiliados/"
+  ],
+  "sources": [
+    { "title": "APROSS + Cerca en Plaza San Martín: mamografías y controles de salud para toda la comunidad", "url": "https://www.apross.gov.ar/apross-cerca-en-plaza-san-martin-mamografias-y-controles-de-salud-para-toda-la-comunidad/", "source_type": "apross" },
+    { "title": "La Voz de San Justo: APROSS + Cerca ya realizó más de 10.000 mamografías en la provincia", "url": "https://www.lavozdesanjusto.com.ar/apross-cerca-ya-realizo-mas-de-10000-mamografias-en-la-provincia", "source_type": "press" }
+  ]
+}

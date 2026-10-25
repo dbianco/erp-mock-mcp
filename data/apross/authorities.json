@@ -1,0 +1,20 @@
+{
+  "source_url": "https://www.apross.gov.ar/institucional/",
+  "read_at": "2026-10-25",
+  "board": [
+    { "name": "Dr. Pablo Venturuzzi", "role": "Presidente del Directorio" },
+    { "name": "Dra. Cecilia Muñoz de Toro", "role": "Vicepresidenta" },
+    { "name": "Ab. Sebastián García Petrini", "role": "Vocal" },
+    { "name": "Prof. Graciela Fontanesi", "role": "Vocal" },
+    { "name": "Sr. Walter Villarreal", "role": "Vocal" }
+  ],
+  "directors": [
+    { "name": "Ctdor. Lucas Valdemarin", "role": "Director General Coordinación Operativa" },
+    { "name": "Facundo Barrabino", "role": "Director General Prestaciones Asistenciales y Control de Gestión" }
+  ],
+  "about": [
+    "APROSS es la Administración Provincial del Seguro de Salud, creada en 2005 por Ley 9277.",
+    "Brinda cobertura de salud a agentes en actividad y pasividad de los tres Poderes del Estado Provincial y de los municipios y comunas adheridos.",
+    "Líneas de cuidado priorizadas: salud de las mujeres y de niños y niñas; prevención y detección temprana de ITS; fortalecimiento de la red de prestadores del primer nivel de atención, sobre todo en el interior; enfermedades crónicas no transmisibles; atención socio-sanitaria de las personas mayores."
+  ]
+}

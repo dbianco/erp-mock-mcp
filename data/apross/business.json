@@ -1,0 +1,29 @@
+{
+  "name": "APROSS – Administración Provincial del Seguro de Salud (Córdoba)",
+  "address": "Marcelo T. de Alvear 758, Córdoba",
+  "phone": "0800-888-2776",
+  "email": "comunicaciones@apross.gov.ar",
+  "hours": [
+    { "day": "mon", "ranges": [{ "open": "08:00", "close": "14:00" }] },
+    { "day": "tue", "ranges": [{ "open": "08:00", "close": "14:00" }] },
+    { "day": "wed", "ranges": [{ "open": "08:00", "close": "14:00" }] },
+    { "day": "thu", "ranges": [{ "open": "08:00", "close": "14:00" }] },
+    { "day": "fri", "ranges": [{ "open": "08:00", "close": "14:00" }] },
+    { "day": "sat", "ranges": [] },
+    { "day": "sun", "ranges": [] }
+  ],
+  "links": {
+    "web": "https://www.apross.gov.ar/",
+    "autogestion": "https://autogestionapross.cba.gov.ar/",
+    "cidi": "https://cidi.cba.gov.ar/portal-publico/",
+    "delegaciones": "https://www.apross.gov.ar/centros-de-atencion/",
+    "programas_de_salud": "https://www.apross.gov.ar/afiliados/programas-de-salud/",
+    "cartilla_de_prestadores": "https://www.apross.gov.ar/afiliados/cartilla-de-prestadores/"
+  },
+  "notes": [
+    "Horario de la Sede Central: de 8:00 a 14:00, según el pie del sitio. El sitio no dice los días; se tomó lunes a viernes, como el resto de las delegaciones (lectura 2026-10-25).",
+    "Teléfono: Centro de Atención Telefónica al Afiliado, de lunes a viernes de 8:00 a 20:00. Emergencias: 0810 777 2985.",
+    "Más de 600.000 afiliados, casi 15.000 prestadores y descuentos en 1600 farmacias adheridas; centro de referencia propio: Hospital Raúl Ferreyra (https://www.apross.gov.ar/institucional/, lectura 2026-10-25).",
+    "Creada en 2005 por Ley 9277; cubre a agentes activos y pasivos de los tres Poderes del Estado provincial y de los municipios y comunas adheridos."
+  ]
+}

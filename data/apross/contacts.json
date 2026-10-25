@@ -1,0 +1,14 @@
+{
+  "source_url": "https://www.apross.gov.ar/institucional/",
+  "read_at": "2026-10-25",
+  "contacts": [
+    { "purpose": "Centro de Atención Telefónica al Afiliado", "value": "0-800-888-2776", "hours": "lunes a viernes de 8:00 a 20:00" },
+    { "purpose": "Urgencias y emergencias", "value": "0-810-777-2985", "hours": null },
+    { "purpose": "Urgencias y emergencias (línea directa)", "value": "0351-4201711 (internos 12 a 16) y 0351-5697000", "hours": null },
+    { "purpose": "Consultas generales", "value": "comunicaciones@apross.gov.ar", "hours": null },
+    { "purpose": "Trámites generales, medicación y tratamientos", "value": "integral@apross.gov.ar", "hours": null },
+    { "purpose": "Trámites afiliatorios", "value": "afiliaciones@apross.gov.ar", "hours": null },
+    { "purpose": "Trámites de autogestión y seguimiento", "value": "https://cidi.cba.gov.ar/portal-publico/", "hours": null },
+    { "purpose": "Portal de Autogestión, Telemedicina y Turnero Digital", "value": "https://autogestionapross.cba.gov.ar/", "hours": null }
+  ]
+}
