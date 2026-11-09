@@ -1,7 +1,7 @@
 # erp-mock-mcp
 
-A read-only mock of four businesses, exposed as MCP servers so the Textra AI agent (feature 025) can answer
-questions about each of them. One process serves four Textra tenants, each on its own URL with only its own
+A read-only mock of five businesses, exposed as MCP servers so the Textra AI agent (feature 025) can answer
+questions about each of them. One process serves five Textra tenants, each on its own URL with only its own
 tools and data. It is both a demo and a deterministic fixture: no orders, stock, payments or live data.
 
 | Tenant | Route | Tools |
@@ -10,6 +10,7 @@ tools and data. It is both a demo and a deterministic fixture: no orders, stock,
 | Güemes Neumáticos (tyre shop, Córdoba) | `POST /guemes/mcp` | `search_products`, `get_product`, `list_categories`, `get_business_info`, `list_services`, `get_maintenance_tips` |
 | Observatorio Hidro-Meteorológico Córdoba | `POST /ohmc/mcp` | `list_localities`, `get_forecast`, `get_active_alerts`, `get_current_conditions`, `get_hydrological_levels`, `get_monitoring_links`, `get_business_info` |
 | APROSS (health insurer, Córdoba) | `POST /apross/mcp` | `get_business_info`, `get_authorities`, `list_health_programs`, `get_health_program`, `get_mobile_mammography`, `find_offices`, `get_contacts` |
+| Low Battery (phone store) | `POST /low-battery/mcp` | `search_products`, `get_product`, `list_categories`, `compare_products`, `get_business_info` |
 
 `POST /mcp` answers as Casa Gigli, so registrations made before multi-tenancy keep working. `GET /health` is open.
 Any other path, an unknown slug included, is a 404.
@@ -33,7 +34,7 @@ The server is stateless: `POST /<slug>/mcp` (Streamable HTTP) and `GET /health`.
 the server at startup.
 The Textra platform refuses loopback and private addresses, so register each tenant through a public `https` URL
 (for example a Cloudflare quick tunnel): `https://<public-host>/casa-gigli/mcp`, `https://<public-host>/guemes/mcp`
-`https://<public-host>/ohmc/mcp` and `https://<public-host>/apross/mcp`.
+`https://<public-host>/ohmc/mcp`, `https://<public-host>/apross/mcp` and `https://<public-host>/low-battery/mcp`.
 
 ## Tools
 
@@ -69,9 +70,23 @@ mammography unit's figures beyond one news item, so `mammography.json` tags each
 San Justo) with its date. To refresh, re-read the pages named in the `source_url` fields and edit `data/apross/*.json`;
 `npm test` checks the shapes and the office counts.
 
+**Low Battery.** `search_products` — `query`, `brand`, `condition` (`new`, `used`, `refurbished`), `storage_gb`, `ram_gb`,
+`min_price`, `max_price` (list price in `currency`, `ARS` by default or `USD`), `in_stock_only`, `limit` (1 to 20, default 5),
+cheapest first in that currency, phones with no price last and excluded by a price filter. Every phone carries its list and
+cash price in both pesos and dollars. `get_product` — by slug or id; used phones show their battery health. `compare_products`
+— two to four phones, with the cheapest. `list_categories` — brands with counts. A phone with no published price answers
+`price on request`.
+
+**Low Battery data is a snapshot, not invented.** The models and both prices were read from https://liberadosya.com/
+(the pesos store and its dollar twin under `/us/`, joined by product id) on the date in `data/low-battery/products.json`
+(`read_at`); each phone carries its `source_url`; nothing is fetched at request time. The store publishes no price for
+about 40% of its phones, and those stay without one. When a phone has several colors at different prices the snapshot keeps
+the lowest. The implied rate is about 1,580 ARS per USD. To refresh, run `npm run snapshot:low-battery` and `npm test`. The
+business details (address, hours) are invented. The example WhatsApp template is in `docs/low-battery-template.md`.
+
 ## Invented data
 
-Only the business details are real: Casa Gigli's and Güemes' address, phone, hours and links come from the owner;
+Only the business details are real (Low Battery's are invented, see above): Casa Gigli's and Güemes' address, phone, hours and links come from the owner;
 OHMC's address, e-mail and links come from https://ohmc.ar/ (read 2026-10-23). **Everything else is invented**: Güemes' tyres,
 services, prices and tips; Casa Gigli's tips and offers; and all of OHMC's weather. https://ohmc.ar/ publishes no
 forecast, no alert feed and no list of towns, so the forecasts, alerts, observations and river levels are made up, fixed

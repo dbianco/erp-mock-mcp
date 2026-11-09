@@ -28,11 +28,12 @@ async function toolNames(url: string, path: string): Promise<string[]> {
 }
 
 describe('tenant registry', () => {
-  test('registers exactly apross, casa-gigli, guemes and ohmc', () => {
+  test('registers exactly apross, casa-gigli, guemes, low-battery and ohmc', () => {
     expect([...createTenants({ imageBaseUrl: 'https://img.example/m' }).keys()].sort()).toEqual([
       'apross',
       'casa-gigli',
       'guemes',
+      'low-battery',
       'ohmc',
     ]);
   });
@@ -43,6 +44,7 @@ describe('tenant registry', () => {
     const guemes = await toolNames(url, '/guemes/mcp');
     const ohmc = await toolNames(url, '/ohmc/mcp');
     const apross = await toolNames(url, '/apross/mcp');
+    const lowBattery = await toolNames(url, '/low-battery/mcp');
     expect(casaGigli).toEqual(['get_business_info', 'get_product', 'get_tips_and_offers', 'list_categories', 'search_products']);
     expect(guemes).toEqual([
       'get_business_info',
@@ -70,6 +72,8 @@ describe('tenant registry', () => {
       'get_mobile_mammography',
       'list_health_programs',
     ]);
+    expect(lowBattery).toEqual(['compare_products', 'get_business_info', 'get_product', 'list_categories', 'search_products']);
+    expect(lowBattery).not.toContain('list_services');
     expect(apross).not.toContain('search_products');
     expect(ohmc).not.toContain('search_products');
     expect(guemes).not.toContain('get_forecast');
