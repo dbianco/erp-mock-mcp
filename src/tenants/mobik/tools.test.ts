@@ -6,11 +6,14 @@ import { parseAccessories } from './accessories.js';
 import { createCachedSource } from './cache.js';
 import { type MobikOptions, createMobikTenant } from './index.js';
 import { parsePriceList, quoteTradeIn, tradeInDifference } from './price-list.js';
-import { ACCESSORIES_URL, type Fetcher, PRICE_LIST_URL, loadSnapshot } from './sources.js';
+import { parseFaqPage, searchFaq } from './faq.js';
+import { ACCESSORIES_URL, FAQ_URL, type Fetcher, PRICE_LIST_URL, SHIPPING_POLICY_URL, loadSnapshot } from './sources.js';
 
 const fixture = (name: string): string => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
 const PAGE = fixture('price-list.html');
 const STORE = fixture('accessories.json');
+const FAQ = fixture('faq.html');
+const SHIPPING = fixture('shipping-policy.html');
 
 interface ToolResult {
   isError?: boolean;
@@ -20,13 +23,14 @@ interface ToolResult {
 
 /** A store that answers from the fixtures, counts its hits and can be switched off or handed another page. */
 function fakeStore() {
-  const state = { hits: [] as string[], down: false, page: PAGE };
+  const state = { hits: [] as string[], down: false, page: PAGE, faq: FAQ };
   const fetcher: Fetcher = async (url) => {
     state.hits.push(url);
     if (state.down) {
       return new Response('unavailable', { status: 503 });
     }
-    return url === PRICE_LIST_URL ? new Response(state.page, { status: 200 }) : new Response(STORE, { status: 200 });
+    const body = url === PRICE_LIST_URL ? state.page : url === FAQ_URL ? state.faq : url === SHIPPING_POLICY_URL ? SHIPPING : STORE;
+    return new Response(body, { status: 200 });
   };
   return { state, fetcher };
 }
@@ -120,6 +124,40 @@ describe('Mobik accessories parser', () => {
   });
 });
 
+describe('Mobik FAQ parser', () => {
+  const faq = parseFaqPage(FAQ, 'faq', FAQ_URL);
+  const shipping = parseFaqPage(SHIPPING, 'shipping_policy', SHIPPING_POLICY_URL);
+
+  test('reads each question with its answer and drops the numbering', () => {
+    expect(faq[0]).toEqual({
+      source: 'faq',
+      question: '¿Hacen envíos?',
+      answer: '¡Sí! Realizamos envíos a todo el país por Correo Argentino o Andreani.',
+      source_url: FAQ_URL,
+    });
+    expect(shipping.map((e) => e.question)).toContain('¿Cómo se calcula el costo del envío?');
+  });
+
+  test('leaves out warranty and payment entries, which the owner-fed tools answer', () => {
+    expect(FAQ).toContain('¿Ofrecen garantía?');
+    expect(FAQ).toContain('¿Qué formas de pago aceptan?');
+    expect(SHIPPING).toMatch(/tienen garantía\?/);
+    expect(faq.map((e) => e.question)).toEqual(['¿Hacen envíos?', '¿Cuánto tarda en llegar mi pedido?', '¿Se pueden realizar cambios?']);
+    expect(shipping.length).toBe(7);
+    expect([...faq, ...shipping].some((e) => /garant|forma de pago/i.test(e.question))).toBe(false);
+  });
+
+  test('a page with no question blocks throws', () => {
+    expect(() => parseFaqPage('<html><body>maintenance</body></html>', 'faq', FAQ_URL)).toThrow(/no question-and-answer blocks/);
+  });
+
+  test('search matches words in the question or the answer, ignoring accents', () => {
+    expect(searchFaq([...faq, ...shipping], 'envios').length).toBeGreaterThanOrEqual(3);
+    expect(searchFaq([...faq, ...shipping], 'andreani').map((e) => e.source)).toEqual(['faq', 'shipping_policy']);
+    expect(searchFaq(faq, undefined).length).toBe(3);
+  });
+});
+
 describe('cached source', () => {
   const setup = (ttlMs = 60_000) => {
     const state = { clock: 1_000_000, loads: 0, fail: false, next: 'live-1' };
@@ -183,15 +221,17 @@ describe('Mobik shipped snapshot', () => {
     const snapshot = loadSnapshot();
     expect(snapshot.iphones.length).toBeGreaterThan(10);
     expect(snapshot.accessories.length).toBeGreaterThan(5);
-    expect(Object.keys(snapshot)).toEqual(['read_at', 'iphones', 'accessories']);
+    expect(snapshot.faq.length).toBeGreaterThan(5);
+    expect(Object.keys(snapshot)).toEqual(['read_at', 'iphones', 'accessories', 'faq']);
   });
 });
 
 describe('Mobik tenant', () => {
-  test('offers exactly eight tools', async () => {
+  test('offers exactly nine tools', async () => {
     const { tools } = await (await connect({ fetcher: fakeStore().fetcher })).listTools();
     expect(tools.map((t) => t.name).sort()).toEqual([
       'get_business_info',
+      'get_faq',
       'get_payment_methods',
       'get_product',
       'get_reservation_info',
@@ -330,6 +370,31 @@ describe('Mobik tenant', () => {
     const kept = await units();
     expect(kept?.iphone.units.length).toBe(1);
     expect(kept?.stale).toBe(true);
+  });
+
+  test('"hacen envíos?" is answered from the published FAQ and shipping policy', async () => {
+    const store = fakeStore();
+    const client = await connect({ fetcher: store.fetcher });
+    const shipping = await call(client, 'get_faq', { query: 'envíos' });
+    expect(shipping.content[0]?.text).toContain('Realizamos envíos a todo el país por Correo Argentino o Andreani.');
+    expect(shipping.structuredContent?.sources).toEqual(['faq', 'shipping_policy']);
+    expect(shipping.structuredContent?.stale).toBe(false);
+    expect(store.state.hits.sort()).toEqual([SHIPPING_POLICY_URL, FAQ_URL].sort());
+    const all = (await call(client, 'get_faq')).structuredContent;
+    expect(all?.total).toBe(10);
+    const none = await call(client, 'get_faq', { query: 'criptomonedas' });
+    expect(none.structuredContent?.total).toBe(10);
+    expect(none.content[0]?.text).toContain('Nothing matches "criptomonedas"');
+    expect(store.state.hits.length).toBe(2);
+  });
+
+  test('a FAQ page that loses its shape keeps the shipped answers, marked stale', async () => {
+    const store = fakeStore();
+    store.state.faq = '<html><body>Error establishing a database connection</body></html>';
+    const result = await call(await connect({ fetcher: store.fetcher }), 'get_faq', { query: 'envios' });
+    expect(result.structuredContent?.stale).toBe(true);
+    expect(result.structuredContent?.read_at).toBe(loadSnapshot().read_at);
+    expect(result.structuredContent?.total).toBeGreaterThan(0);
   });
 
   test('payment methods apply each surcharge to a USD amount and never produce pesos', async () => {

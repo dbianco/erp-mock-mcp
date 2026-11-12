@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { dataFile, loadJson } from '../../data.js';
 import { type Accessory, AccessorySchema } from './accessories.js';
 import { DEFAULT_LIMIT, KINDS, didYouMean, findById, searchAccessories, searchIphones } from './catalog.js';
+import { FAQ_SOURCES, FaqEntrySchema, searchFaq } from './faq.js';
 import { IPHONE_CONDITIONS, type Iphone, IphoneSchema, quoteTradeIn } from './price-list.js';
 import type { Sources } from './sources.js';
 
@@ -357,6 +358,37 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
         ...notes,
       ].join('\n');
       return { content: [{ type: 'text' as const, text }], structuredContent: { amount_usd: amount, methods, card_plans, notes } };
+    },
+  );
+
+  server.registerTool(
+    'get_faq',
+    {
+      title: 'Shipping and frequent questions',
+      description:
+        "Mobik's published answers on shipping (whether they ship, carriers, delivery times, when an order is processed, how the shipping " +
+        'cost is set, delays), on exchanges and returns, and on how to reach the team. Use it for any question about envíos, entregas, ' +
+        'cambios or devoluciones. Pass `query` with a word or two ("envio", "demora", "cambio") to narrow it, or nothing to get every entry. ' +
+        'Answer only with what an entry says: never invent a shipping cost, a carrier or a delivery date. Warranty and payment methods are ' +
+        'not here: use get_warranty and get_payment_methods.',
+      inputSchema: { query: z.string().max(200).optional() },
+      outputSchema: { total: z.number().int(), entries: z.array(FaqEntrySchema), sources: z.array(z.enum(FAQ_SOURCES)), ...meta },
+      annotations: { readOnlyHint: true },
+    },
+    async ({ query }) => {
+      const faq = await sources.faq();
+      const matched = searchFaq(faq.value, query);
+      // A query that matches nothing still answers with every entry, so the agent can pick instead of guessing.
+      const entries = matched.length === 0 ? faq.value : matched;
+      const text = [
+        ...(matched.length === 0 && query !== undefined ? [`Nothing matches "${query}"; these are all the published answers:`] : []),
+        ...entries.map((entry) => `Q: ${entry.question}\nA: ${entry.answer}`),
+        freshness(faq.read_at, faq.stale),
+      ].join('\n');
+      return {
+        content: [{ type: 'text' as const, text }],
+        structuredContent: { total: entries.length, entries, sources: [...new Set(entries.map((e) => e.source))], read_at: faq.read_at, stale: faq.stale },
+      };
     },
   );
 

@@ -12,7 +12,7 @@ exception: **Mobik reads its catalog from the store's site at request time**, be
 | Observatorio Hidro-Meteorológico Córdoba | `POST /ohmc/mcp` | `list_localities`, `get_forecast`, `get_active_alerts`, `get_current_conditions`, `get_hydrological_levels`, `get_monitoring_links`, `get_business_info` |
 | APROSS (health insurer, Córdoba) | `POST /apross/mcp` | `get_business_info`, `get_authorities`, `list_health_programs`, `get_health_program`, `get_mobile_mammography`, `find_offices`, `get_contacts` |
 | Low Battery (phone store) | `POST /low-battery/mcp` | `search_products`, `get_product`, `list_categories`, `compare_products`, `get_business_info` |
-| Mobik iPhones (iPhone store, Córdoba) | `POST /mobik/mcp` | `search_products`, `get_product`, `list_categories`, `get_warranty`, `get_trade_in_quote`, `get_payment_methods`, `get_reservation_info`, `get_business_info` |
+| Mobik iPhones (iPhone store, Córdoba) | `POST /mobik/mcp` | `search_products`, `get_product`, `list_categories`, `get_warranty`, `get_trade_in_quote`, `get_payment_methods`, `get_reservation_info`, `get_faq`, `get_business_info` |
 
 `POST /mcp` answers as Casa Gigli, so registrations made before multi-tenancy keep working. `GET /health` is open.
 Any other path, an unknown slug included, is a 404.
@@ -97,14 +97,16 @@ health, USD price); a sealed one has a "from" price and no colors. `get_product`
 Mobik on used. `get_trade_in_quote` — `have_model`, `want_model`: the estimated difference to pay in USD, never the value
 of the phone handed in. `get_payment_methods` — surcharges per method and card plan, with totals for `amount_usd`; it
 never produces pesos: pesos are taken at Banco Nación's selling rate at the time of the operation, which the server does not know. `get_reservation_info` — deposit, alias, validity.
+`get_faq` — the published answers on shipping, delivery times, exchanges and returns, narrowed by `query`.
 
-**Mobik data is read live, not invented.** Two public sources on https://mobikiphones.com.ar/, both read with a plain
+**Mobik data is read live, not invented.** Three public sources on https://mobikiphones.com.ar/, both read with a plain
 `GET` and no credentials:
 
 | What | Source | Why |
 |---|---|---|
 | iPhones (new and used) and the trade-in calculator | the `/lista-de-precios/` page, whose inline script holds the catalog | The only place with each used unit's battery, the new/used split and USD prices |
 | Accessories | the WooCommerce Store API, `/wp-json/wc/store/v1/products?category=accesorios` | Clean JSON with ARS prices, the iPhone models each one fits and colors |
+| Shipping, exchanges and other frequent questions | the `<details>` blocks of `/preguntas-frecuentes/` and `/politicas-de-envio/` | The store's own wording; its warranty and payment entries are dropped, because they contradict the owner's figures (30 days on sealed phones, debit cards and Mercado Pago) |
 
 The Store API also lists iPhones, but with placeholder prices (0, 1 and 50,000 pesos), a stock counter that starts at
 100 and no battery or condition, so it is not used for them; where its prices disagree with the list, the USD list wins

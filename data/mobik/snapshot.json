@@ -1,5 +1,5 @@
 {
- "read_at": "2026-11-12T16:46:54.360Z",
+ "read_at": "2026-11-12T17:12:29.681Z",
  "iphones": [
   {
    "id": "iphone-13-128gb-used",
@@ -864,6 +864,68 @@
    "description": "Adaptado a fichas locales (IRAM). Carga rápida segura sin necesidad de adaptadores.",
    "in_stock": true,
    "url": "https://mobikiphones.com.ar/tienda/base-20w-cargador-estilo-argentino/"
+  }
+ ],
+ "faq": [
+  {
+   "source": "faq",
+   "question": "¿Hacen envíos?",
+   "answer": "¡Sí! Realizamos envíos a todo el país por Correo Argentino o Andreani.",
+   "source_url": "https://mobikiphones.com.ar/preguntas-frecuentes/"
+  },
+  {
+   "source": "faq",
+   "question": "¿Cuánto tarda en llegar mi pedido?",
+   "answer": "Envíos dentro de Córdoba: 24 a 72 hs hábiles. Envíos al interior del país: entre 3 y 7 días hábiles según tu ubicación.",
+   "source_url": "https://mobikiphones.com.ar/preguntas-frecuentes/"
+  },
+  {
+   "source": "faq",
+   "question": "¿Se pueden realizar cambios?",
+   "answer": "Realizamos cambios sólo por fallas de fábrica dentro de los primeros 30 días.",
+   "source_url": "https://mobikiphones.com.ar/preguntas-frecuentes/"
+  },
+  {
+   "source": "shipping_policy",
+   "question": "¿A dónde realizan envíos?",
+   "answer": "Realizamos envíos a todo el territorio de la República Argentina mediante servicios logísticos como Correo Argentino y Andreani. La disponibilidad del servicio puede variar según la localidad del destinatario.",
+   "source_url": "https://mobikiphones.com.ar/politicas-de-envio/"
+  },
+  {
+   "source": "shipping_policy",
+   "question": "¿Cuáles son los tiempos de entrega?",
+   "answer": "Los plazos de entrega comienzan a contabilizarse una vez confirmado el pago del pedido. Envíos dentro de Córdoba: entre 24 y 72 horas hábiles. Envíos al resto del país: entre 3 y 7 días hábiles. Estos tiempos son estimados, pueden verse afectados por factores externos ajenos a Mobik.",
+   "source_url": "https://mobikiphones.com.ar/politicas-de-envio/"
+  },
+  {
+   "source": "shipping_policy",
+   "question": "¿Cuándo se procesa mi pedido?",
+   "answer": "Los pedidos serán procesados únicamente una vez acreditado el pago. Al despachar el producto, recibirás un número de seguimiento para monitorear el envío.",
+   "source_url": "https://mobikiphones.com.ar/politicas-de-envio/"
+  },
+  {
+   "source": "shipping_policy",
+   "question": "¿Cómo se calcula el costo del envío?",
+   "answer": "El costo del envío se calcula automáticamente al momento de la compra, según la ubicación del cliente y el método de envío seleccionado.",
+   "source_url": "https://mobikiphones.com.ar/politicas-de-envio/"
+  },
+  {
+   "source": "shipping_policy",
+   "question": "¿Qué pasa si el envío se demora?",
+   "answer": "Una vez despachado el pedido, la responsabilidad del transporte recae sobre la empresa logística seleccionada. No nos responsabilizamos por demoras, robos ni hurtos ocasionados por el servicio de transporte.",
+   "source_url": "https://mobikiphones.com.ar/politicas-de-envio/"
+  },
+  {
+   "source": "shipping_policy",
+   "question": "¿Puedo cambiar o devolver un producto?",
+   "answer": "Se aceptan cambios por fallas de fábrica dentro de los 30 días desde la recepción del iPhone. El equipo debe encontrarse en su estado original. Debe conservar su empaque y accesorios.",
+   "source_url": "https://mobikiphones.com.ar/politicas-de-envio/"
+  },
+  {
+   "source": "shipping_policy",
+   "question": "¿Cómo puedo hacer consultas?",
+   "answer": "Estamos para ayudarte. En Mobik combinamos atención humana y asistencia virtual para acompañarte en cada etapa de tu compra. Podés comunicarte directamente con nuestro equipo de vendedores por WhatsApp para consultas, seguimiento de envíos y soporte postventa, o recibir una respuesta inmediata de nuestro Asistente Virtual Mobik, entrenado por nosotros, para resolver las consultas más frecuentes de forma rápida y sencilla.",
+   "source_url": "https://mobikiphones.com.ar/politicas-de-envio/"
   }
  ]
 }

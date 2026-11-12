@@ -78,6 +78,7 @@ describe('tenant registry', () => {
     expect(lowBattery).not.toContain('list_services');
     expect(mobik).toEqual([
       'get_business_info',
+      'get_faq',
       'get_payment_methods',
       'get_product',
       'get_reservation_info',
