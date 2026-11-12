@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="es-AR"><head><title>lista de precios -</title></head><body>
+<div id="mobik-catalog"></div>
+<script>
+(function(){
+
+const root=document.getElementById('mobik-catalog');
+if(!root)return;
+
+const WHATSAPP='5493518089754';
+
+const base=
+'https://mobikiphones.com.ar/wp-content/uploads/2026/11/';
+
+/* IMAGENES */
+const photos={
+ '13':'iphone-13.jpeg',
+ '13 Pro':'13-pro-y-pro-max.jpeg',
+ '13 Pro Max':'13-pro-y-pro-max.jpeg',
+ '14':'14.jpeg',
+ '14 Pro':'14-pro-y-pro-max.jpeg',
+ '14 Pro Max':'14-pro-y-pro-max.jpeg',
+ '15':'15.jpeg',
+ '15 Pro':'15-pro-y-15-pro-max.jpeg',
+ '15 Pro Max':'15-pro-y-15-pro-max.jpeg',
+ '16':'16.jpeg',
+ '16 Pro':'16-pro-y-pro-max.jpeg',
+ '16 Pro Max':'16-pro-y-pro-max.jpeg',
+ '17':'17.jpeg',
+ '17 Pro':'17-pro-y-pro-max.jpeg',
+ '17 Pro Max':'17-pro-y-pro-max.jpeg',
+ '17 Sellado':'17-sellado.jpeg',
+ '17 Pro Sellado':'17-pro-sellado.jpeg',
+ '17 Pro Max Sellado':'17-pro-sellado.jpeg',
+ '18 Pro Sellado':'18-pro-y-pro-max-sellado.jpeg',
+ '18 Pro Max Sellado':'18-pro-y-pro-max-sellado.jpeg'
+};
+
+/*
+ PRECIOS PUBLICOS DEL CATALOGO
+ NO MODIFICAR PARA CAMBIAR EL PLAN CANJE.
+*/
+const data=[
+ ['13','128 GB',290,[[100,'Blanco',310],[100,'Midnight',310],[88,'Azul',300],[84,'Azul',300],[78,'Blanco',290]]],
+ ['13 Pro','128 GB',380,[[100,'Azul sierra',410],[94,'Negro',400],[88,'Blanco',395],[80,'Negro',390],[78,'Azul sierra',385]]],
+ ['13 Pro Max','128 GB',430,[[95,'Azul sierra',480],[88,'Azul sierra',470],[84,'Azul sierra',460],[82,'Azul sierra',450]]],
+ ['14','128 GB',300,[[100,'Azul',340],[100,'Azul',340],[89,'Azul',330],[87,'Celeste',325],[76,'Blanco',300]]],
+ ['14 Pro','128 GB',430,[[100,'Purple',480],[100,'Negro',480],[94,'Blanco',470],[88,'Negro',450],[83,'Purple',440]]],
+ ['14 Pro','256 GB',480,[[100,'Purple',530],[100,'Purple',530],[88,'Blanco',500],[82,'Purple',490]]],
+ ['14 Pro Max','128 GB',520,[[100,'Negro',560],[88,'Dorado',550],[84,'Negro',540],[82,'Blanco',530]]],
+ ['14 Pro Max','256 GB',550,[[100,'Negro',600],[94,'Blanco',590]]],
+ ['15','128 GB',440,[[100,'Negro',480],[98,'Azul',470],[88,'Azul',460],[87,'Rosa',455]]],
+ ['15 Pro','128 GB',540,[[100,'Negro',580],[98,'Blanco',575],[87,'Gris',560],[84,'Negro',555]]],
+ ['15 Pro','256 GB',590,[[100,'Negro',630],[88,'Blanco',600]]],
+ ['15 Pro Max','256 GB',660,[[100,'Gris natural',690],[88,'Negro',680]]],
+ ['16','128 GB',600,[[100,'Negro',640],[89,'Verde',620]]],
+ ['16','256 GB',650,[[100,'Negro',685],[89,'Verde',665]]],
+ ['16 Pro','128 GB',700,[[100,'Negro',750],[99,'Blanco',750],[87,'Dorado',720]]],
+ ['16 Pro','256 GB',750,[[100,'Negro',800],[86,'Dorado',770]]],
+ ['16 Pro Max','256 GB',830,[[100,'Negro',870],[99,'Dorado',880],[89,'Dorado',840]]],
+ ['17','256 GB',800,[[100,'Negro',850],[99,'Blanco',840],[88,'Lavanda',810]]],
+ ['17 Pro','256 GB',1080,[[100,'Silver',1130],[99,'Orange',1120],[88,'Blue',1090]]],
+ ['17 Pro Max','256 GB',1150,[[100,'Naranja',1200],[99,'Silver',1190],[89,'Silver',1160]]],
+ ['17 Sellado','256 GB',1000,[]],
+ ['17 Pro Sellado','256 GB',1200,[]],
+ ['17 Pro Max Sellado','256 GB',1300,[]],
+ ['18 Pro Sellado','256 GB',1399,[]],
+ ['18 Pro Max Sellado','256 GB',1599,[]],
+ ['18 Pro Sellado','512 GB',1550,[]],
+ ['18 Pro Max Sellado','512 GB',1750,[]]
+];
+
+/*
+ VALORES INTERNOS EXCLUSIVOS DEL PLAN CANJE.
+ NO SON PRECIOS PUBLICOS.
+*/
+const CANJE_VALORES={
+ '13':240,
+ '13 Pro':290,
+ '13 Pro Max':320,
+
+ '14':260,
+ '14 Pro':350,
+ '14 Pro Max':410,
+
+ '15':360,
+ '15 Pro':440,
+ '15 Pro Max':510,
+
+ '16':490,
+ '16 Pro':590,
+ '16 Pro Max':690,
+
+ '17':650,
+ '17 Pro':850,
+ '17 Pro Max':950,
+
+ '18 Pro Sellado':1190,
+ '18 Pro Max Sellado':1330
+};
+
+/* COLORES */
+const colors={
+ blanco:'#f1f0e9',
+ midnight:'#252936',
+ negro:'#292b31',
+ azul:'#6d9dc6',
+ 'azul sierra':'#a3bcd0',
+ celeste:'#b2d4e9',
+ purple:'#776487',
+ dorado:'#d4b58b',
+ rosa:'#efb9c9',
+ gris:'#9c9b9b',
+ 'gris natural':'#b6aea4',
+ verde:'#83b5a3',
+ lavanda:'#c6b5d8',
+ silver:'#d9dddf',
+ orange:'#ef8038',
+ naranja:'#ef8038',
+ blue:'#415779'
+};
+
+const money=n=>
+ Number(n).toLocaleString('es-AR',{
+  maximumFractionDigits:2
+ });
+
+const esc=s=>
+ String(s).replace(/[&<>"']/g,c=>({
+  '&':'&amp;',
+  '<':'&lt;',
+  '>':'&gt;',
+  '"':'&quot;',
+  "'":'&#39;'
+ }[c]));
+
+const wa=t=>
+ 'https://wa.me/'+WHATSAPP+
+ '?text='+encodeURIComponent(t);
+
+/* ICONO WHATSAPP */
+const waIcon=`
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.966-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.372-.011-.57-.011-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.073c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.646-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.437-9.884 9.887-9.884a9.82 9.82 0 0 1 6.99 2.896 9.82 9.82 0 0 1 2.893 6.993c-.003 5.45-4.437 9.886-9.886 9.886m8.413-18.299A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.89a11.85 11.85 0 0 0 1.586 5.937L.057 24l6.306-1.654a11.88 11.88 0 0 0 5.684 1.448h.005c6.554 0 11.89-5.335 11.893-11.89a11.82 11.82 0 0 0-3.48-8.413z"/>
+</svg>`;
+
+/* PRODUCTOS PUBLICOS */
+const items=data.map(([model,storage,from,variants])=>({
+ model,
+ storage,
+ from,
+ variants,
+ kind:model.includes('Sellado')?'new':'used',
+ name:'iPhone '+model.replace(' Sellado',''),
+ photo:base+photos[model]
+}));
+
+items.sort((a,b)=>{
+ const num=x=>parseInt(x.model,10);
+ const tier=x=>
+  x.model.includes('Pro Max')?3:
+  x.model.includes('Pro')?2:1;
+
+ return num(b)-num(a)
+  ||tier(b)-tier(a)
+  ||Number(b.kind==='new')-Number(a.kind==='new')
+  ||parseInt(b.storage)-parseInt(a.storage);
+});
+
+const list=root.querySelector('#mc-list');
+const search=root.querySelector('#mc-search');
+const empty=root.querySelector('#mc-empty');
+const kicker=root.querySelector('#mc-kicker');
+
+let filter='all';
+
+/* RENDERIZAR CATALOGO */
+function render(){
+
+ const q=search.value.trim().toLowerCase();
+
+ const rows=items.filter(p=>
+  (filter==='all'||p.kind===filter)
+  &&[p.name,p.storage,p.kind,...p.variants.map(v=>v[1])]
+   .join(' ').toLowerCase().includes(q)
+ );
+
+ kicker.textContent=
+  filter==='new'?'NUEVOS':
+  filter==='used'?'SEMINUEVOS':
+  'NUEVOS Y SEMINUEVOS';
+
+ list.innerHTML=rows.map(p=>{
+
+  const sold=p.kind==='new';
+
+  const swatches=[
+   ...new Set(p.variants.map(v=>v[1]))
+  ].map(c=>`
+   <span class="mc-color">
+    <span class="mc-dot"
+     style="--swatch:${colors[c.toLowerCase()]||'#999'}">
+    </span>
+    ${esc(c)}
+   </span>
+  `).join('');
+
+  const variants=p.variants.map(([battery,color,price])=>`
+   <div class="mc-variant">
+
+    <div class="mc-variant-info">
+     <span class="mc-dot"
+      style="--swatch:${colors[color.toLowerCase()]||'#999'}">
+     </span>
+     <strong>${esc(color)}</strong>
+     <span>Batería ${battery}%</span>
+    </div>
+
+    <div class="mc-variant-actions">
+     <span class="mc-variant-price">
+      USD ${money(price)}
+     </span>
+
+     <a class="mc-variant-wa"
+      href="${wa(
+       'Hola, quiero consultar por '+
+       p.name+' '+p.storage+
+       ', color '+color+
+       ', batería '+battery+
+       '%, USD '+price
+      )}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Consultar variante por WhatsApp">
+      ${waIcon}
+     </a>
+    </div>
+
+   </div>
+  `).join('');
+
+  return `
+   <article class="mc-item">
+
+    <div class="mc-top">
+     <div class="mc-photo">
+      <img decoding="async" src="${esc(p.photo)}"
+       alt="${esc(p.name)}"
+       loading="lazy"
+       onerror="this.onerror=null;this.style.opacity='.15'">
+     </div>
+
+     <div class="mc-heading">
+      <h3>${esc(p.name)}</h3>
+      <p>${sold?'Garantía oficial Apple':'Equipo seminuevo'}</p>
+     </div>
+
+     <span class="mc-pill ${sold?'mc-pill-sellado':''}">
+      ${sold?'NUEVO':'USADO'}
+     </span>
+    </div>
+
+    <div class="mc-bottom">
+     <div class="mc-storage">${esc(p.storage)}</div>
+
+     <div class="mc-price">
+      <span class="mc-price-from">Desde</span>
+      <span class="mc-price-amount">
+       USD ${money(p.from)}
+      </span>
+     </div>
+
+     <a class="mc-wa"
+      href="${wa('Hola, quiero consultar por '+p.name+' '+p.storage)}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Consultar por WhatsApp">
+      ${waIcon}
+     </a>
+    </div>
+
+    ${swatches?'<div class="mc-colors">'+swatches+'</div>':''}
+    ${variants?'<div class="mc-variants">'+variants+'</div>':''}
+
+   </article>
+  `;
+ }).join('');
+
+ empty.hidden=rows.length>0;
+ empty.textContent='No encontramos equipos con esa búsqueda.';
+}
+
+/* FILTROS */
+root.querySelectorAll('.mc-tab').forEach(button=>{
+ button.addEventListener('click',()=>{
+  filter=button.dataset.filter;
+
+  root.querySelectorAll('.mc-tab').forEach(x=>{
+   x.setAttribute(
+    'aria-pressed',
+    String(x===button)
+   );
+  });
+
+  render();
+ });
+});
+
+search.addEventListener('input',render);
+render();
+
+/*
+ CALCULADORA PLAN CANJE
+ - Entrega: solo iPhone 13 a 17 Pro Max.
+ - Compra: los 15 anteriores + dos iPhone 18.
+ - Solo permite equipos de mayor valor interno.
+ - Margen segun el equipo elegido.
+*/
+const have=root.querySelector('#mc-trade-have');
+const want=root.querySelector('#mc-trade-want');
+const result=root.querySelector('#mc-trade-result');
+const differenceEl=root.querySelector('#mc-trade-difference');
+const summary=root.querySelector('#mc-trade-summary');
+const send=root.querySelector('#mc-trade-send');
+
+const models=Object.keys(CANJE_VALORES);
+
+const deliveredModels=models.filter(
+ model=>!model.startsWith('18 ')
+);
+
+/* SELECTOR 1 */
+deliveredModels.forEach(model=>{
+ have.add(new Option('iPhone '+model,model));
+});
+
+/* SELECTOR 2 */
+function updateChoices(){
+
+ const old=have.value;
+
+ want.replaceChildren(
+  new Option(
+   old?'Seleccioná tu próximo iPhone':
+   'Primero elegí tu iPhone',
+   ''
+  )
+ );
+
+ result.hidden=true;
+ want.disabled=!old;
+
+ if(!old)return;
+
+ models.filter(model=>
+  CANJE_VALORES[model]>CANJE_VALORES[old]
+ ).forEach(model=>{
+  want.add(new Option('iPhone '+model,model));
+ });
+
+ if(want.options.length===1){
+  want.options[0].textContent=
+   'No hay modelos de mayor valor';
+  want.disabled=true;
+ }
+}
+
+/* CALCULO */
+function calculate(){
+
+ const old=have.value;
+ const chosen=want.value;
+
+ if(
+  !old ||
+  !chosen ||
+  !Object.prototype.hasOwnProperty.call(CANJE_VALORES,old) ||
+  !Object.prototype.hasOwnProperty.call(CANJE_VALORES,chosen) ||
+  CANJE_VALORES[chosen]<=CANJE_VALORES[old]
+ ){
+  result.hidden=true;
+  return;
+ }
+
+ const sellado18=
+  chosen==='18 Pro Sellado' ||
+  chosen==='18 Pro Max Sellado';
+
+ const margin=sellado18?150:120;
+
+ const amount=
+  CANJE_VALORES[chosen]-
+  CANJE_VALORES[old]+
+  margin;
+
+ differenceEl.textContent='USD '+money(amount);
+
+ summary.textContent=
+  'iPhone '+old+' → iPhone '+chosen;
+
+ const message=[
+  'Hola Mobik, quiero consultar por el Plan Canje.',
+  '',
+  'Mi iPhone: iPhone '+old,
+  'Quiero llevar: iPhone '+chosen,
+  'Diferencia calculada: USD '+money(amount),
+  '',
+  'Quiero confirmar disponibilidad y cotización.'
+ ].join('\n');
+
+ send.href=wa(message);
+
+ result.hidden=false;
+}
+
+/* EVENTOS */
+have.addEventListener('change',updateChoices);
+want.addEventListener('change',calculate);
+
+updateChoices();
+
+/* ABRIR Y CERRAR PLAN CANJE */
+const toggle=root.querySelector('#mc-canje-toggle');
+const panel=root.querySelector('#mc-canje');
+
+toggle.addEventListener('click',()=>{
+ const opening=panel.hidden;
+
+ panel.hidden=!opening;
+
+ toggle.setAttribute(
+  'aria-expanded',
+  String(opening)
+ );
+
+ if(opening){
+  panel.scrollIntoView({
+   behavior:'smooth',
+   block:'start'
+  });
+ }
+});
+
+/* VALIDACION DE LOS 8 EJEMPLOS */
+const tests=[
+ ['13','14',140],
+ ['14 Pro','15 Pro',210],
+ ['15 Pro','16 Pro',270],
+ ['16 Pro','17 Pro',380],
+ ['15 Pro','18 Pro Sellado',900],
+ ['16 Pro','18 Pro Sellado',750],
+ ['17 Pro','18 Pro Sellado',490],
+ ['17 Pro Max','18 Pro Max Sellado',530]
+];
+
+tests.forEach(([a,b,expected])=>{
+ const actual=
+  CANJE_VALORES[b]-
+  CANJE_VALORES[a]+
+  (b.startsWith('18 ')?150:120);
+
+ if(actual!==expected){
+  console.error(
+   'Mobik Plan Canje: error de validación',
+   a,b,actual,expected
+  );
+ }
+});
+
+})();
+</script>
+</body></html>

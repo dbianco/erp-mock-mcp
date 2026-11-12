@@ -1,0 +1,869 @@
+{
+ "read_at": "2026-11-12T16:46:54.360Z",
+ "iphones": [
+  {
+   "id": "iphone-13-128gb-used",
+   "name": "iPhone 13",
+   "model": "13",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 290,
+   "price_usd": 290,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Blanco",
+     "price_usd": 310
+    },
+    {
+     "battery_pct": 100,
+     "color": "Midnight",
+     "price_usd": 310
+    },
+    {
+     "battery_pct": 88,
+     "color": "Azul",
+     "price_usd": 300
+    },
+    {
+     "battery_pct": 84,
+     "color": "Azul",
+     "price_usd": 300
+    },
+    {
+     "battery_pct": 78,
+     "color": "Blanco",
+     "price_usd": 290
+    }
+   ]
+  },
+  {
+   "id": "iphone-13-pro-128gb-used",
+   "name": "iPhone 13 Pro",
+   "model": "13 Pro",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 380,
+   "price_usd": 385,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Azul sierra",
+     "price_usd": 410
+    },
+    {
+     "battery_pct": 94,
+     "color": "Negro",
+     "price_usd": 400
+    },
+    {
+     "battery_pct": 88,
+     "color": "Blanco",
+     "price_usd": 395
+    },
+    {
+     "battery_pct": 80,
+     "color": "Negro",
+     "price_usd": 390
+    },
+    {
+     "battery_pct": 78,
+     "color": "Azul sierra",
+     "price_usd": 385
+    }
+   ]
+  },
+  {
+   "id": "iphone-13-pro-max-128gb-used",
+   "name": "iPhone 13 Pro Max",
+   "model": "13 Pro Max",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 430,
+   "price_usd": 450,
+   "units": [
+    {
+     "battery_pct": 95,
+     "color": "Azul sierra",
+     "price_usd": 480
+    },
+    {
+     "battery_pct": 88,
+     "color": "Azul sierra",
+     "price_usd": 470
+    },
+    {
+     "battery_pct": 84,
+     "color": "Azul sierra",
+     "price_usd": 460
+    },
+    {
+     "battery_pct": 82,
+     "color": "Azul sierra",
+     "price_usd": 450
+    }
+   ]
+  },
+  {
+   "id": "iphone-14-128gb-used",
+   "name": "iPhone 14",
+   "model": "14",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 300,
+   "price_usd": 300,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Azul",
+     "price_usd": 340
+    },
+    {
+     "battery_pct": 100,
+     "color": "Azul",
+     "price_usd": 340
+    },
+    {
+     "battery_pct": 89,
+     "color": "Azul",
+     "price_usd": 330
+    },
+    {
+     "battery_pct": 87,
+     "color": "Celeste",
+     "price_usd": 325
+    },
+    {
+     "battery_pct": 76,
+     "color": "Blanco",
+     "price_usd": 300
+    }
+   ]
+  },
+  {
+   "id": "iphone-14-pro-128gb-used",
+   "name": "iPhone 14 Pro",
+   "model": "14 Pro",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 430,
+   "price_usd": 440,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Purple",
+     "price_usd": 480
+    },
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 480
+    },
+    {
+     "battery_pct": 94,
+     "color": "Blanco",
+     "price_usd": 470
+    },
+    {
+     "battery_pct": 88,
+     "color": "Negro",
+     "price_usd": 450
+    },
+    {
+     "battery_pct": 83,
+     "color": "Purple",
+     "price_usd": 440
+    }
+   ]
+  },
+  {
+   "id": "iphone-14-pro-256gb-used",
+   "name": "iPhone 14 Pro",
+   "model": "14 Pro",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 480,
+   "price_usd": 490,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Purple",
+     "price_usd": 530
+    },
+    {
+     "battery_pct": 100,
+     "color": "Purple",
+     "price_usd": 530
+    },
+    {
+     "battery_pct": 88,
+     "color": "Blanco",
+     "price_usd": 500
+    },
+    {
+     "battery_pct": 82,
+     "color": "Purple",
+     "price_usd": 490
+    }
+   ]
+  },
+  {
+   "id": "iphone-14-pro-max-128gb-used",
+   "name": "iPhone 14 Pro Max",
+   "model": "14 Pro Max",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 520,
+   "price_usd": 530,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 560
+    },
+    {
+     "battery_pct": 88,
+     "color": "Dorado",
+     "price_usd": 550
+    },
+    {
+     "battery_pct": 84,
+     "color": "Negro",
+     "price_usd": 540
+    },
+    {
+     "battery_pct": 82,
+     "color": "Blanco",
+     "price_usd": 530
+    }
+   ]
+  },
+  {
+   "id": "iphone-14-pro-max-256gb-used",
+   "name": "iPhone 14 Pro Max",
+   "model": "14 Pro Max",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 550,
+   "price_usd": 590,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 600
+    },
+    {
+     "battery_pct": 94,
+     "color": "Blanco",
+     "price_usd": 590
+    }
+   ]
+  },
+  {
+   "id": "iphone-15-128gb-used",
+   "name": "iPhone 15",
+   "model": "15",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 440,
+   "price_usd": 455,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 480
+    },
+    {
+     "battery_pct": 98,
+     "color": "Azul",
+     "price_usd": 470
+    },
+    {
+     "battery_pct": 88,
+     "color": "Azul",
+     "price_usd": 460
+    },
+    {
+     "battery_pct": 87,
+     "color": "Rosa",
+     "price_usd": 455
+    }
+   ]
+  },
+  {
+   "id": "iphone-15-pro-128gb-used",
+   "name": "iPhone 15 Pro",
+   "model": "15 Pro",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 540,
+   "price_usd": 555,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 580
+    },
+    {
+     "battery_pct": 98,
+     "color": "Blanco",
+     "price_usd": 575
+    },
+    {
+     "battery_pct": 87,
+     "color": "Gris",
+     "price_usd": 560
+    },
+    {
+     "battery_pct": 84,
+     "color": "Negro",
+     "price_usd": 555
+    }
+   ]
+  },
+  {
+   "id": "iphone-15-pro-256gb-used",
+   "name": "iPhone 15 Pro",
+   "model": "15 Pro",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 590,
+   "price_usd": 600,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 630
+    },
+    {
+     "battery_pct": 88,
+     "color": "Blanco",
+     "price_usd": 600
+    }
+   ]
+  },
+  {
+   "id": "iphone-15-pro-max-256gb-used",
+   "name": "iPhone 15 Pro Max",
+   "model": "15 Pro Max",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 660,
+   "price_usd": 680,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Gris natural",
+     "price_usd": 690
+    },
+    {
+     "battery_pct": 88,
+     "color": "Negro",
+     "price_usd": 680
+    }
+   ]
+  },
+  {
+   "id": "iphone-16-128gb-used",
+   "name": "iPhone 16",
+   "model": "16",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 600,
+   "price_usd": 620,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 640
+    },
+    {
+     "battery_pct": 89,
+     "color": "Verde",
+     "price_usd": 620
+    }
+   ]
+  },
+  {
+   "id": "iphone-16-256gb-used",
+   "name": "iPhone 16",
+   "model": "16",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 650,
+   "price_usd": 665,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 685
+    },
+    {
+     "battery_pct": 89,
+     "color": "Verde",
+     "price_usd": 665
+    }
+   ]
+  },
+  {
+   "id": "iphone-16-pro-128gb-used",
+   "name": "iPhone 16 Pro",
+   "model": "16 Pro",
+   "condition": "used",
+   "storage_gb": 128,
+   "from_price_usd": 700,
+   "price_usd": 720,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 750
+    },
+    {
+     "battery_pct": 99,
+     "color": "Blanco",
+     "price_usd": 750
+    },
+    {
+     "battery_pct": 87,
+     "color": "Dorado",
+     "price_usd": 720
+    }
+   ]
+  },
+  {
+   "id": "iphone-16-pro-256gb-used",
+   "name": "iPhone 16 Pro",
+   "model": "16 Pro",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 750,
+   "price_usd": 770,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 800
+    },
+    {
+     "battery_pct": 86,
+     "color": "Dorado",
+     "price_usd": 770
+    }
+   ]
+  },
+  {
+   "id": "iphone-16-pro-max-256gb-used",
+   "name": "iPhone 16 Pro Max",
+   "model": "16 Pro Max",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 830,
+   "price_usd": 840,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 870
+    },
+    {
+     "battery_pct": 99,
+     "color": "Dorado",
+     "price_usd": 880
+    },
+    {
+     "battery_pct": 89,
+     "color": "Dorado",
+     "price_usd": 840
+    }
+   ]
+  },
+  {
+   "id": "iphone-17-256gb-used",
+   "name": "iPhone 17",
+   "model": "17",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 800,
+   "price_usd": 810,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Negro",
+     "price_usd": 850
+    },
+    {
+     "battery_pct": 99,
+     "color": "Blanco",
+     "price_usd": 840
+    },
+    {
+     "battery_pct": 88,
+     "color": "Lavanda",
+     "price_usd": 810
+    }
+   ]
+  },
+  {
+   "id": "iphone-17-pro-256gb-used",
+   "name": "iPhone 17 Pro",
+   "model": "17 Pro",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 1080,
+   "price_usd": 1090,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Silver",
+     "price_usd": 1130
+    },
+    {
+     "battery_pct": 99,
+     "color": "Orange",
+     "price_usd": 1120
+    },
+    {
+     "battery_pct": 88,
+     "color": "Blue",
+     "price_usd": 1090
+    }
+   ]
+  },
+  {
+   "id": "iphone-17-pro-max-256gb-used",
+   "name": "iPhone 17 Pro Max",
+   "model": "17 Pro Max",
+   "condition": "used",
+   "storage_gb": 256,
+   "from_price_usd": 1150,
+   "price_usd": 1160,
+   "units": [
+    {
+     "battery_pct": 100,
+     "color": "Naranja",
+     "price_usd": 1200
+    },
+    {
+     "battery_pct": 99,
+     "color": "Silver",
+     "price_usd": 1190
+    },
+    {
+     "battery_pct": 89,
+     "color": "Silver",
+     "price_usd": 1160
+    }
+   ]
+  },
+  {
+   "id": "iphone-17-256gb-new",
+   "name": "iPhone 17",
+   "model": "17",
+   "condition": "new",
+   "storage_gb": 256,
+   "from_price_usd": 1000,
+   "price_usd": 1000,
+   "units": []
+  },
+  {
+   "id": "iphone-17-pro-256gb-new",
+   "name": "iPhone 17 Pro",
+   "model": "17 Pro",
+   "condition": "new",
+   "storage_gb": 256,
+   "from_price_usd": 1200,
+   "price_usd": 1200,
+   "units": []
+  },
+  {
+   "id": "iphone-17-pro-max-256gb-new",
+   "name": "iPhone 17 Pro Max",
+   "model": "17 Pro Max",
+   "condition": "new",
+   "storage_gb": 256,
+   "from_price_usd": 1300,
+   "price_usd": 1300,
+   "units": []
+  },
+  {
+   "id": "iphone-18-pro-256gb-new",
+   "name": "iPhone 18 Pro",
+   "model": "18 Pro",
+   "condition": "new",
+   "storage_gb": 256,
+   "from_price_usd": 1399,
+   "price_usd": 1399,
+   "units": []
+  },
+  {
+   "id": "iphone-18-pro-max-256gb-new",
+   "name": "iPhone 18 Pro Max",
+   "model": "18 Pro Max",
+   "condition": "new",
+   "storage_gb": 256,
+   "from_price_usd": 1599,
+   "price_usd": 1599,
+   "units": []
+  },
+  {
+   "id": "iphone-18-pro-512gb-new",
+   "name": "iPhone 18 Pro",
+   "model": "18 Pro",
+   "condition": "new",
+   "storage_gb": 512,
+   "from_price_usd": 1550,
+   "price_usd": 1550,
+   "units": []
+  },
+  {
+   "id": "iphone-18-pro-max-512gb-new",
+   "name": "iPhone 18 Pro Max",
+   "model": "18 Pro Max",
+   "condition": "new",
+   "storage_gb": 512,
+   "from_price_usd": 1750,
+   "price_usd": 1750,
+   "units": []
+  }
+ ],
+ "accessories": [
+  {
+   "id": "base-cargador-20w-usa",
+   "name": "Base Cargador 20w USA",
+   "categories": [
+    "Cargadores"
+   ],
+   "price_ars": 12560,
+   "type": "Original",
+   "compatible_models": [],
+   "colors": [],
+   "description": "Fuente oficial de carga rápida (0-50% en 30 min). Máxima protección para la salud de la batería",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/base-cargador-20w-usa/"
+  },
+  {
+   "id": "battery-pack",
+   "name": "Battery Pack",
+   "categories": [
+    "Baterías"
+   ],
+   "price_ars": 23550,
+   "type": "Certificado",
+   "compatible_models": [],
+   "colors": [],
+   "description": "Batería externa magnética portátil. Ideal para extender la autonomía en viajes o jornadas largas.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/battery-pack/"
+  },
+  {
+   "id": "cargador-magsafe-inalambrico",
+   "name": "Cargador Magsafe inalámbrico",
+   "categories": [
+    "Cargadores"
+   ],
+   "price_ars": 17270,
+   "type": "Certificado",
+   "compatible_models": [],
+   "colors": [],
+   "description": "Cargador magnético de 15W. Alineación precisa para una carga eficiente sin cables.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/cargador-magsafe-inalambrico/"
+  },
+  {
+   "id": "funda-transparente-iphone",
+   "name": "Funda Transparente iPhone",
+   "categories": [
+    "Fundas",
+    "Ofertas"
+   ],
+   "price_ars": 7800,
+   "type": null,
+   "compatible_models": [
+    "iPhone 11",
+    "iPhone 11 Pro",
+    "iPhone 11 Pro Max",
+    "iPhone 12",
+    "iPhone 12 Pro",
+    "iPhone 12 Pro Max",
+    "iPhone 13",
+    "iPhone 13 Pro",
+    "iPhone 13 Pro Max",
+    "iPhone 14",
+    "iPhone 14 Pro",
+    "iPhone 14 Pro Max",
+    "iPhone 15",
+    "iPhone 15 Pro",
+    "iPhone 15 Pro Max",
+    "iPhone 16",
+    "iPhone 16 Pro",
+    "iPhone 16 Pro Max",
+    "iPhone 17",
+    "iPhone 17 Pro",
+    "iPhone 17 Pro Max"
+   ],
+   "colors": [],
+   "description": "Policarbonato rígido con tecnología anti-amarilleo para lucir el color original del iPhone.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/funda-transparente-iphone/"
+  },
+  {
+   "id": "funda-magsafe",
+   "name": "Funda Magsafe iPhone",
+   "categories": [
+    "Fundas",
+    "Ofertas"
+   ],
+   "price_ars": 6240,
+   "type": null,
+   "compatible_models": [
+    "iPhone 11",
+    "iPhone 11 Pro",
+    "iPhone 11 Pro Max",
+    "iPhone 12",
+    "iPhone 12 Pro",
+    "iPhone 12 Pro Max",
+    "iPhone 13",
+    "iPhone 13 Pro",
+    "iPhone 13 Pro Max",
+    "iPhone 14",
+    "iPhone 14 Pro",
+    "iPhone 14 Pro Max",
+    "iPhone 15",
+    "iPhone 15 Pro",
+    "iPhone 15 Pro Max",
+    "iPhone 16",
+    "iPhone 16 Pro",
+    "iPhone 16 Pro Max",
+    "iPhone 17",
+    "iPhone 17 Pro",
+    "iPhone 17 Pro Max"
+   ],
+   "colors": [],
+   "description": "Protección contra impactos con anillo magnético integrado para accesorios y carga inalámbrica.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/funda-magsafe/"
+  },
+  {
+   "id": "silicone-case",
+   "name": "Funda Silicone iPhone",
+   "categories": [
+    "Fundas",
+    "Ofertas"
+   ],
+   "price_ars": 7800,
+   "type": null,
+   "compatible_models": [
+    "iPhone 13",
+    "iPhone 13 Pro",
+    "iPhone 13 Pro Max",
+    "iPhone 14",
+    "iPhone 14 Pro",
+    "iPhone 14 Pro Max",
+    "iPhone 15",
+    "iPhone 15 Pro",
+    "iPhone 15 Pro Max",
+    "iPhone 16",
+    "iPhone 16 Pro",
+    "iPhone 16 Pro Max",
+    "iPhone 17",
+    "iPhone 17 Pro",
+    "iPhone 17 Pro Max"
+   ],
+   "colors": [
+    "Celeste",
+    "Naranja",
+    "Negro",
+    "Rojo",
+    "Rosa"
+   ],
+   "description": "Acabado soft-touch antideslizante con interior de microfibra.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/silicone-case/"
+  },
+  {
+   "id": "vidrio-templado-9d",
+   "name": "Vidrio Templado 9D iPhone",
+   "categories": [
+    "Protectores"
+   ],
+   "price_ars": 4710,
+   "type": null,
+   "compatible_models": [
+    "iPhone 13",
+    "iPhone 13 Pro",
+    "iPhone 13 Pro Max",
+    "iPhone 14",
+    "iPhone 14 Pro",
+    "iPhone 14 Pro Max",
+    "iPhone 15",
+    "iPhone 15 Pro",
+    "iPhone 15 Pro Max",
+    "iPhone 16",
+    "iPhone 16 Pro",
+    "iPhone 16 Pro Max",
+    "iPhone 17",
+    "iPhone 17 Pro",
+    "iPhone 17 Pro Max"
+   ],
+   "colors": [],
+   "description": "Vidrio de máxima dureza con cobertura total de borde a borde y tratamiento oleofóbico.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/vidrio-templado-9d/"
+  },
+  {
+   "id": "auriculares-pro-2-generacion",
+   "name": "Auriculares Pro 2 Generacion",
+   "categories": [
+    "Auriculares"
+   ],
+   "price_ars": 28260,
+   "type": null,
+   "compatible_models": [],
+   "colors": [],
+   "description": "Auriculares con cancelación activa de ruido, modo ambiente y audio espacial envolvente.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/auriculares-pro-2-generacion/"
+  },
+  {
+   "id": "tipo-c-a-lighting",
+   "name": "Cable tipo C a Lighting",
+   "categories": [],
+   "price_ars": 6280,
+   "type": "Certificado",
+   "compatible_models": [],
+   "colors": [],
+   "description": "Optimizado para carga rápida en modelos iPhone 8 hasta el 14.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/tipo-c-a-lighting/"
+  },
+  {
+   "id": "cable-tipo-c-a-c",
+   "name": "Cable Tipo C a C Blanco",
+   "categories": [
+    "Cables"
+   ],
+   "price_ars": 6280,
+   "type": "Certificado",
+   "compatible_models": [],
+   "colors": [],
+   "description": "Alta resistencia y velocidad de transferencia para series iPhone 15/16 y iPads.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/cable-tipo-c-a-c/"
+  },
+  {
+   "id": "base-20w-cargador-estilo-argentino",
+   "name": "Base Cargador 20w Argentino iPhone",
+   "categories": [
+    "Cargadores"
+   ],
+   "price_ars": 12560,
+   "type": "Certificado",
+   "compatible_models": [],
+   "colors": [],
+   "description": "Adaptado a fichas locales (IRAM). Carga rápida segura sin necesidad de adaptadores.",
+   "in_stock": true,
+   "url": "https://mobikiphones.com.ar/tienda/base-20w-cargador-estilo-argentino/"
+  }
+ ]
+}

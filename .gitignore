@@ -1,3 +1,5 @@
 node_modules/
 *.log
 .DS_Store
+# Client material with bank details; keep it out of the public repository
+docs/MobikInfo.docx
