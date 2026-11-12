@@ -1,0 +1,26 @@
+{
+  "name": "Mobik iPhones",
+  "address": "Independencia 205, Nueva Córdoba, Córdoba capital (a metros del Patio Olmos)",
+  "phone": "3515140518",
+  "email": "mobikarg@gmail.com",
+  "hours": [
+    { "day": "mon", "ranges": [{ "open": "09:30", "close": "14:00" }, { "open": "15:30", "close": "19:30" }] },
+    { "day": "tue", "ranges": [{ "open": "09:30", "close": "14:00" }, { "open": "15:30", "close": "19:30" }] },
+    { "day": "wed", "ranges": [{ "open": "09:30", "close": "14:00" }, { "open": "15:30", "close": "19:30" }] },
+    { "day": "thu", "ranges": [{ "open": "09:30", "close": "14:00" }, { "open": "15:30", "close": "19:30" }] },
+    { "day": "fri", "ranges": [{ "open": "09:30", "close": "14:00" }, { "open": "15:30", "close": "19:30" }] },
+    { "day": "sat", "ranges": [{ "open": "09:30", "close": "14:00" }, { "open": "15:30", "close": "19:30" }] },
+    { "day": "sun", "ranges": [] }
+  ],
+  "links": {
+    "web": "https://mobikiphones.com.ar/",
+    "lista_de_precios": "https://mobikiphones.com.ar/lista-de-precios/",
+    "tienda": "https://mobikiphones.com.ar/tienda/"
+  },
+  "notes": [
+    "El local se comparte con KAIPHONE, pero cada negocio maneja su propio stock, precios y ventas. Nunca informar productos o precios de KAIPHONE como si fueran de MOBIK.",
+    "Al llegar al local, el cliente tiene que indicar que viene de parte de MOBIK para que identifiquen su pedido.",
+    "Conviene confirmar disponibilidad y precio antes de acercarse al local.",
+    "MOBIK vende iPhones nuevos (sellados) y usados (seminuevos), accesorios y plan canje."
+  ]
+}
