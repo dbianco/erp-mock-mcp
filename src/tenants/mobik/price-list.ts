@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { normalise } from '../../text.js';
+import { fullSizeImage } from './gallery.js';
 
 /**
  * Reads the public price list of the store (`/lista-de-precios/`). The page ships its catalog and its trade-in
@@ -14,6 +15,8 @@ export const IphoneUnitSchema = z.object({
   battery_pct: z.number().int().min(1).max(100),
   color: z.string().min(1),
   price_usd: z.number().positive(),
+  /** An illustrative picture of the model in this color, when the store has one; filled in when the catalog is served. */
+  image_url: z.string().nullable(),
 });
 export type IphoneUnit = z.infer<typeof IphoneUnitSchema>;
 
@@ -29,6 +32,8 @@ export const IphoneSchema = z.object({
   price_usd: z.number().positive(),
   /** One entry per published used unit; empty for sealed phones, whose colors the page does not list. */
   units: z.array(IphoneUnitSchema),
+  /** The illustrative picture the price list shows for the model (no particular color), or null. */
+  image_url: z.string().nullable(),
 });
 export type Iphone = z.infer<typeof IphoneSchema>;
 
@@ -53,6 +58,7 @@ const RowSchema = z.tuple([
 ]);
 const DataSchema = z.array(RowSchema).min(1);
 const ValuesSchema = z.record(z.string(), z.number().positive());
+const PhotosSchema = z.record(z.string(), z.string());
 const ExamplesSchema = z.array(z.tuple([z.string(), z.string(), z.number()])).min(1);
 
 /** Returns the bracketed literal assigned to `const <name>=`, or undefined when the script has none. */
@@ -109,11 +115,11 @@ function storageGb(text: string): number {
 
 const SEALED = /\s*sellado\s*$/i;
 
-function toIphone([model, storage, from, variants]: z.infer<typeof RowSchema>): Iphone {
+function toIphone([model, storage, from, variants]: z.infer<typeof RowSchema>, photos: Record<string, string>): Iphone {
   const condition: IphoneCondition = SEALED.test(model) ? 'new' : 'used';
   const bare = model.replace(SEALED, '').trim();
   const gb = storageGb(storage);
-  const units = variants.map(([battery_pct, color, price_usd]) => ({ battery_pct, color, price_usd }));
+  const units = variants.map(([battery_pct, color, price_usd]) => ({ battery_pct, color, price_usd, image_url: null }));
   return {
     id: `iphone-${normalise(bare).replace(/\s+/g, '-')}-${gb >= 1024 ? `${gb / 1024}tb` : `${gb}gb`}-${condition}`,
     name: `iPhone ${bare}`,
@@ -123,6 +129,7 @@ function toIphone([model, storage, from, variants]: z.infer<typeof RowSchema>): 
     from_price_usd: from,
     price_usd: units.length === 0 ? from : Math.min(...units.map((u) => u.price_usd)),
     units,
+    image_url: photos[model] ?? null,
   };
 }
 
@@ -156,6 +163,22 @@ function readTradeIn(script: string): TradeIn | null {
   }
 }
 
+/** The page's picture per model, as full URLs; empty when the page has none or they are unreadable (pictures are optional). */
+function readPhotos(script: string): Record<string, string> {
+  const base = /const\s+base\s*=\s*'([^']+)'/.exec(script)?.[1];
+  const literal = literalOf(script, 'photos');
+  if (base === undefined || literal === undefined) {
+    return {};
+  }
+  try {
+    const files = PhotosSchema.parse(parseLiteral(literal));
+    const urls = Object.entries(files).map(([model, file]) => [model, fullSizeImage(base + file)] as const);
+    return Object.fromEntries(urls.filter((entry): entry is readonly [string, string] => entry[1] !== null));
+  } catch {
+    return {};
+  }
+}
+
 export function parsePriceList(html: string): PriceList {
   const scripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1] as string);
   const script = scripts.find((s) => s.includes('mobik-catalog') && /const\s+data\s*=/.test(s));
@@ -166,7 +189,7 @@ export function parsePriceList(html: string): PriceList {
   if (dataLiteral === undefined) {
     throw new Error('Price list script has no data literal');
   }
-  const iphones = DataSchema.parse(parseLiteral(dataLiteral)).map(toIphone);
+  const iphones = DataSchema.parse(parseLiteral(dataLiteral)).map((row) => toIphone(row, readPhotos(script)));
   if (new Set(iphones.map((p) => p.id)).size !== iphones.length) {
     throw new Error('Price list repeats a model, capacity and condition');
   }

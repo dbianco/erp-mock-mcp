@@ -92,20 +92,21 @@ business details (address, hours) are invented. The example WhatsApp template is
 **Mobik iPhones.** `search_products` — `query`, `kind` (`iphone`, `accessory`), and for iPhones `condition` (`new` =
 sealed, `used`), `storage_gb`, `color`, `min_battery_pct`; `min_price`/`max_price` need `kind` because iPhones are in USD
 and accessories in ARS; `limit` (1 to 20, default 5 of each). A used iPhone lists every published unit (color, battery
-health, USD price); a sealed one has a "from" price and no colors. `get_product` — by id, with the warranty that applies.
+health, USD price); a sealed one has a "from" price and no colors. Units and accessories carry an `image_url`. `get_product` — by id, with the warranty that applies.
 `list_categories` — iPhone models and accessory categories. `get_warranty` — 1 year from Apple on new, 30 days from
 Mobik on used. `get_trade_in_quote` — `have_model`, `want_model`: the estimated difference to pay in USD, never the value
 of the phone handed in. `get_payment_methods` — surcharges per method and card plan, with totals for `amount_usd`; it
 never produces pesos: pesos are taken at Banco Nación's selling rate at the time of the operation, which the server does not know. `get_reservation_info` — deposit, alias, validity.
 `get_faq` — the published answers on shipping, delivery times, exchanges and returns, narrowed by `query`.
 
-**Mobik data is read live, not invented.** Three public sources on https://mobikiphones.com.ar/, both read with a plain
+**Mobik data is read live, not invented.** Four public reads on https://mobikiphones.com.ar/, both read with a plain
 `GET` and no credentials:
 
 | What | Source | Why |
 |---|---|---|
 | iPhones (new and used) and the trade-in calculator | the `/lista-de-precios/` page, whose inline script holds the catalog | The only place with each used unit's battery, the new/used split and USD prices |
 | Accessories | the WooCommerce Store API, `/wp-json/wc/store/v1/products?category=accesorios` | Clean JSON with ARS prices, the iPhone models each one fits and colors |
+| Pictures of each iPhone color | the Store API again, `products?category=iphones` (kept for at least an hour) | The price list has one picture per model; the store has one per color. A unit gets its color's picture, or the model's when the store shows none |
 | Shipping, exchanges and other frequent questions | the `<details>` blocks of `/preguntas-frecuentes/` and `/politicas-de-envio/` | The store's own wording; its warranty and payment entries are dropped, because they contradict the owner's figures (30 days on sealed phones, debit cards and Mercado Pago) |
 
 The Store API also lists iPhones, but with placeholder prices (0, 1 and 50,000 pesos), a stock counter that starts at
@@ -117,6 +118,11 @@ from `data/mobik/snapshot.json` (refresh it with `npm run snapshot:mobik`). The 
 store marks those values as internal, so a quote needs a live read and is refused otherwise. The calculator is trusted
 only when our formula reproduces the worked examples the page itself ships. Warranty, payment methods, the reservation
 deposit and the business details are fixed data from the owner (`data/mobik/policies.json`, `data/mobik/business.json`).
+**Pictures.** Every `image_url` is the original upload on `mobikiphones.com.ar` (a `-400x488` style suffix is removed),
+`https`, PNG or JPEG. They are the store's catalog pictures, illustrative of a model and color, never a photo of the unit
+on sale; the tool answers say so. The Textra agent sends one with its built-in `attach_image`, which only accepts hosts
+listed in `WORKFLOWS_FLOW_IMAGE_HOSTS`, so that list must include `mobikiphones.com.ar`.
+
 The tests never touch the network: they use `src/tenants/mobik/fixtures/` (the real page script, with the trade-in
 values shifted by a constant, and the real API response trimmed to the fields that are read). The agent prompt is in
 `docs/mobik/agent-prompt.md`.

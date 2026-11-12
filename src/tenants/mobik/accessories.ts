@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { fullSizeImage } from './gallery.js';
 
 /** Reads accessories from the store's public WooCommerce Store API (`/wp-json/wc/store/v1/products`). */
 
@@ -15,6 +16,8 @@ export const AccessorySchema = z.object({
   description: z.string(),
   in_stock: z.boolean(),
   url: z.string(),
+  /** The store's first picture of the product, or null. */
+  image_url: z.string().nullable(),
 });
 export type Accessory = z.infer<typeof AccessorySchema>;
 
@@ -27,6 +30,7 @@ const StoreProductSchema = z.object({
   categories: z.array(z.object({ name: z.string(), slug: z.string() })),
   attributes: z.array(z.object({ name: z.string(), terms: z.array(z.object({ name: z.string() })) })),
   is_in_stock: z.boolean(),
+  images: z.array(z.object({ src: z.string() })).optional(),
 });
 const StoreResponseSchema = z.array(StoreProductSchema);
 
@@ -63,6 +67,7 @@ export function parseAccessories(payload: unknown): Accessory[] {
       description: plainText(product.short_description),
       in_stock: product.is_in_stock,
       url: product.permalink,
+      image_url: (product.images ?? []).map((image) => fullSizeImage(image.src)).find((url) => url !== null) ?? null,
     };
   });
   if (new Set(accessories.map((a) => a.id)).size !== accessories.length) {

@@ -4,6 +4,7 @@ import { dataFile, loadJson } from '../../data.js';
 import { type Accessory, AccessorySchema } from './accessories.js';
 import { DEFAULT_LIMIT, KINDS, didYouMean, findById, searchAccessories, searchIphones } from './catalog.js';
 import { FAQ_SOURCES, FaqEntrySchema, searchFaq } from './faq.js';
+import { type Gallery, pickColorImage } from './gallery.js';
 import { IPHONE_CONDITIONS, type Iphone, IphoneSchema, quoteTradeIn } from './price-list.js';
 import type { Sources } from './sources.js';
 
@@ -46,6 +47,17 @@ const PARTS_NOTE =
   'The price list does not say whether a phone has replaced parts or repairs. Never state that parts are original; it is confirmed when the phone is inspected.';
 const SEALED_NOTE = 'Sealed (new) phones: the price list gives a "from" price per capacity and does not list colors; confirm colors with the team.';
 
+const IMAGE_NOTE =
+  'Pictures are illustrative catalog pictures of the model and color, not photos of the unit on sale: say so when sending one. ' +
+  'Send a picture with the attach_image tool, passing the `image` URL exactly as given; never build or guess a picture URL.';
+
+/** Gives each unit the picture of its color when the gallery has one, falling back to the model's own picture. */
+const withPictures = (phone: Iphone, gallery: Gallery): Iphone => ({
+  ...phone,
+  units: phone.units.map((unit) => ({ ...unit, image_url: pickColorImage(gallery, phone.model, unit.color) ?? phone.image_url })),
+});
+const picture = (url: string | null): string => (url === null ? '' : ` | image ${url}`);
+
 const failure = (text: string) => ({ isError: true as const, content: [{ type: 'text' as const, text }] });
 const usd = (value: number): string => `USD ${new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(value)}`;
 const ars = (value: number | null): string => (value === null ? 'price on request' : `$${new Intl.NumberFormat('es-AR').format(value)} ARS`);
@@ -57,8 +69,8 @@ const freshness = (readAt: string, stale: boolean): string =>
 const iphoneLines = (p: Iphone): string[] => [
   `${p.id} | ${p.name} ${storage(p.storage_gb)} | ${p.condition} | from ${usd(p.price_usd)}`,
   ...(p.units.length === 0
-    ? ['  sealed, colors not listed']
-    : p.units.map((u) => `  - ${u.color}, battery ${u.battery_pct}%, ${usd(u.price_usd)}`)),
+    ? [`  sealed, colors not listed${picture(p.image_url)}`]
+    : p.units.map((u) => `  - ${u.color}, battery ${u.battery_pct}%, ${usd(u.price_usd)}${picture(u.image_url)}`)),
 ];
 const accessoryLine = (a: Accessory): string =>
   [
@@ -70,6 +82,7 @@ const accessoryLine = (a: Accessory): string =>
     ...(a.compatible_models.length === 0 ? [] : [`for ${a.compatible_models.join(', ')}`]),
     ...(a.colors.length === 0 ? [] : [`colors ${a.colors.join(', ')}`]),
     ...(a.in_stock ? [] : ['out of stock']),
+    ...(a.image_url === null ? [] : [`image ${a.image_url}`]),
   ].join(' | ');
 
 const meta = { read_at: z.string(), stale: z.boolean() };
@@ -87,7 +100,7 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
         'priced in USD and accessories in ARS pesos. A used iPhone lists each published unit with its color, battery health and USD price; ' +
         `a sealed one has only a "from" price. iPhones come cheapest first, then accessories cheapest first, ${DEFAULT_LIMIT} of each unless ` +
         '`limit` (1 to 20) is given. Never invent a model, color, battery percentage or price that is not in the answer, and never convert a ' +
-        `USD price to pesos. ${AVAILABILITY_NOTE} ${PARTS_NOTE}`,
+        `USD price to pesos. ${AVAILABILITY_NOTE} ${PARTS_NOTE} ${IMAGE_NOTE}`,
       inputSchema: {
         query: z.string().max(200).optional(),
         kind: z.enum(KINDS).optional(),
@@ -124,8 +137,8 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
         ...(min_price !== undefined && { minPrice: min_price }),
         ...(max_price !== undefined && { maxPrice: max_price }),
       };
-      const [priceList, accessories] = await Promise.all([sources.priceList(), sources.accessories()]);
-      const phones = kind === 'accessory' ? [] : searchIphones(priceList.value.iphones, search);
+      const [priceList, accessories, gallery] = await Promise.all([sources.priceList(), sources.accessories(), sources.gallery()]);
+      const phones = kind === 'accessory' ? [] : searchIphones(priceList.value.iphones, search).map((p) => withPictures(p, gallery.value));
       const extras = kind === 'iphone' || (kind === undefined && iphoneOnly) ? [] : searchAccessories(accessories.value, search);
       const max = limit ?? DEFAULT_LIMIT;
       const shownPhones = phones.slice(0, max);
@@ -137,6 +150,7 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
         ...shownExtras.map(accessoryLine),
         ...(shownPhones.some((p) => p.units.length === 0) ? [SEALED_NOTE] : []),
         ...(shownPhones.length > 0 ? [AVAILABILITY_NOTE] : []),
+        ...(shownPhones.length + shownExtras.length > 0 ? [IMAGE_NOTE] : []),
         `iPhones: ${freshness(priceList.read_at, priceList.stale)} Accessories: ${freshness(accessories.read_at, accessories.stale)}`,
       ].join('\n');
       return {
@@ -161,7 +175,7 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
       description:
         'Get one product by its id (from search_products). An iPhone answers with its condition, capacity, the warranty that applies and every ' +
         'published unit (color, battery health, USD price); an accessory with its ARS price, the iPhone models it fits, colors and description. ' +
-        `${AVAILABILITY_NOTE} ${PARTS_NOTE}`,
+        `${AVAILABILITY_NOTE} ${PARTS_NOTE} ${IMAGE_NOTE}`,
       inputSchema: { id: z.string().min(1).max(200) },
       outputSchema: {
         kind: z.enum(KINDS),
@@ -173,11 +187,12 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
       annotations: { readOnlyHint: true },
     },
     async ({ id }) => {
-      const [priceList, accessories] = await Promise.all([sources.priceList(), sources.accessories()]);
-      const phone = findById(priceList.value.iphones, id);
-      if (phone !== undefined) {
+      const [priceList, accessories, gallery] = await Promise.all([sources.priceList(), sources.accessories(), sources.gallery()]);
+      const listed = findById(priceList.value.iphones, id);
+      if (listed !== undefined) {
+        const phone = withPictures(listed, gallery.value);
         const warranty = policies.warranty[phone.condition].summary;
-        const text = [...iphoneLines(phone), `warranty: ${warranty}`, AVAILABILITY_NOTE, PARTS_NOTE, freshness(priceList.read_at, priceList.stale)];
+        const text = [...iphoneLines(phone), `warranty: ${warranty}`, AVAILABILITY_NOTE, PARTS_NOTE, IMAGE_NOTE, freshness(priceList.read_at, priceList.stale)];
         return {
           content: [{ type: 'text' as const, text: text.join('\n') }],
           structuredContent: { kind: 'iphone' as const, iphone: phone, accessory: null, warranty, read_at: priceList.read_at, stale: priceList.stale },
