@@ -1,0 +1,21 @@
+{
+  "name": "Low Battery",
+  "address": "Córdoba, Argentina (dirección de demostración)",
+  "phone": null,
+  "email": null,
+  "hours": [
+    { "day": "mon", "ranges": [{ "open": "09:00", "close": "13:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "tue", "ranges": [{ "open": "09:00", "close": "13:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "wed", "ranges": [{ "open": "09:00", "close": "13:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "thu", "ranges": [{ "open": "09:00", "close": "13:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "fri", "ranges": [{ "open": "09:00", "close": "13:00" }, { "open": "16:30", "close": "20:30" }] },
+    { "day": "sat", "ranges": [{ "open": "09:30", "close": "13:30" }] },
+    { "day": "sun", "ranges": [] }
+  ],
+  "links": {},
+  "notes": [
+    "Datos de demostración: la dirección, el horario y los datos de contacto son inventados; Low Battery es un comercio ficticio.",
+    "Los modelos y precios (en pesos y en dólares) son una captura de un comercio real de celulares liberados; no son precios de Low Battery ni están en vivo.",
+    "Un equipo sin precio se informa como 'precio a consultar'."
+  ]
+}

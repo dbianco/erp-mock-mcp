@@ -6,6 +6,7 @@
   "description": "Read-only Odoo-style product catalog exposed as an MCP server (Textra feature 025).",
   "engines": { "node": ">=22" },
   "scripts": {
+    "snapshot:low-battery": "tsx scripts/snapshot-low-battery.ts",
     "build:catalog": "tsx scripts/build-catalog.ts",
     "check:images": "tsx scripts/check-images.ts",
     "start": "tsx src/main.ts",
