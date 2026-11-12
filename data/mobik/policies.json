@@ -1,0 +1,41 @@
+{
+  "source": "Owner's WhatsApp messages and decisions (2026-11-12; the pesos rate is Banco Nación's selling rate, replacing the Info Dólar Córdoba reference of the original message) and https://mobikiphones.com.ar/lista-de-precios/",
+  "warranty": {
+    "new": { "duration": "1 año", "provider": "Apple", "summary": "Los iPhones nuevos (sellados) tienen 1 año de garantía oficial de Apple." },
+    "used": { "duration": "30 días", "provider": "Mobik", "summary": "Los iPhones usados (seminuevos) tienen 30 días de garantía de Mobik." },
+    "notes": [
+      "Mobik no publicó el detalle de qué cubre y qué excluye la garantía: no prometer coberturas; si el cliente lo pregunta, derivar a una persona del equipo.",
+      "Un reclamo de garantía siempre se deriva a una persona del equipo.",
+      "La lista de precios no informa piezas cambiadas ni reparaciones: 'sin cambios informados' no es 'piezas originales verificadas'; se confirma al revisar el equipo."
+    ]
+  },
+  "payment_methods": [
+    { "id": "usd_cash", "label": "USD billete", "adjustment_pct": 0, "needs_exchange_rate": false, "note": "Sin recargo." },
+    { "id": "usdt", "label": "USDT", "adjustment_pct": -2, "needs_exchange_rate": false, "note": "2% de descuento exclusivo." },
+    { "id": "usd_transfer", "label": "USD transferencia", "adjustment_pct": 3, "needs_exchange_rate": false, "note": "+3% de recargo." },
+    { "id": "ars_cash", "label": "Pesos en efectivo", "adjustment_pct": 0, "needs_exchange_rate": true, "note": "Sin recargo. Se toma el dólar venta del Banco Nación al momento de hacer la operación." },
+    { "id": "ars_transfer", "label": "Pesos por transferencia", "adjustment_pct": 2, "needs_exchange_rate": true, "note": "+2% de recargo, sobre el dólar venta del Banco Nación al momento de hacer la operación." }
+  ],
+  "card_plans": [
+    { "instalments": 1, "surcharge_pct": 10 },
+    { "instalments": 3, "surcharge_pct": 20 },
+    { "instalments": 6, "surcharge_pct": 40 },
+    { "instalments": 12, "surcharge_pct": 50 }
+  ],
+  "card_note": "Se aceptan tarjetas de crédito. Los porcentajes se aplican sobre el precio de contado.",
+  "exchange_rate_note": "Para pagar en pesos se toma el dólar venta del Banco Nación al momento de hacer la operación. Este servicio no conoce esa cotización: decirle eso al cliente y nunca calcular ni estimar un monto en pesos para un iPhone.",
+  "reservation": {
+    "deposit_ars": 20000,
+    "deposit_note": "La seña se descuenta del precio final del equipo.",
+    "wallet": "Ualá",
+    "alias": "mobikarg",
+    "validity_days": 7,
+    "validity_note": "La reserva vale 7 días corridos desde la confirmación del pago. Vencido el plazo, la reserva caduca y el equipo puede volver a la venta.",
+    "steps": [
+      "Confirmar con el cliente qué equipo quiere reservar y que siga publicado.",
+      "El cliente transfiere la seña y envía el comprobante por WhatsApp.",
+      "Una persona del equipo verifica el pago y confirma la reserva."
+    ],
+    "confirmation_note": "La reserva queda confirmada solo cuando una persona de Mobik verifica el pago. Nunca decir que un equipo está reservado o que la seña fue recibida porque el cliente dice que transfirió."
+  }
+}

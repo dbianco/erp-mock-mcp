@@ -8,7 +8,20 @@ if (!Number.isInteger(port) || port < 0 || port > 65535) {
 const imageBaseUrl = (process.env.IMAGE_BASE_URL ?? 'https://casagigli.com.ar/mcp/images').replace(/\/+$/, '');
 const authToken = process.env.MCP_AUTH_TOKEN;
 
-const tenants = createTenants({ imageBaseUrl });
+const mobikTtlSeconds = Number(process.env.MOBIK_CACHE_TTL_SECONDS ?? 60);
+if (!Number.isFinite(mobikTtlSeconds) || mobikTtlSeconds < 0) {
+  throw new Error(`MOBIK_CACHE_TTL_SECONDS must be a number of seconds, zero or more, got "${process.env.MOBIK_CACHE_TTL_SECONDS}"`);
+}
+const mobikHolder = process.env.MOBIK_RESERVATION_HOLDER;
+const mobikCbu = process.env.MOBIK_RESERVATION_CBU;
+
+const tenants = createTenants({
+  imageBaseUrl,
+  mobik: {
+    ttlSeconds: mobikTtlSeconds,
+    reservation: { ...(mobikHolder && { holder: mobikHolder }), ...(mobikCbu && { cbu: mobikCbu }) },
+  },
+});
 const server = createHttpServer({
   tenants,
   defaultTenant: DEFAULT_TENANT,

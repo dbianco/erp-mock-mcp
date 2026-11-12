@@ -1,0 +1,945 @@
+[
+ {
+  "id": 6058,
+  "name": "Base Cargador 20w USA",
+  "slug": "base-cargador-20w-usa",
+  "type": "simple",
+  "permalink": "https://mobikiphones.com.ar/tienda/base-cargador-20w-usa/",
+  "short_description": "<p>Fuente oficial de carga rápida (0-50% en 30 min). Máxima protección para la salud de la batería</p>",
+  "description": "<p>El estándar de carga rápida oficial. Permite cargar el iPhone de 0% a 50% en solo 30 minutos. Ideal para proteger la salud de la batería a largo plazo.</p>",
+  "prices": {
+   "price": "12560",
+   "regular_price": "12560",
+   "sale_price": "12560",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 141,
+    "name": "Cargadores",
+    "slug": "cargadores",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/cargadores/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 0,
+    "name": "Tipo",
+    "taxonomy": null,
+    "has_variations": false,
+    "terms": [
+     {
+      "id": 0,
+      "name": "Original",
+      "slug": "Original"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6057,
+  "name": "Battery Pack",
+  "slug": "battery-pack",
+  "type": "simple",
+  "permalink": "https://mobikiphones.com.ar/tienda/battery-pack/",
+  "short_description": "<p>Batería externa magnética portátil. Ideal para extender la autonomía en viajes o jornadas largas.</p>",
+  "description": "<p>Batería externa magnética ideal para viajes o días de uso intensivo, proporcionando un extra de energía sin necesidad de enchufes.</p>",
+  "prices": {
+   "price": "23550",
+   "regular_price": "23550",
+   "sale_price": "23550",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 145,
+    "name": "Baterías",
+    "slug": "baterias",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/baterias/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 0,
+    "name": "Tipo",
+    "taxonomy": null,
+    "has_variations": false,
+    "terms": [
+     {
+      "id": 0,
+      "name": "Certificado",
+      "slug": "Certificado"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6056,
+  "name": "Cargador Magsafe inalámbrico",
+  "slug": "cargador-magsafe-inalambrico",
+  "type": "simple",
+  "permalink": "https://mobikiphones.com.ar/tienda/cargador-magsafe-inalambrico/",
+  "short_description": "<p>Cargador magnético de 15W. Alineación precisa para una carga eficiente sin cables.</p>",
+  "description": "<p>Cargador magnético que se alinea perfectamente con la parte trasera del iPhone (desde el 12 en adelante) para una carga cómoda y sin cables.</p>",
+  "prices": {
+   "price": "17270",
+   "regular_price": "17270",
+   "sale_price": "17270",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 141,
+    "name": "Cargadores",
+    "slug": "cargadores",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/cargadores/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 0,
+    "name": "Tipo",
+    "taxonomy": null,
+    "has_variations": false,
+    "terms": [
+     {
+      "id": 0,
+      "name": "Certificado",
+      "slug": "Certificado"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6055,
+  "name": "Funda Transparente iPhone",
+  "slug": "funda-transparente-iphone",
+  "type": "variable",
+  "permalink": "https://mobikiphones.com.ar/tienda/funda-transparente-iphone/",
+  "short_description": "<p>Policarbonato rígido con tecnología anti-amarilleo para lucir el color original del iPhone.</p>",
+  "description": "<p>Funda de policarbonato de alta resistencia con tratamiento anti-amarilleo para lucir el diseño original.</p>",
+  "prices": {
+   "price": "7800",
+   "regular_price": "7800",
+   "sale_price": "7800",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 140,
+    "name": "Fundas",
+    "slug": "fundas",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/fundas/"
+   },
+   {
+    "id": 70,
+    "name": "Ofertas",
+    "slug": "ofertas",
+    "link": "https://mobikiphones.com.ar/product-category/ofertas/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 1,
+    "name": "Modelo de iPhone",
+    "taxonomy": "pa_modelo",
+    "has_variations": true,
+    "terms": [
+     {
+      "id": 31,
+      "name": "iPhone 11",
+      "slug": "iphone-11"
+     },
+     {
+      "id": 38,
+      "name": "iPhone 11 Pro",
+      "slug": "iphone-11-pro"
+     },
+     {
+      "id": 61,
+      "name": "iPhone 11 Pro Max",
+      "slug": "iphone-11-pro-max"
+     },
+     {
+      "id": 32,
+      "name": "iPhone 12",
+      "slug": "iphone-12"
+     },
+     {
+      "id": 39,
+      "name": "iPhone 12 Pro",
+      "slug": "iphone-12-pro"
+     },
+     {
+      "id": 62,
+      "name": "iPhone 12 Pro Max",
+      "slug": "iphone-12-pro-max"
+     },
+     {
+      "id": 33,
+      "name": "iPhone 13",
+      "slug": "iphone-13"
+     },
+     {
+      "id": 40,
+      "name": "iPhone 13 Pro",
+      "slug": "iphone-13-pro"
+     },
+     {
+      "id": 63,
+      "name": "iPhone 13 Pro Max",
+      "slug": "iphone-13-pro-max"
+     },
+     {
+      "id": 34,
+      "name": "iPhone 14",
+      "slug": "iphone-14"
+     },
+     {
+      "id": 41,
+      "name": "iPhone 14 Pro",
+      "slug": "iphone-14-pro"
+     },
+     {
+      "id": 64,
+      "name": "iPhone 14 Pro Max",
+      "slug": "iphone-14-pro-max"
+     },
+     {
+      "id": 35,
+      "name": "iPhone 15",
+      "slug": "iphone-15"
+     },
+     {
+      "id": 42,
+      "name": "iPhone 15 Pro",
+      "slug": "iphone-15-pro"
+     },
+     {
+      "id": 65,
+      "name": "iPhone 15 Pro Max",
+      "slug": "iphone-15-pro-max"
+     },
+     {
+      "id": 36,
+      "name": "iPhone 16",
+      "slug": "iphone-16"
+     },
+     {
+      "id": 43,
+      "name": "iPhone 16 Pro",
+      "slug": "iphone-16-pro"
+     },
+     {
+      "id": 66,
+      "name": "iPhone 16 Pro Max",
+      "slug": "iphone-16-pro-max"
+     },
+     {
+      "id": 37,
+      "name": "iPhone 17",
+      "slug": "iphone-17"
+     },
+     {
+      "id": 44,
+      "name": "iPhone 17 Pro",
+      "slug": "iphone-17-pro"
+     },
+     {
+      "id": 67,
+      "name": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6054,
+  "name": "Funda Magsafe iPhone",
+  "slug": "funda-magsafe",
+  "type": "variable",
+  "permalink": "https://mobikiphones.com.ar/tienda/funda-magsafe/",
+  "short_description": "<p>Protección contra impactos con anillo magnético integrado para accesorios y carga inalámbrica.</p>",
+  "description": "<p>Funda diseñada para absorber impactos. Las versiones Magsafe permiten que los accesorios magnéticos se adhieran con fuerza a pesar de la funda.</p>",
+  "prices": {
+   "price": "6240",
+   "regular_price": "7850",
+   "sale_price": "6240",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 140,
+    "name": "Fundas",
+    "slug": "fundas",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/fundas/"
+   },
+   {
+    "id": 70,
+    "name": "Ofertas",
+    "slug": "ofertas",
+    "link": "https://mobikiphones.com.ar/product-category/ofertas/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 1,
+    "name": "Modelo de iPhone",
+    "taxonomy": "pa_modelo",
+    "has_variations": true,
+    "terms": [
+     {
+      "id": 31,
+      "name": "iPhone 11",
+      "slug": "iphone-11"
+     },
+     {
+      "id": 38,
+      "name": "iPhone 11 Pro",
+      "slug": "iphone-11-pro"
+     },
+     {
+      "id": 61,
+      "name": "iPhone 11 Pro Max",
+      "slug": "iphone-11-pro-max"
+     },
+     {
+      "id": 32,
+      "name": "iPhone 12",
+      "slug": "iphone-12"
+     },
+     {
+      "id": 39,
+      "name": "iPhone 12 Pro",
+      "slug": "iphone-12-pro"
+     },
+     {
+      "id": 62,
+      "name": "iPhone 12 Pro Max",
+      "slug": "iphone-12-pro-max"
+     },
+     {
+      "id": 33,
+      "name": "iPhone 13",
+      "slug": "iphone-13"
+     },
+     {
+      "id": 40,
+      "name": "iPhone 13 Pro",
+      "slug": "iphone-13-pro"
+     },
+     {
+      "id": 63,
+      "name": "iPhone 13 Pro Max",
+      "slug": "iphone-13-pro-max"
+     },
+     {
+      "id": 34,
+      "name": "iPhone 14",
+      "slug": "iphone-14"
+     },
+     {
+      "id": 41,
+      "name": "iPhone 14 Pro",
+      "slug": "iphone-14-pro"
+     },
+     {
+      "id": 64,
+      "name": "iPhone 14 Pro Max",
+      "slug": "iphone-14-pro-max"
+     },
+     {
+      "id": 35,
+      "name": "iPhone 15",
+      "slug": "iphone-15"
+     },
+     {
+      "id": 42,
+      "name": "iPhone 15 Pro",
+      "slug": "iphone-15-pro"
+     },
+     {
+      "id": 65,
+      "name": "iPhone 15 Pro Max",
+      "slug": "iphone-15-pro-max"
+     },
+     {
+      "id": 36,
+      "name": "iPhone 16",
+      "slug": "iphone-16"
+     },
+     {
+      "id": 43,
+      "name": "iPhone 16 Pro",
+      "slug": "iphone-16-pro"
+     },
+     {
+      "id": 66,
+      "name": "iPhone 16 Pro Max",
+      "slug": "iphone-16-pro-max"
+     },
+     {
+      "id": 37,
+      "name": "iPhone 17",
+      "slug": "iphone-17"
+     },
+     {
+      "id": 44,
+      "name": "iPhone 17 Pro",
+      "slug": "iphone-17-pro"
+     },
+     {
+      "id": 67,
+      "name": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6053,
+  "name": "Funda Silicone iPhone",
+  "slug": "silicone-case",
+  "type": "variable",
+  "permalink": "https://mobikiphones.com.ar/tienda/silicone-case/",
+  "short_description": "<p>Acabado soft-touch antideslizante con interior de microfibra.</p>",
+  "description": "<p>Funda de silicona con acabado soft-touch antideslizante con interior de microfibra.</p>",
+  "prices": {
+   "price": "7800",
+   "regular_price": "7800",
+   "sale_price": "7800",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 140,
+    "name": "Fundas",
+    "slug": "fundas",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/fundas/"
+   },
+   {
+    "id": 70,
+    "name": "Ofertas",
+    "slug": "ofertas",
+    "link": "https://mobikiphones.com.ar/product-category/ofertas/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 1,
+    "name": "Modelo de iPhone",
+    "taxonomy": "pa_modelo",
+    "has_variations": true,
+    "terms": [
+     {
+      "id": 33,
+      "name": "iPhone 13",
+      "slug": "iphone-13"
+     },
+     {
+      "id": 40,
+      "name": "iPhone 13 Pro",
+      "slug": "iphone-13-pro"
+     },
+     {
+      "id": 63,
+      "name": "iPhone 13 Pro Max",
+      "slug": "iphone-13-pro-max"
+     },
+     {
+      "id": 34,
+      "name": "iPhone 14",
+      "slug": "iphone-14"
+     },
+     {
+      "id": 41,
+      "name": "iPhone 14 Pro",
+      "slug": "iphone-14-pro"
+     },
+     {
+      "id": 64,
+      "name": "iPhone 14 Pro Max",
+      "slug": "iphone-14-pro-max"
+     },
+     {
+      "id": 35,
+      "name": "iPhone 15",
+      "slug": "iphone-15"
+     },
+     {
+      "id": 42,
+      "name": "iPhone 15 Pro",
+      "slug": "iphone-15-pro"
+     },
+     {
+      "id": 65,
+      "name": "iPhone 15 Pro Max",
+      "slug": "iphone-15-pro-max"
+     },
+     {
+      "id": 36,
+      "name": "iPhone 16",
+      "slug": "iphone-16"
+     },
+     {
+      "id": 43,
+      "name": "iPhone 16 Pro",
+      "slug": "iphone-16-pro"
+     },
+     {
+      "id": 66,
+      "name": "iPhone 16 Pro Max",
+      "slug": "iphone-16-pro-max"
+     },
+     {
+      "id": 37,
+      "name": "iPhone 17",
+      "slug": "iphone-17"
+     },
+     {
+      "id": 44,
+      "name": "iPhone 17 Pro",
+      "slug": "iphone-17-pro"
+     },
+     {
+      "id": 67,
+      "name": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max"
+     }
+    ]
+   },
+   {
+    "id": 3,
+    "name": "Color",
+    "taxonomy": "pa_color",
+    "has_variations": true,
+    "terms": [
+     {
+      "id": 59,
+      "name": "Celeste",
+      "slug": "celeste"
+     },
+     {
+      "id": 53,
+      "name": "Naranja",
+      "slug": "naranja"
+     },
+     {
+      "id": 48,
+      "name": "Negro",
+      "slug": "negro"
+     },
+     {
+      "id": 50,
+      "name": "Rojo",
+      "slug": "rojo"
+     },
+     {
+      "id": 54,
+      "name": "Rosa",
+      "slug": "rosa"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6052,
+  "name": "Vidrio Templado 9D iPhone",
+  "slug": "vidrio-templado-9d",
+  "type": "variable",
+  "permalink": "https://mobikiphones.com.ar/tienda/vidrio-templado-9d/",
+  "short_description": "<p>Vidrio de máxima dureza con cobertura total de borde a borde y tratamiento oleofóbico.</p>",
+  "description": "<p>Protección de pantalla de máxima dureza. Cubre de borde a borde con una transparencia total y alta sensibilidad táctil.</p>",
+  "prices": {
+   "price": "4710",
+   "regular_price": "4710",
+   "sale_price": "4710",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 143,
+    "name": "Protectores",
+    "slug": "protectores",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/protectores/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 1,
+    "name": "Modelo de iPhone",
+    "taxonomy": "pa_modelo",
+    "has_variations": true,
+    "terms": [
+     {
+      "id": 33,
+      "name": "iPhone 13",
+      "slug": "iphone-13"
+     },
+     {
+      "id": 40,
+      "name": "iPhone 13 Pro",
+      "slug": "iphone-13-pro"
+     },
+     {
+      "id": 63,
+      "name": "iPhone 13 Pro Max",
+      "slug": "iphone-13-pro-max"
+     },
+     {
+      "id": 34,
+      "name": "iPhone 14",
+      "slug": "iphone-14"
+     },
+     {
+      "id": 41,
+      "name": "iPhone 14 Pro",
+      "slug": "iphone-14-pro"
+     },
+     {
+      "id": 64,
+      "name": "iPhone 14 Pro Max",
+      "slug": "iphone-14-pro-max"
+     },
+     {
+      "id": 35,
+      "name": "iPhone 15",
+      "slug": "iphone-15"
+     },
+     {
+      "id": 42,
+      "name": "iPhone 15 Pro",
+      "slug": "iphone-15-pro"
+     },
+     {
+      "id": 65,
+      "name": "iPhone 15 Pro Max",
+      "slug": "iphone-15-pro-max"
+     },
+     {
+      "id": 36,
+      "name": "iPhone 16",
+      "slug": "iphone-16"
+     },
+     {
+      "id": 43,
+      "name": "iPhone 16 Pro",
+      "slug": "iphone-16-pro"
+     },
+     {
+      "id": 66,
+      "name": "iPhone 16 Pro Max",
+      "slug": "iphone-16-pro-max"
+     },
+     {
+      "id": 37,
+      "name": "iPhone 17",
+      "slug": "iphone-17"
+     },
+     {
+      "id": 44,
+      "name": "iPhone 17 Pro",
+      "slug": "iphone-17-pro"
+     },
+     {
+      "id": 67,
+      "name": "iPhone 17 Pro Max",
+      "slug": "iphone-17-pro-max"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6051,
+  "name": "Auriculares Pro 2 Generacion",
+  "slug": "auriculares-pro-2-generacion",
+  "type": "simple",
+  "permalink": "https://mobikiphones.com.ar/tienda/auriculares-pro-2-generacion/",
+  "short_description": "<p>Auriculares con cancelación activa de ruido, modo ambiente y audio espacial envolvente.</p>",
+  "description": "<p>Auriculares con cancelación activa de ruido, modo ambiente y audio espacial. Incluyen estuche de carga con parlante integrado para localización.</p>",
+  "prices": {
+   "price": "28260",
+   "regular_price": "28260",
+   "sale_price": "28260",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 144,
+    "name": "Auriculares",
+    "slug": "auriculares",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/auriculares/"
+   }
+  ],
+  "attributes": [],
+  "is_in_stock": true
+ },
+ {
+  "id": 6050,
+  "name": "Cable tipo C a Lighting",
+  "slug": "tipo-c-a-lighting",
+  "type": "simple",
+  "permalink": "https://mobikiphones.com.ar/tienda/tipo-c-a-lighting/",
+  "short_description": "<p>Optimizado para carga rápida en modelos iPhone 8 hasta el 14.</p>",
+  "description": "<p>Conector especializado para carga rápida en modelos iPhone 8 hasta el 14. Permite la conexión directa a transformadores USB-C modernos.</p>",
+  "prices": {
+   "price": "6280",
+   "regular_price": "6280",
+   "sale_price": "6280",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 0,
+    "name": "Tipo",
+    "taxonomy": null,
+    "has_variations": false,
+    "terms": [
+     {
+      "id": 0,
+      "name": "Certificado",
+      "slug": "Certificado"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6049,
+  "name": "Cable Tipo C a C Blanco",
+  "slug": "cable-tipo-c-a-c",
+  "type": "simple",
+  "permalink": "https://mobikiphones.com.ar/tienda/cable-tipo-c-a-c/",
+  "short_description": "<p>Alta resistencia y velocidad de transferencia para series iPhone 15/16 y iPads.</p>",
+  "description": "<p>Cable de alta resistencia para la nueva generación de iPhone (15 y 16) y iPads. Soporta protocolos de carga rápida y transferencia de datos de alta velocidad.</p>",
+  "prices": {
+   "price": "6280",
+   "regular_price": "6280",
+   "sale_price": "6280",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 142,
+    "name": "Cables",
+    "slug": "cables",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/cables/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 0,
+    "name": "Tipo",
+    "taxonomy": null,
+    "has_variations": false,
+    "terms": [
+     {
+      "id": 0,
+      "name": "Certificado",
+      "slug": "Certificado"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ },
+ {
+  "id": 6048,
+  "name": "Base Cargador 20w Argentino iPhone",
+  "slug": "base-20w-cargador-estilo-argentino",
+  "type": "simple",
+  "permalink": "https://mobikiphones.com.ar/tienda/base-20w-cargador-estilo-argentino/",
+  "short_description": "<p>Adaptado a fichas locales (IRAM). Carga rápida segura sin necesidad de adaptadores.</p>",
+  "description": "<p>Fuente de carga rápida con ficha adaptada a las normas locales, ofreciendo una alternativa eficiente y económica.</p>",
+  "prices": {
+   "price": "12560",
+   "regular_price": "12560",
+   "sale_price": "12560",
+   "price_range": null,
+   "currency_code": "ARS",
+   "currency_symbol": "$",
+   "currency_minor_unit": 0,
+   "currency_decimal_separator": ".",
+   "currency_thousand_separator": ".",
+   "currency_prefix": "$",
+   "currency_suffix": ""
+  },
+  "categories": [
+   {
+    "id": 26,
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/"
+   },
+   {
+    "id": 141,
+    "name": "Cargadores",
+    "slug": "cargadores",
+    "link": "https://mobikiphones.com.ar/product-category/accesorios/cargadores/"
+   }
+  ],
+  "attributes": [
+   {
+    "id": 0,
+    "name": "Tipo",
+    "taxonomy": null,
+    "has_variations": false,
+    "terms": [
+     {
+      "id": 0,
+      "name": "Certificado",
+      "slug": "Certificado"
+     }
+    ]
+   }
+  ],
+  "is_in_stock": true
+ }
+]

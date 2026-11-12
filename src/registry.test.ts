@@ -28,12 +28,13 @@ async function toolNames(url: string, path: string): Promise<string[]> {
 }
 
 describe('tenant registry', () => {
-  test('registers exactly apross, casa-gigli, guemes, low-battery and ohmc', () => {
+  test('registers exactly apross, casa-gigli, guemes, low-battery, mobik and ohmc', () => {
     expect([...createTenants({ imageBaseUrl: 'https://img.example/m' }).keys()].sort()).toEqual([
       'apross',
       'casa-gigli',
       'guemes',
       'low-battery',
+      'mobik',
       'ohmc',
     ]);
   });
@@ -45,6 +46,7 @@ describe('tenant registry', () => {
     const ohmc = await toolNames(url, '/ohmc/mcp');
     const apross = await toolNames(url, '/apross/mcp');
     const lowBattery = await toolNames(url, '/low-battery/mcp');
+    const mobik = await toolNames(url, '/mobik/mcp');
     expect(casaGigli).toEqual(['get_business_info', 'get_product', 'get_tips_and_offers', 'list_categories', 'search_products']);
     expect(guemes).toEqual([
       'get_business_info',
@@ -74,6 +76,18 @@ describe('tenant registry', () => {
     ]);
     expect(lowBattery).toEqual(['compare_products', 'get_business_info', 'get_product', 'list_categories', 'search_products']);
     expect(lowBattery).not.toContain('list_services');
+    expect(mobik).toEqual([
+      'get_business_info',
+      'get_faq',
+      'get_payment_methods',
+      'get_product',
+      'get_reservation_info',
+      'get_trade_in_quote',
+      'get_warranty',
+      'list_categories',
+      'search_products',
+    ]);
+    expect(lowBattery).not.toContain('get_trade_in_quote');
     expect(apross).not.toContain('search_products');
     expect(ohmc).not.toContain('search_products');
     expect(guemes).not.toContain('get_forecast');

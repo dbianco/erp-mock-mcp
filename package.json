@@ -7,6 +7,7 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "snapshot:low-battery": "tsx scripts/snapshot-low-battery.ts",
+    "snapshot:mobik": "tsx scripts/snapshot-mobik.ts",
     "build:catalog": "tsx scripts/build-catalog.ts",
     "check:images": "tsx scripts/check-images.ts",
     "start": "tsx src/main.ts",
