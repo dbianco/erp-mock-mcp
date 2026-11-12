@@ -7,13 +7,16 @@ import { createCachedSource } from './cache.js';
 import { type MobikOptions, createMobikTenant } from './index.js';
 import { parsePriceList, quoteTradeIn, tradeInDifference } from './price-list.js';
 import { parseFaqPage, searchFaq } from './faq.js';
-import { ACCESSORIES_URL, FAQ_URL, type Fetcher, PRICE_LIST_URL, SHIPPING_POLICY_URL, loadSnapshot } from './sources.js';
+import { fullSizeImage, parseGallery, pickColorImage } from './gallery.js';
+import { ACCESSORIES_URL, FAQ_URL, type Fetcher, GALLERY_URL, PRICE_LIST_URL, SHIPPING_POLICY_URL, loadSnapshot } from './sources.js';
 
 const fixture = (name: string): string => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
 const PAGE = fixture('price-list.html');
 const STORE = fixture('accessories.json');
 const FAQ = fixture('faq.html');
 const SHIPPING = fixture('shipping-policy.html');
+const GALLERY = fixture('iphone-gallery.json');
+const UPLOADS = 'https://mobikiphones.com.ar/wp-content/uploads';
 
 interface ToolResult {
   isError?: boolean;
@@ -29,7 +32,7 @@ function fakeStore() {
     if (state.down) {
       return new Response('unavailable', { status: 503 });
     }
-    const body = url === PRICE_LIST_URL ? state.page : url === FAQ_URL ? state.faq : url === SHIPPING_POLICY_URL ? SHIPPING : STORE;
+    const body = url === PRICE_LIST_URL ? state.page : url === FAQ_URL ? state.faq : url === SHIPPING_POLICY_URL ? SHIPPING : url === GALLERY_URL ? GALLERY : STORE;
     return new Response(body, { status: 200 });
   };
   return { state, fetcher };
@@ -53,11 +56,13 @@ describe('Mobik price list parser', () => {
     const used15Pro = list.iphones.find((p) => p.id === 'iphone-15-pro-128gb-used');
     expect(used15Pro).toMatchObject({ name: 'iPhone 15 Pro', condition: 'used', storage_gb: 128, from_price_usd: 540, price_usd: 555 });
     expect(used15Pro?.units).toEqual([
-      { battery_pct: 100, color: 'Negro', price_usd: 580 },
-      { battery_pct: 98, color: 'Blanco', price_usd: 575 },
-      { battery_pct: 87, color: 'Gris', price_usd: 560 },
-      { battery_pct: 84, color: 'Negro', price_usd: 555 },
+      { battery_pct: 100, color: 'Negro', price_usd: 580, image_url: null },
+      { battery_pct: 98, color: 'Blanco', price_usd: 575, image_url: null },
+      { battery_pct: 87, color: 'Gris', price_usd: 560, image_url: null },
+      { battery_pct: 84, color: 'Negro', price_usd: 555, image_url: null },
     ]);
+    expect(used15Pro?.image_url).toBe(`${UPLOADS}/2026/11/15-pro-y-15-pro-max.jpeg`);
+    expect(list.iphones.every((p) => p.image_url !== null)).toBe(true);
     const sealed = list.iphones.filter((p) => p.condition === 'new');
     expect(sealed.length).toBe(7);
     expect(sealed.every((p) => p.units.length === 0 && p.price_usd === p.from_price_usd)).toBe(true);
@@ -112,7 +117,12 @@ describe('Mobik accessories parser', () => {
       in_stock: true,
     });
     expect(accessories.find((a) => a.id === 'silicone-case')?.compatible_models).toContain('iPhone 15 Pro');
-    expect(accessories.find((a) => a.id === 'base-cargador-20w-usa')).toMatchObject({ type: 'Original', price_ars: 12560 });
+    expect(accessories.find((a) => a.id === 'base-cargador-20w-usa')).toMatchObject({
+      type: 'Original',
+      price_ars: 12560,
+      image_url: `${UPLOADS}/2026/03/base-cargador-usa-20w.png`,
+    });
+    expect(accessories.every((a) => a.image_url !== null)).toBe(true);
   });
 
   test('a placeholder price becomes "price on request" and another currency is refused', () => {
@@ -121,6 +131,34 @@ describe('Mobik accessories parser', () => {
     expect(parseAccessories(placeholder)[0]?.price_ars).toBeNull();
     const dollars = raw.map((p, i) => (i === 0 ? { ...p, prices: { ...p.prices, currency_code: 'USD' } } : p));
     expect(() => parseAccessories(dollars)).toThrow(/expected ARS/);
+  });
+});
+
+describe('Mobik pictures', () => {
+  const gallery = parseGallery(JSON.parse(GALLERY));
+
+  test('a resized rendition becomes the original upload; anything unusable becomes null', () => {
+    expect(fullSizeImage(`${UPLOADS}/2026/04/iphone-17-pro-max-naranja-400x488.png`)).toBe(`${UPLOADS}/2026/04/iphone-17-pro-max-naranja.png`);
+    expect(fullSizeImage(`${UPLOADS}/2026/04/iphone-17-pro-max-naranja.png`)).toBe(`${UPLOADS}/2026/04/iphone-17-pro-max-naranja.png`);
+    expect(fullSizeImage(`${UPLOADS}/2026/03/IMG_6718-scaled.jpeg`)).toBe(`${UPLOADS}/2026/03/IMG_6718-scaled.jpeg`);
+    expect(fullSizeImage(`${UPLOADS}/2026/03/funda.webp`)).toBeNull();
+    expect(fullSizeImage('http://mobikiphones.com.ar/wp-content/uploads/a.png')).toBeNull();
+    expect(fullSizeImage('https://cdn.example/wp-content/uploads/a.png')).toBeNull();
+    expect(fullSizeImage('not a url')).toBeNull();
+  });
+
+  test('picks a picture of the model in the color, translating the price list color names', () => {
+    expect(pickColorImage(gallery, '17 Pro Max', 'Naranja')).toBe(`${UPLOADS}/2026/04/iphone-17-pro-max-naranja.png`);
+    expect(pickColorImage(gallery, '17 Pro Max', 'Orange')).toBe(pickColorImage(gallery, '17 Pro Max', 'Naranja'));
+    expect(pickColorImage(gallery, '14 Pro', 'Purple')).not.toBeNull();
+    expect(pickColorImage(gallery, '14 Pro', 'Purple')).not.toBe(pickColorImage(gallery, '14 Pro', 'Negro'));
+    expect(pickColorImage(gallery, '15 Pro', 'Negro')).not.toBe(pickColorImage(gallery, '15 Pro Max', 'Negro'));
+  });
+
+  test('no picture for a model or a color the store does not show', () => {
+    expect(pickColorImage(gallery, '16 Pro', 'Negro')).toBeNull();
+    expect(pickColorImage(gallery, '15 Pro', 'Fucsia')).toBeNull();
+    expect(pickColorImage({}, '15 Pro', 'Negro')).toBeNull();
   });
 });
 
@@ -348,12 +386,14 @@ describe('Mobik tenant', () => {
     await call(await open(), 'search_products', { query: '15' });
     await call(await open(), 'get_product', { id: 'battery-pack' });
     await call(await open(), 'list_categories');
-    expect(store.state.hits.sort()).toEqual([PRICE_LIST_URL, ACCESSORIES_URL].sort());
+    expect(store.state.hits.sort()).toEqual([PRICE_LIST_URL, ACCESSORIES_URL, GALLERY_URL].sort());
     clock += 60_000;
     store.state.page = PAGE.replace("[84,'Negro',555]", "[84,'Negro',545]");
     const fresh = await call(await open(), 'get_product', { id: 'iphone-15-pro-128gb-used' });
     expect(fresh.structuredContent?.iphone.price_usd).toBe(545);
-    expect(store.state.hits.length).toBe(4);
+    // The price list and the accessories were read again; the picture gallery is kept for an hour.
+    expect(store.state.hits.length).toBe(5);
+    expect(store.state.hits.filter((url) => url === GALLERY_URL).length).toBe(1);
   });
 
   test('a sold unit disappears from the answers after the next read; a broken page keeps the last good list', async () => {
@@ -364,12 +404,39 @@ describe('Mobik tenant', () => {
     expect((await units())?.iphone.units.length).toBe(2);
     clock += 60_000;
     store.state.page = PAGE.replace("[[100,'Negro',630],[88,'Blanco',600]]", "[[88,'Blanco',600]]");
-    expect((await units())?.iphone.units).toEqual([{ battery_pct: 88, color: 'Blanco', price_usd: 600 }]);
+    expect((await units())?.iphone.units).toMatchObject([{ battery_pct: 88, color: 'Blanco', price_usd: 600 }]);
     clock += 60_000;
     store.state.page = '<html><body>Error establishing a database connection</body></html>';
     const kept = await units();
     expect(kept?.iphone.units.length).toBe(1);
     expect(kept?.stale).toBe(true);
+  });
+
+  test('each unit carries a picture of its color, or the model picture when the store shows none for it', async () => {
+    const client = await connect({ fetcher: fakeStore().fetcher });
+    const result = await call(client, 'get_product', { id: 'iphone-17-pro-max-256gb-used' });
+    const units = result.structuredContent?.iphone.units;
+    expect(units.map((u: any) => u.color)).toEqual(['Naranja', 'Silver', 'Silver']);
+    expect(units[0].image_url).toBe(`${UPLOADS}/2026/04/iphone-17-pro-max-naranja.png`);
+    expect(units[1].image_url).not.toBe(units[0].image_url);
+    expect(result.content[0]?.text).toContain(`| image ${UPLOADS}/2026/04/iphone-17-pro-max-naranja.png`);
+    expect(result.content[0]?.text).toContain('illustrative');
+    // The store has no iPhone 16 Pro product, so its units fall back to the price list picture of the model.
+    const fallback = (await call(client, 'get_product', { id: 'iphone-16-pro-128gb-used' })).structuredContent?.iphone;
+    expect(fallback.units.every((u: any) => u.image_url === fallback.image_url)).toBe(true);
+    expect(fallback.image_url).toBe(`${UPLOADS}/2026/11/16-pro-y-pro-max.jpeg`);
+    const sealed = await call(client, 'search_products', { query: '18 pro max', storage_gb: 256 });
+    expect(sealed.content[0]?.text).toContain(`sealed, colors not listed | image ${UPLOADS}/2026/11/18-pro-y-pro-max-sellado.jpeg`);
+    const funda = await call(client, 'search_products', { query: 'battery pack', kind: 'accessory' });
+    expect(funda.content[0]?.text).toMatch(/\| image https:\/\/mobikiphones\.com\.ar\/wp-content\/uploads\/.+\.png/);
+  });
+
+  test('with the picture gallery down, phones still answer with the model picture', async () => {
+    const store = fakeStore();
+    const fetcher: Fetcher = async (url, init) => (url === GALLERY_URL ? new Response('nope', { status: 500 }) : store.fetcher(url, init));
+    const phone = (await call(await connect({ fetcher }), 'get_product', { id: 'iphone-17-pro-max-256gb-used' })).structuredContent;
+    expect(phone?.stale).toBe(false);
+    expect(phone?.iphone.units.every((u: any) => u.image_url === `${UPLOADS}/2026/11/17-pro-y-pro-max.jpeg`)).toBe(true);
   });
 
   test('"hacen envíos?" is answered from the published FAQ and shipping policy', async () => {

@@ -1,5 +1,5 @@
 {
- "read_at": "2026-11-12T17:12:29.681Z",
+ "read_at": "2026-11-12T18:10:15.858Z",
  "iphones": [
   {
    "id": "iphone-13-128gb-used",
@@ -13,29 +13,35 @@
     {
      "battery_pct": 100,
      "color": "Blanco",
-     "price_usd": 310
+     "price_usd": 310,
+     "image_url": null
     },
     {
      "battery_pct": 100,
      "color": "Midnight",
-     "price_usd": 310
+     "price_usd": 310,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Azul",
-     "price_usd": 300
+     "price_usd": 300,
+     "image_url": null
     },
     {
      "battery_pct": 84,
      "color": "Azul",
-     "price_usd": 300
+     "price_usd": 300,
+     "image_url": null
     },
     {
      "battery_pct": 78,
      "color": "Blanco",
-     "price_usd": 290
+     "price_usd": 290,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/iphone-13.jpeg"
   },
   {
    "id": "iphone-13-pro-128gb-used",
@@ -49,29 +55,35 @@
     {
      "battery_pct": 100,
      "color": "Azul sierra",
-     "price_usd": 410
+     "price_usd": 410,
+     "image_url": null
     },
     {
      "battery_pct": 94,
      "color": "Negro",
-     "price_usd": 400
+     "price_usd": 400,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Blanco",
-     "price_usd": 395
+     "price_usd": 395,
+     "image_url": null
     },
     {
      "battery_pct": 80,
      "color": "Negro",
-     "price_usd": 390
+     "price_usd": 390,
+     "image_url": null
     },
     {
      "battery_pct": 78,
      "color": "Azul sierra",
-     "price_usd": 385
+     "price_usd": 385,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/13-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-13-pro-max-128gb-used",
@@ -85,24 +97,29 @@
     {
      "battery_pct": 95,
      "color": "Azul sierra",
-     "price_usd": 480
+     "price_usd": 480,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Azul sierra",
-     "price_usd": 470
+     "price_usd": 470,
+     "image_url": null
     },
     {
      "battery_pct": 84,
      "color": "Azul sierra",
-     "price_usd": 460
+     "price_usd": 460,
+     "image_url": null
     },
     {
      "battery_pct": 82,
      "color": "Azul sierra",
-     "price_usd": 450
+     "price_usd": 450,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/13-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-14-128gb-used",
@@ -116,29 +133,35 @@
     {
      "battery_pct": 100,
      "color": "Azul",
-     "price_usd": 340
+     "price_usd": 340,
+     "image_url": null
     },
     {
      "battery_pct": 100,
      "color": "Azul",
-     "price_usd": 340
+     "price_usd": 340,
+     "image_url": null
     },
     {
      "battery_pct": 89,
      "color": "Azul",
-     "price_usd": 330
+     "price_usd": 330,
+     "image_url": null
     },
     {
      "battery_pct": 87,
      "color": "Celeste",
-     "price_usd": 325
+     "price_usd": 325,
+     "image_url": null
     },
     {
      "battery_pct": 76,
      "color": "Blanco",
-     "price_usd": 300
+     "price_usd": 300,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/14.jpeg"
   },
   {
    "id": "iphone-14-pro-128gb-used",
@@ -152,29 +175,35 @@
     {
      "battery_pct": 100,
      "color": "Purple",
-     "price_usd": 480
+     "price_usd": 480,
+     "image_url": null
     },
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 480
+     "price_usd": 480,
+     "image_url": null
     },
     {
      "battery_pct": 94,
      "color": "Blanco",
-     "price_usd": 470
+     "price_usd": 470,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Negro",
-     "price_usd": 450
+     "price_usd": 450,
+     "image_url": null
     },
     {
      "battery_pct": 83,
      "color": "Purple",
-     "price_usd": 440
+     "price_usd": 440,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/14-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-14-pro-256gb-used",
@@ -188,24 +217,29 @@
     {
      "battery_pct": 100,
      "color": "Purple",
-     "price_usd": 530
+     "price_usd": 530,
+     "image_url": null
     },
     {
      "battery_pct": 100,
      "color": "Purple",
-     "price_usd": 530
+     "price_usd": 530,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Blanco",
-     "price_usd": 500
+     "price_usd": 500,
+     "image_url": null
     },
     {
      "battery_pct": 82,
      "color": "Purple",
-     "price_usd": 490
+     "price_usd": 490,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/14-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-14-pro-max-128gb-used",
@@ -219,24 +253,29 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 560
+     "price_usd": 560,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Dorado",
-     "price_usd": 550
+     "price_usd": 550,
+     "image_url": null
     },
     {
      "battery_pct": 84,
      "color": "Negro",
-     "price_usd": 540
+     "price_usd": 540,
+     "image_url": null
     },
     {
      "battery_pct": 82,
      "color": "Blanco",
-     "price_usd": 530
+     "price_usd": 530,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/14-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-14-pro-max-256gb-used",
@@ -250,14 +289,17 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 600
+     "price_usd": 600,
+     "image_url": null
     },
     {
      "battery_pct": 94,
      "color": "Blanco",
-     "price_usd": 590
+     "price_usd": 590,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/14-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-15-128gb-used",
@@ -271,24 +313,29 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 480
+     "price_usd": 480,
+     "image_url": null
     },
     {
      "battery_pct": 98,
      "color": "Azul",
-     "price_usd": 470
+     "price_usd": 470,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Azul",
-     "price_usd": 460
+     "price_usd": 460,
+     "image_url": null
     },
     {
      "battery_pct": 87,
      "color": "Rosa",
-     "price_usd": 455
+     "price_usd": 455,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/15.jpeg"
   },
   {
    "id": "iphone-15-pro-128gb-used",
@@ -302,24 +349,29 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 580
+     "price_usd": 580,
+     "image_url": null
     },
     {
      "battery_pct": 98,
      "color": "Blanco",
-     "price_usd": 575
+     "price_usd": 575,
+     "image_url": null
     },
     {
      "battery_pct": 87,
      "color": "Gris",
-     "price_usd": 560
+     "price_usd": 560,
+     "image_url": null
     },
     {
      "battery_pct": 84,
      "color": "Negro",
-     "price_usd": 555
+     "price_usd": 555,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/15-pro-y-15-pro-max.jpeg"
   },
   {
    "id": "iphone-15-pro-256gb-used",
@@ -333,14 +385,17 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 630
+     "price_usd": 630,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Blanco",
-     "price_usd": 600
+     "price_usd": 600,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/15-pro-y-15-pro-max.jpeg"
   },
   {
    "id": "iphone-15-pro-max-256gb-used",
@@ -354,14 +409,17 @@
     {
      "battery_pct": 100,
      "color": "Gris natural",
-     "price_usd": 690
+     "price_usd": 690,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Negro",
-     "price_usd": 680
+     "price_usd": 680,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/15-pro-y-15-pro-max.jpeg"
   },
   {
    "id": "iphone-16-128gb-used",
@@ -375,14 +433,17 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 640
+     "price_usd": 640,
+     "image_url": null
     },
     {
      "battery_pct": 89,
      "color": "Verde",
-     "price_usd": 620
+     "price_usd": 620,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/16.jpeg"
   },
   {
    "id": "iphone-16-256gb-used",
@@ -396,14 +457,17 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 685
+     "price_usd": 685,
+     "image_url": null
     },
     {
      "battery_pct": 89,
      "color": "Verde",
-     "price_usd": 665
+     "price_usd": 665,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/16.jpeg"
   },
   {
    "id": "iphone-16-pro-128gb-used",
@@ -417,19 +481,23 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 750
+     "price_usd": 750,
+     "image_url": null
     },
     {
      "battery_pct": 99,
      "color": "Blanco",
-     "price_usd": 750
+     "price_usd": 750,
+     "image_url": null
     },
     {
      "battery_pct": 87,
      "color": "Dorado",
-     "price_usd": 720
+     "price_usd": 720,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/16-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-16-pro-256gb-used",
@@ -443,14 +511,17 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 800
+     "price_usd": 800,
+     "image_url": null
     },
     {
      "battery_pct": 86,
      "color": "Dorado",
-     "price_usd": 770
+     "price_usd": 770,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/16-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-16-pro-max-256gb-used",
@@ -464,19 +535,23 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 870
+     "price_usd": 870,
+     "image_url": null
     },
     {
      "battery_pct": 99,
      "color": "Dorado",
-     "price_usd": 880
+     "price_usd": 880,
+     "image_url": null
     },
     {
      "battery_pct": 89,
      "color": "Dorado",
-     "price_usd": 840
+     "price_usd": 840,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/16-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-17-256gb-used",
@@ -490,19 +565,23 @@
     {
      "battery_pct": 100,
      "color": "Negro",
-     "price_usd": 850
+     "price_usd": 850,
+     "image_url": null
     },
     {
      "battery_pct": 99,
      "color": "Blanco",
-     "price_usd": 840
+     "price_usd": 840,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Lavanda",
-     "price_usd": 810
+     "price_usd": 810,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/17.jpeg"
   },
   {
    "id": "iphone-17-pro-256gb-used",
@@ -516,19 +595,23 @@
     {
      "battery_pct": 100,
      "color": "Silver",
-     "price_usd": 1130
+     "price_usd": 1130,
+     "image_url": null
     },
     {
      "battery_pct": 99,
      "color": "Orange",
-     "price_usd": 1120
+     "price_usd": 1120,
+     "image_url": null
     },
     {
      "battery_pct": 88,
      "color": "Blue",
-     "price_usd": 1090
+     "price_usd": 1090,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/17-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-17-pro-max-256gb-used",
@@ -542,19 +625,23 @@
     {
      "battery_pct": 100,
      "color": "Naranja",
-     "price_usd": 1200
+     "price_usd": 1200,
+     "image_url": null
     },
     {
      "battery_pct": 99,
      "color": "Silver",
-     "price_usd": 1190
+     "price_usd": 1190,
+     "image_url": null
     },
     {
      "battery_pct": 89,
      "color": "Silver",
-     "price_usd": 1160
+     "price_usd": 1160,
+     "image_url": null
     }
-   ]
+   ],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/17-pro-y-pro-max.jpeg"
   },
   {
    "id": "iphone-17-256gb-new",
@@ -564,7 +651,8 @@
    "storage_gb": 256,
    "from_price_usd": 1000,
    "price_usd": 1000,
-   "units": []
+   "units": [],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/17-sellado.jpeg"
   },
   {
    "id": "iphone-17-pro-256gb-new",
@@ -574,7 +662,8 @@
    "storage_gb": 256,
    "from_price_usd": 1200,
    "price_usd": 1200,
-   "units": []
+   "units": [],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/17-pro-sellado.jpeg"
   },
   {
    "id": "iphone-17-pro-max-256gb-new",
@@ -584,7 +673,8 @@
    "storage_gb": 256,
    "from_price_usd": 1300,
    "price_usd": 1300,
-   "units": []
+   "units": [],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/17-pro-sellado.jpeg"
   },
   {
    "id": "iphone-18-pro-256gb-new",
@@ -594,7 +684,8 @@
    "storage_gb": 256,
    "from_price_usd": 1399,
    "price_usd": 1399,
-   "units": []
+   "units": [],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/18-pro-y-pro-max-sellado.jpeg"
   },
   {
    "id": "iphone-18-pro-max-256gb-new",
@@ -604,7 +695,8 @@
    "storage_gb": 256,
    "from_price_usd": 1599,
    "price_usd": 1599,
-   "units": []
+   "units": [],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/18-pro-y-pro-max-sellado.jpeg"
   },
   {
    "id": "iphone-18-pro-512gb-new",
@@ -614,7 +706,8 @@
    "storage_gb": 512,
    "from_price_usd": 1550,
    "price_usd": 1550,
-   "units": []
+   "units": [],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/18-pro-y-pro-max-sellado.jpeg"
   },
   {
    "id": "iphone-18-pro-max-512gb-new",
@@ -624,7 +717,8 @@
    "storage_gb": 512,
    "from_price_usd": 1750,
    "price_usd": 1750,
-   "units": []
+   "units": [],
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/11/18-pro-y-pro-max-sellado.jpeg"
   }
  ],
  "accessories": [
@@ -640,7 +734,8 @@
    "colors": [],
    "description": "Fuente oficial de carga rápida (0-50% en 30 min). Máxima protección para la salud de la batería",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/base-cargador-20w-usa/"
+   "url": "https://mobikiphones.com.ar/tienda/base-cargador-20w-usa/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/base-cargador-usa-20w.png"
   },
   {
    "id": "battery-pack",
@@ -654,7 +749,8 @@
    "colors": [],
    "description": "Batería externa magnética portátil. Ideal para extender la autonomía en viajes o jornadas largas.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/battery-pack/"
+   "url": "https://mobikiphones.com.ar/tienda/battery-pack/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/6F0B7083-805F-44C5-8212-A9C517CB0440.png"
   },
   {
    "id": "cargador-magsafe-inalambrico",
@@ -668,7 +764,8 @@
    "colors": [],
    "description": "Cargador magnético de 15W. Alineación precisa para una carga eficiente sin cables.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/cargador-magsafe-inalambrico/"
+   "url": "https://mobikiphones.com.ar/tienda/cargador-magsafe-inalambrico/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_7262-scaled.png"
   },
   {
    "id": "funda-transparente-iphone",
@@ -705,7 +802,8 @@
    "colors": [],
    "description": "Policarbonato rígido con tecnología anti-amarilleo para lucir el color original del iPhone.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/funda-transparente-iphone/"
+   "url": "https://mobikiphones.com.ar/tienda/funda-transparente-iphone/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6718-scaled.jpeg"
   },
   {
    "id": "funda-magsafe",
@@ -742,7 +840,8 @@
    "colors": [],
    "description": "Protección contra impactos con anillo magnético integrado para accesorios y carga inalámbrica.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/funda-magsafe/"
+   "url": "https://mobikiphones.com.ar/tienda/funda-magsafe/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6720-scaled.jpeg"
   },
   {
    "id": "silicone-case",
@@ -779,7 +878,8 @@
    ],
    "description": "Acabado soft-touch antideslizante con interior de microfibra.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/silicone-case/"
+   "url": "https://mobikiphones.com.ar/tienda/silicone-case/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_7255-scaled.png"
   },
   {
    "id": "vidrio-templado-9d",
@@ -809,7 +909,8 @@
    "colors": [],
    "description": "Vidrio de máxima dureza con cobertura total de borde a borde y tratamiento oleofóbico.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/vidrio-templado-9d/"
+   "url": "https://mobikiphones.com.ar/tienda/vidrio-templado-9d/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6705-scaled.jpeg"
   },
   {
    "id": "auriculares-pro-2-generacion",
@@ -823,7 +924,8 @@
    "colors": [],
    "description": "Auriculares con cancelación activa de ruido, modo ambiente y audio espacial envolvente.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/auriculares-pro-2-generacion/"
+   "url": "https://mobikiphones.com.ar/tienda/auriculares-pro-2-generacion/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6709-scaled.jpeg"
   },
   {
    "id": "tipo-c-a-lighting",
@@ -835,7 +937,8 @@
    "colors": [],
    "description": "Optimizado para carga rápida en modelos iPhone 8 hasta el 14.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/tipo-c-a-lighting/"
+   "url": "https://mobikiphones.com.ar/tienda/tipo-c-a-lighting/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6715-scaled.jpeg"
   },
   {
    "id": "cable-tipo-c-a-c",
@@ -849,7 +952,8 @@
    "colors": [],
    "description": "Alta resistencia y velocidad de transferencia para series iPhone 15/16 y iPads.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/cable-tipo-c-a-c/"
+   "url": "https://mobikiphones.com.ar/tienda/cable-tipo-c-a-c/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6738-2-scaled.jpg"
   },
   {
    "id": "base-20w-cargador-estilo-argentino",
@@ -863,7 +967,8 @@
    "colors": [],
    "description": "Adaptado a fichas locales (IRAM). Carga rápida segura sin necesidad de adaptadores.",
    "in_stock": true,
-   "url": "https://mobikiphones.com.ar/tienda/base-20w-cargador-estilo-argentino/"
+   "url": "https://mobikiphones.com.ar/tienda/base-20w-cargador-estilo-argentino/",
+   "image_url": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/base-cargador-arg-blanco.png"
   }
  ],
  "faq": [

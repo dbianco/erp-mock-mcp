@@ -49,7 +49,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/base-cargador-usa-20w.png",
+    "alt": "Base cargador blanca USA 20w"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6707-scaled.jpeg",
+    "alt": "Base blanca cargador tipo c"
+   }
+  ]
  },
  {
   "id": 6057,
@@ -101,7 +111,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/6F0B7083-805F-44C5-8212-A9C517CB0440.png",
+    "alt": "Battery pack"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/6F0B7083-805F-44C5-8212-A9C517CB0440.png",
+    "alt": "Battery pack"
+   }
+  ]
  },
  {
   "id": 6056,
@@ -153,7 +173,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_7262-scaled.png",
+    "alt": "Cargador Magsafe"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_7261-scaled.png",
+    "alt": "Cargador Magsafe"
+   }
+  ]
  },
  {
   "id": 6055,
@@ -311,7 +341,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6718-scaled.jpeg",
+    "alt": "Funda transparente iPhone"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6718-scaled.jpeg",
+    "alt": "Funda transparente iPhone"
+   }
+  ]
  },
  {
   "id": 6054,
@@ -469,7 +509,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6720-scaled.jpeg",
+    "alt": "Funda Magsafe iPhone 16"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6721-scaled.jpeg",
+    "alt": "Funda Magsafe iPhone"
+   }
+  ]
  },
  {
   "id": 6053,
@@ -630,7 +680,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_7255-scaled.png",
+    "alt": "Funda silicone case"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/08/Funda-rosa-iPhone-17-17-Pro-.jpg",
+    "alt": ""
+   }
+  ]
  },
  {
   "id": 6052,
@@ -752,7 +812,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6705-scaled.jpeg",
+    "alt": "Vidrio templado 9D"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6706-scaled.jpeg",
+    "alt": "Vidrio templado modo de uso"
+   }
+  ]
  },
  {
   "id": 6051,
@@ -790,7 +860,17 @@
    }
   ],
   "attributes": [],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6709-scaled.jpeg",
+    "alt": "Auriculares 2 Generación encendidos"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6709-scaled.jpeg",
+    "alt": "Auriculares 2 Generación encendidos"
+   }
+  ]
  },
  {
   "id": 6050,
@@ -836,7 +916,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6715-scaled.jpeg",
+    "alt": "Cable blanco C a Lightning"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6703-scaled.jpeg",
+    "alt": "Cable C a Lightning"
+   }
+  ]
  },
  {
   "id": 6049,
@@ -888,7 +978,17 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6738-2-scaled.jpg",
+    "alt": "Cable blanco C a C"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6698-scaled.jpeg",
+    "alt": "Cable cargador 1m tipo C a C"
+   }
+  ]
  },
  {
   "id": 6048,
@@ -940,6 +1040,16 @@
     ]
    }
   ],
-  "is_in_stock": true
+  "is_in_stock": true,
+  "images": [
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/base-cargador-arg-blanco.png",
+    "alt": "Base blanca cargador ARG"
+   },
+   {
+    "src": "https://mobikiphones.com.ar/wp-content/uploads/2026/03/IMG_6707-scaled.jpeg",
+    "alt": "Base blanca cargador tipo c"
+   }
+  ]
  }
 ]

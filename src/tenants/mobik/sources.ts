@@ -3,6 +3,7 @@ import { dataFile, loadJson } from '../../data.js';
 import { type Accessory, AccessorySchema, parseAccessories } from './accessories.js';
 import { type Reading, createCachedSource } from './cache.js';
 import { type FaqEntry, FaqEntrySchema, parseFaqPage } from './faq.js';
+import { type Gallery, parseGallery } from './gallery.js';
 import { IphoneSchema, type PriceList, parsePriceList } from './price-list.js';
 
 export const SITE = 'https://mobikiphones.com.ar';
@@ -10,7 +11,10 @@ export const PRICE_LIST_URL = `${SITE}/lista-de-precios/`;
 export const ACCESSORIES_URL = `${SITE}/wp-json/wc/store/v1/products?category=accesorios&per_page=100`;
 export const FAQ_URL = `${SITE}/preguntas-frecuentes/`;
 export const SHIPPING_POLICY_URL = `${SITE}/politicas-de-envio/`;
+export const GALLERY_URL = `${SITE}/wp-json/wc/store/v1/products?category=iphones&per_page=100`;
 export const DEFAULT_TTL_SECONDS = 60;
+/** Pictures change rarely and the response is large, so the gallery is kept at least this long whatever the TTL. */
+const GALLERY_MIN_TTL_SECONDS = 3600;
 const TIMEOUT_MS = 8000;
 const USER_AGENT = 'erp-mock-mcp/0.1';
 
@@ -46,10 +50,14 @@ export async function fetchFaq(fetcher: Fetcher): Promise<FaqEntry[]> {
   return [...parseFaqPage(await faq.text(), 'faq', FAQ_URL), ...parseFaqPage(await shipping.text(), 'shipping_policy', SHIPPING_POLICY_URL)];
 }
 
+export const fetchGallery = async (fetcher: Fetcher): Promise<Gallery> => parseGallery(await (await get(fetcher, GALLERY_URL)).json());
+
 export interface Sources {
   priceList: () => Promise<Reading<PriceList>>;
   accessories: () => Promise<Reading<Accessory[]>>;
   faq: () => Promise<Reading<FaqEntry[]>>;
+  /** Pictures per model and color. Optional by nature: with none, phones keep the price list's picture. */
+  gallery: () => Promise<Reading<Gallery>>;
 }
 
 export interface SourceOptions {
@@ -77,6 +85,12 @@ export function createSources(options: SourceOptions = {}): Sources {
       ...shared,
       load: () => fetchFaq(fetcher),
       fallback: { value: snapshot.faq, read_at: snapshot.read_at },
+    }),
+    gallery: createCachedSource<Gallery>({
+      ...shared,
+      ttlMs: Math.max(shared.ttlMs, GALLERY_MIN_TTL_SECONDS * 1000),
+      load: () => fetchGallery(fetcher),
+      fallback: { value: {}, read_at: snapshot.read_at },
     }),
   };
 }
