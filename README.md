@@ -96,7 +96,7 @@ health, USD price); a sealed one has a "from" price and no colors. `get_product`
 `list_categories` — iPhone models and accessory categories. `get_warranty` — 1 year from Apple on new, 30 days from
 Mobik on used. `get_trade_in_quote` — `have_model`, `want_model`: the estimated difference to pay in USD, never the value
 of the phone handed in. `get_payment_methods` — surcharges per method and card plan, with totals for `amount_usd`; it
-never produces pesos, because the day's exchange rate is not known. `get_reservation_info` — deposit, alias, validity.
+never produces pesos: pesos are taken at Banco Nación's selling rate at the time of the operation, which the server does not know. `get_reservation_info` — deposit, alias, validity.
 
 **Mobik data is read live, not invented.** Two public sources on https://mobikiphones.com.ar/, both read with a plain
 `GET` and no credentials:

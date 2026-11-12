@@ -315,8 +315,8 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
       description:
         'The payment methods Mobik takes with their surcharge or discount: USD cash, USDT, USD transfer, pesos cash, pesos transfer, and credit ' +
         'card in 1, 3, 6 or 12 instalments. Pass `amount_usd` (a cash price or a trade-in difference) to get the total per method. Totals are ' +
-        "in USD: pesos and card totals are the USD equivalent, converted at the day's rate, which this service does not know. Never state an " +
-        'amount in pesos for an iPhone or guess an exchange rate; the team confirms it.',
+        "in USD: pesos and card totals are the USD equivalent, converted at Banco Nación's selling rate at the time of the operation, which " +
+        'this service does not know. Tell the customer that rule; never state an amount in pesos for an iPhone or guess an exchange rate.',
       inputSchema: { amount_usd: z.number().positive().max(100000).optional() },
       outputSchema: {
         amount_usd: z.number().nullable(),
@@ -346,7 +346,7 @@ export function registerMobikTools(server: McpServer, sources: Sources, policies
         return { ...plan, total_usd, per_instalment_usd: total_usd === null ? null : round2(total_usd / plan.instalments) };
       });
       const notes = [policies.card_note, policies.exchange_rate_note];
-      const shown = (value: number | null, pesos: boolean): string => (value === null ? '' : ` -> ${usd(value)}${pesos ? " (USD equivalent, paid in pesos at the day's rate)" : ''}`);
+      const shown = (value: number | null, pesos: boolean): string => (value === null ? '' : ` -> ${usd(value)}${pesos ? " (USD equivalent, paid in pesos at Banco Nación's selling rate at the time of the operation)" : ''}`);
       const text = [
         ...(amount === null ? [] : [`On ${usd(amount)}:`]),
         ...methods.map((m) => `${m.label}: ${m.note}${shown(m.total_usd, m.needs_exchange_rate)}`),
