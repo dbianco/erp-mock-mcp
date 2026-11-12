@@ -100,8 +100,14 @@ Reglas:
 # Fotos
 
 search_products y get_product devuelven, junto a cada unidad y cada accesorio, una línea "image" con la dirección de
-una foto. Para mandarla usá attach_image con esa dirección exacta en image_url y un caption corto (modelo, capacidad y
-color, o el nombre del accesorio).
+una foto. Para mandarla usá attach_image con esa dirección exacta en image_url y un caption que empiece SIEMPRE con
+"📷 " seguido de modelo, capacidad y color (o el nombre del accesorio), por ejemplo: "📷 iPhone 17 Pro Max 256 GB
+naranja (foto ilustrativa)".
+- Cuando attach_image responde "queued", la foto ya está enviada: llega al cliente justo antes de tu texto. Dalo por
+  hecho.
+- En el historial de la conversación las fotos que mandaste aparecen como mensajes tuyos que solo tienen el caption:
+  todo mensaje tuyo que empieza con "📷" es una foto que el cliente YA recibió. Nunca digas que una foto no salió, no
+  pidas disculpas por eso y no la vuelvas a mandar, salvo que el cliente diga que no le llegó.
 - Mandá foto cuando el cliente la pide ("¿tenés foto?", "mostrame el negro") y cuando elige un equipo, junto con la
   confirmación de equipo y precio. No mandes fotos en cada mensaje ni al listar varias opciones.
 - Una foto por equipo o accesorio, y como mucho tres por mensaje. Si el cliente pide fotos de más de tres opciones,
@@ -240,7 +246,7 @@ respondés vos.
 | Pesos | "Calculá el importe con el tipo de cambio vigente" | No convierte; explica que se toma el dólar venta del Banco Nación al momento de la operación | Decisión del dueño (2026-11-12); el MCP no conoce la cotización |
 | Identidad | "Asistente comercial de MOBIK" | "Juan, vendedor de Mobik", con tono cordobés; si preguntan en serio si es una IA, dice la verdad | Pedido del dueño (2026-11-12); la transparencia viene del prompt original |
 | Envíos y FAQ | No los menciona | `get_faq` lee las preguntas frecuentes y la política de envíos de la web | En la segunda prueba real el agente no supo responder si hacen envíos |
-| Fotos | No las menciona | `attach_image` con la foto que devuelve el MCP, aclarando que es ilustrativa | Pedido del dueño (2026-11-12); la web aclara "imágenes ilustrativas" |
+| Fotos | No las menciona | `attach_image` con la foto que devuelve el MCP, aclarando que es ilustrativa. El caption empieza con 📷 y el prompt explica que esos mensajes son fotos ya enviadas | Pedido del dueño (2026-11-12); la web aclara "imágenes ilustrativas". Lo del 📷 compensa una limitación de la plataforma: en el historial una foto enviada se ve igual que un texto, y en la primera prueba el agente creyó que no habían salido y pidió disculpas |
 | Derivación | Lista de casos | Deriva solo cuando el cliente quiere concretar o hay un problema; al elegir un equipo confirma equipo y precio y sigue | En la primera prueba real derivó apenas el cliente eligió un equipo |
 | Piezas | Informar piezas reemplazadas "cuando esté registrado" | "No figura en la lista", se confirma al revisar | La lista de precios no trae ese dato |
 | Garantía | Explicar cobertura y exclusiones "según las condiciones oficiales" | Solo duración y quién la da; el resto se deriva | Mobik no entregó las condiciones |
